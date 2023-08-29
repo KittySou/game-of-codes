@@ -5,4 +5,11 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
+  resources :decks, only: [:index, :show]
 end
+# resources :bookings, only: [:index, :show, :edit, :update, :destroy]
+# resources :posters, only: [:index, :show, :create, :new] do
+#  resources :bookings, only: [:new, :create]
+# end
+# get "/booking_confirmation/:id", to: "bookings#booking_confirmation", as: "booking_confirmation"
+# end
