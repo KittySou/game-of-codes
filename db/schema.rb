@@ -15,8 +15,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_29_184054) do
   enable_extension "plpgsql"
 
   create_table "answers", force: :cascade do |t|
-    t.text "content"
-    t.boolean "right_answer"
+    t.string "content"
+    t.boolean "right_answer", default: false, null: false
     t.bigint "question_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -25,8 +25,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_29_184054) do
 
   create_table "decks", force: :cascade do |t|
     t.string "name"
-    t.text "tips"
-    t.integer "level"
+    t.string "tips"
+    t.integer "level", default: 1, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -55,6 +55,10 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_29_184054) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
+    t.string "username"
+    t.string "first_name"
+    t.string "last_name"
+    t.integer "level", default: 1, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
