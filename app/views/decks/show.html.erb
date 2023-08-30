@@ -1,7 +1,16 @@
-<h1>Deck #1 (just as an example)</h1>
+<div class="container">
+  <h1>Deck #1 (just as an example)</h1>
 
-<h2>Name of the deck:</h2>
-<h3><%= @deck.name %></h3>
+  <h2>Name of the deck:</h2>
+  <h3><%= @deck.name %></h3>
 
-<h4>Tips:</h4>
-<h5><%= @deck.tips %></h5>
+  <h4>Tips:</h4>
+  <h5><%= @deck.tips %></h5>
+</div>
+
+<%# Here add the button -> when "clicked", fetch the first question of the deck + 5 answers then display in DOM %>
+
+
+<%# To ask the teachers :how to code
+- if wrong answer put question back in the deck
+- if right answer make question disappear from the deck %>
