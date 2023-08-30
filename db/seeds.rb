@@ -26,7 +26,7 @@ user_5 = User.create!(email:"david@live.com", password:"123456" ,first_name:"Dav
 user_5.photo.attach(io: URI.open("https://res.cloudinary.com/ddpxdkwin/image/upload/v1693423130/wcsd5gataw9n12srxxbj.png"), filename: "user_5.png", content_type: "image/png")
 user_5.save
 
-deck_1 = Deck.create!(name: "strings", tips: "check lecture", level: 1)
+deck_1 = Deck.create!(name: "strings1", tips: "check lecture", level: 1)
 
 question_1 = Question.create!(content: "1+1", deck: deck_1)
 answer_1 = Answer.create!(content: "2", question: question_1, right_answer: true)
@@ -58,6 +58,68 @@ answer_18 = Answer.create!(content: "1", question: question_5)
 answer_19 = Answer.create!(content: "5", question: question_5)
 answer_20 = Answer.create!(content: "8", question: question_5)
 
+deck_2 = Deck.create!(name: "array2", tips: "check lecture", level: 2)
 
-deck_2 = Deck.create!(name: "array", tips: "check lecture", level: 2)
-deck_3 = Deck.create!(name: "boolean", tips: "check lecture", level: 3)
+question_1 = Question.create!(content: "1+1", deck: deck_2)
+answer_1 = Answer.create!(content: "2", question: question_1, right_answer: true)
+answer_2 = Answer.create!(content: "1", question: question_1)
+answer_3 = Answer.create!(content: "5", question: question_1)
+answer_4 = Answer.create!(content: "8", question: question_1)
+
+question_2 = Question.create!(content: "2+2", deck: deck_2)
+answer_5 = Answer.create!(content: "4", question: question_2, right_answer: true)
+answer_6 = Answer.create!(content: "1", question: question_2)
+answer_7 = Answer.create!(content: "5", question: question_2)
+answer_8 = Answer.create!(content: "8", question: question_2)
+
+question_3 = Question.create!(content: "3+3", deck: deck_2)
+answer_9 = Answer.create!(content:  "6", question: question_3, right_answer: true)
+answer_10 = Answer.create!(content: "1", question: question_3)
+answer_11 = Answer.create!(content: "5", question: question_3)
+answer_12 = Answer.create!(content: "8", question: question_3)
+
+question_4 = Question.create!(content: "4+4", deck: deck_2)
+answer_13 = Answer.create!(content: "8", question: question_4, right_answer: true)
+answer_14 = Answer.create!(content: "1", question: question_4)
+answer_15 = Answer.create!(content: "5", question: question_4)
+answer_16 = Answer.create!(content: "2", question: question_4)
+
+question_5 = Question.create!(content: "5+5", deck: deck_2)
+answer_17 = Answer.create!(content: "10", question: question_5, right_answer: true)
+answer_18 = Answer.create!(content: "1", question: question_5)
+answer_19 = Answer.create!(content: "5", question: question_5)
+answer_20 = Answer.create!(content: "8", question: question_5)
+
+
+
+deck_3 = Deck.create!(name: "boolean3", tips: "check lecture", level: 3)
+
+question_1 = Question.create!(content: "1+1", deck: deck_3)
+answer_1 = Answer.create!(content: "2", question: question_1, right_answer: true)
+answer_2 = Answer.create!(content: "1", question: question_1)
+answer_3 = Answer.create!(content: "5", question: question_1)
+answer_4 = Answer.create!(content: "8", question: question_1)
+
+question_2 = Question.create!(content: "2+2", deck: deck_3)
+answer_5 = Answer.create!(content: "4", question: question_2, right_answer: true)
+answer_6 = Answer.create!(content: "1", question: question_2)
+answer_7 = Answer.create!(content: "5", question: question_2)
+answer_8 = Answer.create!(content: "8", question: question_2)
+
+question_3 = Question.create!(content: "3+3", deck: deck_3)
+answer_9 = Answer.create!(content:  "6", question: question_3, right_answer: true)
+answer_10 = Answer.create!(content: "1", question: question_3)
+answer_11 = Answer.create!(content: "5", question: question_3)
+answer_12 = Answer.create!(content: "8", question: question_3)
+
+question_4 = Question.create!(content: "4+4", deck: deck_3)
+answer_13 = Answer.create!(content: "8", question: question_4, right_answer: true)
+answer_14 = Answer.create!(content: "1", question: question_4)
+answer_15 = Answer.create!(content: "5", question: question_4)
+answer_16 = Answer.create!(content: "2", question: question_4)
+
+question_5 = Question.create!(content: "5+5", deck: deck_3)
+answer_17 = Answer.create!(content: "10", question: question_5, right_answer: true)
+answer_18 = Answer.create!(content: "1", question: question_5)
+answer_19 = Answer.create!(content: "5", question: question_5)
+answer_20 = Answer.create!(content: "8", question: question_5)
