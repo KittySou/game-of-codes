@@ -1,24 +1,10 @@
-<h1 class="center my-5">Levels</h1>
-<div class="container justify-content-center">
+<h1 class="center my-5"><%= @decks.first.level %></h1>
+<h2 class="center my-3">Select a Deck</h2>
 
-  <div class="level-cards">
-
-    <div class="level-card">
-      <i class="fa-solid fa-lock d-none"></i>
-      <p>Easy</p>
+<div class="easy-cards">
+  <% @decks.each do |deck| %>
+    <div class="easy-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+      <%= deck.name %>
     </div>
-
-
-    <div class="level-card">
-        <i class="fa-solid fa-lock"></i>
-        <p>Intermediate</p>
-    </div>
-
-
-    <div class="level-card">
-      <i class="fa-solid fa-lock"></i>
-      <p>Advanced</p>
-    </div>
-  </div>
-
+  <% end %>
 </div>

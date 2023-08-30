@@ -1,0 +1,27 @@
+<h1 class="center my-5">Levels</h1>
+<div class="container justify-content-center">
+
+  <div class="level-cards">
+    <%= link_to decks_path(level: "beginner") do %>
+      <div class="level-card">
+        <i class="fa-solid fa-lock d-none"></i>
+        <p>Easy</p>
+      </div>
+    <% end %>
+
+    <%= link_to decks_path(level: "intermediate") do %>
+      <div class="level-card">
+          <i class="fa-solid fa-lock"></i>
+          <p>Intermediate</p>
+      </div>
+    <% end %>
+
+    <%= link_to decks_path(level: "advanced") do %>
+      <div class="level-card">
+        <i class="fa-solid fa-lock"></i>
+        <p>Advanced</p>
+      </div>
+    <% end %>
+  </div>
+
+</div>
