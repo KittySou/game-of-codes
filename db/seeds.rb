@@ -6,6 +6,7 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
+require "open-uri"
 Answer.destroy_all
 Question.destroy_all
 Deck.destroy_all
@@ -18,10 +19,10 @@ user_2 = User.create!(email:"justin@live.com", password:"123456" ,first_name:"Ju
 user_3 = User.create!(email:"grant@live.com", password:"123456" ,first_name:"Grant", last_name:"User")
 
 user_4 = User.create!(email:"kitty@live.com", password:"123456" ,first_name:"Kitty", last_name:"User")
-
+user_4.photo.attach(io: file, filename: "david.png", content_type: "image/png")
 
 user_5 = User.create!(email:"david@live.com", password:"123456" ,first_name:"David", last_name:"User")
-
+user_5.photo.attach(io: file, filename: "1-Ktty_Souriyadeth_25786.png", content_type: "image/png")
 
 deck_1 = Deck.create!(name: "strings", tips: "check lecture", level: 1)
 
