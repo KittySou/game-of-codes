@@ -6,4 +6,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :user_decks
   has_many :decks, through: :user_decks
+  validates :first_name, presence: true
+  validates :last_name, presence: true
 end
