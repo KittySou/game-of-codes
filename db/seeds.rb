@@ -13,13 +13,16 @@ Deck.destroy_all
 User.destroy_all
 
 user_1 = User.create!(email:"marcelo@live.com", password:"123456" ,first_name:"Marcelo", last_name:"User")
+user_1.photo.attach(io: URI.open("https://res.cloudinary.com/ddpxdkwin/image/upload/v1693430408/marcelo_kiroir.jpg"), filename: "user_1.png", content_type: "image/png")
 
 user_2 = User.create!(email:"justin@live.com", password:"123456" ,first_name:"Justin", last_name:"User")
+user_2.photo.attach(io: URI.open("https://res.cloudinary.com/ddpxdkwin/image/upload/v1693430408/justin_dkrsph.jpg"), filename: "user_2.png", content_type: "image/png")
 
 user_3 = User.create!(email:"grant@live.com", password:"123456" ,first_name:"Grant", last_name:"User")
+user_3.photo.attach(io: URI.open("https://res.cloudinary.com/ddpxdkwin/image/upload/v1693430408/grant_gbqxfk.jpg"), filename: "user_3.png", content_type: "image/png")
 
 user_4 = User.create!(email:"kitty@live.com", password:"123456" ,first_name:"Kitty", last_name:"User")
- user_4.photo.attach(io: URI.open("https://res.cloudinary.com/ddpxdkwin/image/upload/v1693423131/b7qgeg70ut2b7hvqqyxp.png"), filename: "user_4.png", content_type: "image/png")
+user_4.photo.attach(io: URI.open("https://res.cloudinary.com/ddpxdkwin/image/upload/v1693423131/b7qgeg70ut2b7hvqqyxp.png"), filename: "user_4.png", content_type: "image/png")
 user_4.save
 
 user_5 = User.create!(email:"david@live.com", password:"123456" ,first_name:"David", last_name:"User")
