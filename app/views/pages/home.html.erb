@@ -1,1 +1,32 @@
-<h1>Pages#home</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GAME OF CODES</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Borel&family=Kanit&family=Press+Start+2P&family=Raleway:wght@600&family=Rubik+Iso&display=swap" rel="stylesheet">
+</head>
+<body>
+    <%# <div class="banner">
+      <div class="navbar">
+        <video class="background-video" autoplay muted loop id="myVideo">
+          <source src="video/vecteezy_binary-code-matrix-background-with-numbers-moving-downward-on-screen-digital-data-stream-effect-animation_2015336.mov" type="video/mp4">
+      </div> %>
+    <%# </div> %>
+    <div class="content">
+      <h1>GAME_OF_CODES</h1>
+      <h2>POWERED BY RUBY</h2>
+      <div>
+        <ul>
+          <%# <li><span></span><button>START GAME</button></li> %>
+          <%# <li><button type="button"><span></span>OPTIONS</button></li> %>
+          <button><%= link_to "START GAME", decks_path, class: "button" %></button>
+             <%# use routes prefix before _path in link_to %>
+        </ul>
+        </div>
+    </div>
+</body>
+</html>

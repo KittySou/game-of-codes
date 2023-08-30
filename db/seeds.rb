@@ -11,7 +11,6 @@ Question.destroy_all
 Deck.destroy_all
 User.destroy_all
 
-
 user_1 = User.create!(email:"marcelo@live.com", password:"123456" ,first_name:"Marcelo", last_name:"User")
 
 user_2 = User.create!(email:"justin@live.com", password:"123456" ,first_name:"Justin", last_name:"User")
@@ -21,9 +20,6 @@ user_3 = User.create!(email:"grant@live.com", password:"123456" ,first_name:"Gra
 user_4 = User.create!(email:"kitty@live.com", password:"123456" ,first_name:"Kitty", last_name:"User")
 
 user_5 = User.create!(email:"david@live.com", password:"123456" ,first_name:"David", last_name:"User")
-
-
-
 
 deck_1 = Deck.create!(name: "strings", tips: "check lecture", level: 1)
 
@@ -60,3 +56,4 @@ answer_20 = Answer.create!(content: "8", question: question_5)
 
 deck_2 = Deck.create!(name: "array", tips: "check lecture", level: 2)
 deck_3 = Deck.create!(name: "boolean", tips: "check lecture", level: 3)
+
