@@ -19,11 +19,11 @@ user_2 = User.create!(email:"justin@live.com", password:"123456" ,first_name:"Ju
 user_3 = User.create!(email:"grant@live.com", password:"123456" ,first_name:"Grant", last_name:"User")
 
 user_4 = User.create!(email:"kitty@live.com", password:"123456" ,first_name:"Kitty", last_name:"User")
-user_4.avatar.attach(io: file, filename: "https://res.cloudinary.com/ddpxdkwin/image/upload/v1693423130/wcsd5gataw9n12srxxbj.png", content_type: "image/png")
+ user_4.photo.attach(io: URI.open("https://res.cloudinary.com/ddpxdkwin/image/upload/v1693423131/b7qgeg70ut2b7hvqqyxp.png"), filename: "user_4.png", content_type: "image/png")
 user_4.save
 
 user_5 = User.create!(email:"david@live.com", password:"123456" ,first_name:"David", last_name:"User")
-user_5.avatar.attach(io: file, filename: "https://res.cloudinary.com/ddpxdkwin/image/upload/v1693423131/b7qgeg70ut2b7hvqqyxp.png", content_type: "image/png")
+user_5.photo.attach(io: URI.open("https://res.cloudinary.com/ddpxdkwin/image/upload/v1693423130/wcsd5gataw9n12srxxbj.png"), filename: "user_5.png", content_type: "image/png")
 user_5.save
 
 deck_1 = Deck.create!(name: "strings", tips: "check lecture", level: 1)
