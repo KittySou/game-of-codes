@@ -3,15 +3,23 @@ import Mustache from "mustache"
 
 // Connects to data-controller="game"
 export default class extends Controller {
-  static targets = ["tips", "startButton", "questionContainer", "questionTemplate", "form", "answerConfirmation"]
+  static targets = [
+    "tips",
+    "startButton",
+    "questionContainer",
+    "questionTemplate",
+    "form",
+    "answerConfirmation",
+    "checkButton",
+    "nextButton"
+  ]
 
   connect() {
-    this.currentQuestion = null;
   }
 
   display() {
     // will become fetch so that we can use seeds
-    const questions =
+    this.questions =
       [
         {
           "content": "Quel est la somme de 1 et 1?",
@@ -54,7 +62,7 @@ export default class extends Controller {
     // Maybe we'll need the answers id? Or maybe their index? To be determ[0]
 
     const template = this.questionTemplateTarget.innerHTML
-    this.currentQuestion = questions[Math.floor(Math.random() * questions.length)]
+    this.currentQuestion = this.questions[Math.floor(Math.random() * this.questions.length)]
     const output = Mustache.render(template, this.currentQuestion)
     this.questionContainerTarget.innerHTML = output
 
@@ -76,5 +84,15 @@ export default class extends Controller {
       this.answerConfirmationTarget.innerHTML = "<h3>Oops wrong answer!</h3>"
       // move on to next question and put back in the deck
     }
+    this.checkButtonTarget.classList.add("d-none")
+    this.nextButtonTarget.classList.remove("d-none")
+  }
+
+  nextQuestion() {
+    this.answerConfirmationTarget.innerHTML = ""
+    const template = this.questionTemplateTarget.innerHTML
+    this.currentQuestion = this.questions[Math.floor(Math.random() * this.questions.length)]
+    const output = Mustache.render(template, this.currentQuestion)
+    this.questionContainerTarget.innerHTML = output
   }
 }
