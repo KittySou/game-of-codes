@@ -1,25 +1,71 @@
-.home-header {
-  font-family: handjet;
-}
+// .home-header {
+//   font-family: handjet;
+// }
 
-.home-subheader {
-  font-family: handjet;
+// .home-subheader {
+//   font-family: handjet;
+// }
+
+#home-button {
+  background-color: lightgray;
 }
 
 .btn a {
+  background-color: lightgray;
   text-decoration: none;
   color: black;
-  border-width: 4px;
+  border-width: 2px;
   border-color: black;
+
 }
 
-h1 {
-  font-family: handjet;
+// h1 {
+//   font-family: handjet;
+// }
+
+.content {
+  width: 100%;
+  position: absolute;
+  top: 25%;
+  transform: translateY(-50);
+  text-align: center;
 }
 
-body {
-  background-image: url('./images/narrow-home');
-  background-size: cover;
-  height: 100vh;
-  background-position: center;
+.content h1 {
+  font-family: 'faster one';
+  font-size: 40px;
+}
+
+.content h3{
+  font-family: 'handjet';
+  margin: 2px;
+  font-weight: 100;
+  line-height: 25px;
+  line-height: 1.5;
+  word-spacing: 3px;
+  letter-spacing: 1px;
+}
+
+#start-button {
+  font-family: 'handjet';
+  background-color: lightgray;
+  color: black;
+  border-width: 4px;
+  text-decoration: none;
+  border-color: black;
+  top: 50%;
+  width: 40%;
+  margin-top: 60%;
+  font-size: 25px;
+
+}
+
+.ruby {
+
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  top: 40%;
+  left: 165px;
+  text-align: center;
 }

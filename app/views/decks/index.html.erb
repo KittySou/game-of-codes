@@ -1,9 +1,19 @@
-<h1 class="center my-5"><%= @decks.first.level %></h1>
-<h2 class="center my-3">Select a Deck</h2>
+<style>
+  body {
+    background-image: url("https://res.cloudinary.com/ddpxdkwin/image/upload/v1693491864/Menu-background_ljsnhl.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+  }
+</style>
+
+<div id="decks-title-container">
+<h1 class="center mt-5"><%= @decks.first.level.upcase %></h1>
+</div>
 
 <div class="easy-cards">
   <% @decks.each do |deck| %>
-    <div class="easy-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+    <div class="easy-card" style="font-family: handjet; font-size: 30px; text-align: center; padding-top: 45px; border-style: solid; border-width:4px;">
       <%= deck.name %>
     </div>
   <% end %>
