@@ -6,7 +6,12 @@
   font-family: handjet;
 }
 
+#home-button {
+  background-color: lightgray;
+}
+
 .btn a {
+  background-color: lightgray;
   text-decoration: none;
   color: black;
   border-width: 4px;
@@ -15,11 +20,4 @@
 
 h1 {
   font-family: handjet;
-}
-
-body {
-  background-image: url('./images/narrow-home');
-  background-size: cover;
-  height: 100vh;
-  background-position: center;
 }
