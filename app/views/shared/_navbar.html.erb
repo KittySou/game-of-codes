@@ -1,7 +1,8 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
     <%= link_to "#", class: "navbar-brand" do %>
-      <%= image_tag "https://res.cloudinary.com/ddpxdkwin/image/upload/v1693440654/rubypng1_e543y1.png" %>
+    <%= link_to "<back", "/", class: "nav-link btn btn-flat" %>
+
     <% end %>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -12,30 +13,11 @@
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
           <li class="nav-item active">
-            <%= link_to "Home", "/", class: "nav-link btn btn-flat" %>
+            <%= link_to "X home", "/", class: "nav-link btn btn-flat" %>
           </li>
           <li class="nav-item">
-            <%= link_to "Tips", "/", class: "nav-link btn btn-flat" %>
+            <%= link_to "<back", "/", class: "nav-link btn btn-flat" %>
           </li>
-          <li class="nav-item">
-            <%= link_to "Progress", "/", class: "nav-link btn btn-flat" %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "About Ruby","https://ruby-doc.org/", class: "nav-link btn btn-flat", target: "_blank"  %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "nav-link btn btn-flat"  %>
-          </li>
-
-
-          <li class="nav-item dropdown">
-          <a href="#" class="avatar" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <% if current_user.photo.key %>
-            <%= cl_image_tag current_user.photo.key, class: "avatar", alt: "dropdown menu" %>
-            <% end %>
-          </a>
-            <%= current_user.first_name %>
-
           </li>
         <% else %>
           <li class="nav-item">
