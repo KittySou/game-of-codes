@@ -29,7 +29,15 @@ user_5 = User.create!(email:"david@live.com", password:"123456" ,first_name:"Dav
 user_5.photo.attach(io: URI.open("https://res.cloudinary.com/ddpxdkwin/image/upload/v1693423130/wcsd5gataw9n12srxxbj.png"), filename: "user_5.png", content_type: "image/png")
 user_5.save
 
-deck_1 = Deck.create!(name: "strings1", tips: "check lecture", level: 1)
+deck_1 = Deck.create!(name: "STRINGS", tips: "check lecture", level: 1)
+deck_2 = Deck.create!(name: "INTEGERS", tips: "check lecture", level: 1)
+deck_3 = Deck.create!(name: "FLOATS", tips: "check lecture", level: 1)
+deck_4 = Deck.create!(name: "ARRAYS 1", tips: "check lecture", level: 1)
+deck_5 = Deck.create!(name: "ARRAYS 2", tips: "check lecture", level: 1)
+deck_6 = Deck.create!(name: "RANGES", tips: "check lecture", level: 1)
+deck_7 = Deck.create!(name: "VARIABLES 1", tips: "check lecture", level: 1)
+deck_8 = Deck.create!(name: "VARIABLES 2", tips: "check lecture", level: 1)
+deck_9 = Deck.create!(name: "LOGIC", tips: "check lecture", level: 1)
 
 question_1 = Question.create!(content: "1+1", deck: deck_1)
 answer_1 = Answer.create!(content: "2", question: question_1, right_answer: true)
@@ -61,7 +69,15 @@ answer_18 = Answer.create!(content: "1", question: question_5)
 answer_19 = Answer.create!(content: "5", question: question_5)
 answer_20 = Answer.create!(content: "8", question: question_5)
 
+deck_1 = Deck.create!(name: "array2", tips: "check lecture", level: 2)
 deck_2 = Deck.create!(name: "array2", tips: "check lecture", level: 2)
+deck_3 = Deck.create!(name: "array2", tips: "check lecture", level: 2)
+deck_4 = Deck.create!(name: "array2", tips: "check lecture", level: 2)
+deck_5 = Deck.create!(name: "array2", tips: "check lecture", level: 2)
+deck_6 = Deck.create!(name: "array2", tips: "check lecture", level: 2)
+deck_7 = Deck.create!(name: "array2", tips: "check lecture", level: 2)
+deck_8 = Deck.create!(name: "array2", tips: "check lecture", level: 2)
+deck_9 = Deck.create!(name: "array2", tips: "check lecture", level: 2)
 
 question_6 = Question.create!(content: "1+1", deck: deck_2)
 answer_21 = Answer.create!(content: "2", question: question_6, right_answer: true)
@@ -93,9 +109,17 @@ answer_38 = Answer.create!(content: "1", question: question_10)
 answer_39 = Answer.create!(content: "5", question: question_10)
 answer_40 = Answer.create!(content: "8", question: question_10)
 
-
-
+deck_1 = Deck.create!(name: "boolean3", tips: "check lecture", level: 3)
+deck_2 = Deck.create!(name: "boolean3", tips: "check lecture", level: 3)
 deck_3 = Deck.create!(name: "boolean3", tips: "check lecture", level: 3)
+deck_4 = Deck.create!(name: "boolean3", tips: "check lecture", level: 3)
+deck_5 = Deck.create!(name: "boolean3", tips: "check lecture", level: 3)
+deck_6 = Deck.create!(name: "boolean3", tips: "check lecture", level: 3)
+deck_7 = Deck.create!(name: "boolean3", tips: "check lecture", level: 3)
+deck_8 = Deck.create!(name: "boolean3", tips: "check lecture", level: 3)
+deck_9 = Deck.create!(name: "boolean3", tips: "check lecture", level: 3)
+
+
 
 question_11 = Question.create!(content: "1+1", deck: deck_3)
 answer_41 = Answer.create!(content: "2", question: question_11, right_answer: true)
