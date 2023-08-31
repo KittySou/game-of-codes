@@ -37,6 +37,21 @@ export default class extends Controller {
 
     this.tipsTarget.classList.add("d-none");
     this.questionTarget.classList.remove("d-none");
+
+    fetch(questions, {
+      method: "PATCH",
+      headers: { "Accept": "text/plain" }
+      })
+      .then(response => response.JSON())
+      .then((data) => {
+        console.log(data)
+      })
+      data.questions.forEach((question) => {
+        const output = Mustache.render(template, question);
+      })
+      .then((data) => {
+        this.questionTarget.outerHTML = data
+      })
   }
 }
 

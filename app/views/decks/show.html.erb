@@ -10,11 +10,18 @@
     <h5><%= @deck.tips %></h5>
   </div>
 
-  <div class="d-none"
-       data-start-button-target="question">
-    <h4>Question:</h4>
-    <h5><%#= Insert here the content of the first question (use JS and try to use mustache/template) %></h5>
-  </div>
+  <template id="questionCardTemplate">
+    {{#questions}}
+      <div class="d-none"
+            data-start-button-target="question">
+        <h4>Question:</h4>
+        <h5>
+          <%#= Insert here the content of the first question (use JS and try to use mustache/template) %>
+          {{content}}
+        </h5>
+      </div>
+    {{/questions}}
+  </template>
 
   <button class="btn btn-primary"
           data-action="click->start-button#display">
