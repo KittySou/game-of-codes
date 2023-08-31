@@ -1,27 +1,10 @@
-<<<<<<< HEAD
 // .home-header {
 //   font-family: handjet;
 // }
+
 // .home-subheader {
 //   font-family: handjet;
 // }
-// #home-button {
-//   background-color: lightgray;
-// }
-// .btn a {
-//   background-color: lightgray;
-//   text-decoration: none;
-//   color: black;
-//   border-width: 4px;
-//   border-color: black;
-=======
-.home-header {
-  font-family: handjet;
-}
-
-.home-subheader {
-  font-family: handjet;
-}
 
 #home-button {
   background-color: lightgray;
@@ -31,30 +14,36 @@
   background-color: lightgray;
   text-decoration: none;
   color: black;
-  border-width: 4px;
+  border-width: 2px;
   border-color: black;
-}
->>>>>>> master
 
-// }
-h1 {
-  font-family: handjet;
 }
-<<<<<<< HEAD
+
+// h1 {
+//   font-family: handjet;
+// }
 
 .content {
   width: 100%;
   position: absolute;
-  top: 30%;
+  top: 25%;
   transform: translateY(-50);
   text-align: center;
 }
 
-.content p{
+.content h1 {
+  font-family: 'faster one';
+  font-size: 40px;
+}
+
+.content h3{
   font-family: 'handjet';
   margin: 2px;
   font-weight: 100;
   line-height: 25px;
+  line-height: 1.5;
+  word-spacing: 3px;
+  letter-spacing: 1px;
 }
 
 #start-button {
@@ -64,6 +53,19 @@ h1 {
   border-width: 4px;
   text-decoration: none;
   border-color: black;
+  top: 50%;
+  width: 40%;
+  margin-top: 60%;
+  font-size: 25px;
+
 }
-=======
->>>>>>> master
+
+.ruby {
+
+  width: 120px;
+  height: 120px;
+  position: absolute;
+  top: 45%;
+  left: 160px;
+  text-align: center;
+}
