@@ -1,7 +1,9 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon" style="height: 60px;">
   <div class="container-fluid">
     <%= link_to "#", class: "navbar-brand" do %>
     <% end %>
+    <link rel="stylesheet" href="style.scss">
+
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -10,20 +12,15 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
-
           <li class="back">
-            <%= link_to " < ", :back , class: "position-absolute top-0 start-0" %>
+            <%= link_to " < ", :back , class: "btn btn-light btn btn-outline-dark btn-lg  position-absolute top-0 start-0  " %>
           </li>
-
           <li class="tips">
-            <%= link_to "?", "#", class: "position-absolute top-50 start-50" %>
-
+            <%= link_to "?", "#", class: "btn btn-light btn btn-outline-dark btn-lg position-absolute top-50 start-50 translate-middle-y"  %>
           </li>
-
           <li class="home">
-            <%= link_to "+", "/", class: "position-absolute bottom-0 end-0" %>
+            <%= link_to "+", "/", class: "btn btn-light btn btn-outline-dark btn-lg position-absolute top-0 end-0 " %>
           </li>
-
         <% else %>
           <li class="nav-item">
             <%= link_to "Login", new_user_session_path, class: "nav-link" %>
