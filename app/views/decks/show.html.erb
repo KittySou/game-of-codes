@@ -1,16 +1,26 @@
-<div class="container">
+<div class="container" data-controller="start-button">
   <h1>Deck #1 (just as an example)</h1>
 
   <h2>Name of the deck:</h2>
   <h3><%= @deck.name %></h3>
 
-  <h4>Tips:</h4>
-  <h5><%= @deck.tips %></h5>
+  <div class="tips-card"
+       data-start-button-target="tips">
+    <h4>Tips:</h4>
+    <h5><%= @deck.tips %></h5>
+  </div>
 
-  <button type="button" class="btn btn-primary">Start/Next</button>
+  <div class="d-none"
+       data-start-button-target="question">
+    <h4>Question:</h4>
+    <h5><%#= Insert here the content of the first question (use JS and try to use mustache/template) %></h5>
+  </div>
+
+  <button class="btn btn-primary"
+          data-action="click->start-button#display">
+    Start/Next
+  </button>
 </div>
-
-<%# Here add the button -> when "clicked", fetch the first question of the deck + 5 answers then display in DOM %>
 
 
 <%# To ask the teachers :how to code
