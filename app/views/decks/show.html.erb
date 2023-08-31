@@ -1,24 +1,27 @@
 <div class="container" data-controller="game">
-  <h1>Deck #1 (just as an example)</h1>
+  <div data-game-target="gameArea">
+    <h1>Deck #1 (just as an example)</h1>
 
-  <h2>Name of the deck:</h2>
-  <h3><%= @deck.name %></h3>
+    <h2>Name of the deck:</h2>
+    <h3><%= @deck.name %></h3>
 
-  <div class="tips-card"
-       data-game-target="tips">
-    <h4>Tips:</h4>
-    <h5><%= @deck.tips %></h5>
+    <div class="tips-card"
+        data-game-target="tips">
+      <h4>Tips:</h4>
+      <h5><%= @deck.tips %></h5>
+    </div>
+
+    <button class="btn btn-primary"
+            data-game-target="startButton"
+            data-action="click->game#start">
+      Start/Next
+    </button>
+
+    <div data-game-target="questionContainer"></div>
+
+    <div data-game-target="answerConfirmation"></div>
+
   </div>
-
-  <button class="btn btn-primary"
-          data-game-target="startButton"
-          data-action="click->game#display">
-    Start/Next
-  </button>
-
-  <div data-game-target="questionContainer"></div>
-
-  <div data-game-target="answerConfirmation"></div>
 
   <template data-game-target="questionTemplate">
     <h1>{{content}}</h1>
