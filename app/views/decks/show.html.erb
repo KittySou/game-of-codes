@@ -1,28 +1,27 @@
-<div class="container" data-controller="start-button">
-  <h1>Deck #1 (just as an example)</h1>
+<div class="container" data-controller="game">
+  <div data-game-target="gameArea">
+    <h1>Deck #1 (just as an example)</h1>
 
-  <h2>Name of the deck:</h2>
-  <h3><%= @deck.name %></h3>
+    <h2>Name of the deck:</h2>
+    <h3><%= @deck.name %></h3>
 
-  <div class="tips-card"
-       data-start-button-target="tips">
-    <h4>Tips:</h4>
-    <h5><%= @deck.tips %></h5>
+    <div class="tips-card"
+        data-game-target="tips">
+      <h4>Tips:</h4>
+      <h5><%= @deck.tips %></h5>
+    </div>
+
+    <button class="btn btn-primary"
+            data-game-target="startButton"
+            data-action="click->game#start">
+      Start/Next
+    </button>
+
+    <div data-game-target="questionContainer"></div>
+
+    <div data-game-target="answerConfirmation"></div>
+
   </div>
 
-  <div class="d-none"
-       data-start-button-target="question">
-    <h4>Question:</h4>
-    <h5><%#= Insert here the content of the first question (use JS and try to use mustache/template) %></h5>
-  </div>
-
-  <button class="btn btn-primary"
-          data-action="click->start-button#display">
-    Start/Next
-  </button>
+  <%= render "question_and_answers_template" %>
 </div>
-
-
-<%# To ask the teachers :how to code
-- if wrong answer put question back in the deck
-- if right answer make question disappear from the deck %>
