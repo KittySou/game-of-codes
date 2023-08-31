@@ -27,16 +27,23 @@
   height: 100px;
   position: absolute;
   bottom: 0;
-  text-align: center;
-  vertical-align: middle;
+}
+.completed-text {
   color: white;
   font-size: 40px;
+  text-align: center;
 }
 
 .game-completed-percent {
   z-index: 4;
   text-align: center;
   bottom: 0;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  margin: 20px;
 }
 
 // .footer {
