@@ -1,31 +1,23 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon" style="height: 60px;">
   <div class="container-fluid">
     <%= link_to "#", class: "navbar-brand" do %>
-      <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" %>
     <% end %>
+    <link rel="stylesheet" href="style.scss">
 
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+
+
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
-          <li class="nav-item active">
-            <%= link_to "<", "#", class: "nav-link" %>
+          <li class="back">
+            <%= link_to " < ", :back , class: "btn btn-light btn btn-outline-dark btn-lg  position-absolute top-0 start-0  " %>
           </li>
-          <li class="nav-item">
-            <%= link_to "+", "#", class: "nav-link" %>
+          <li class="tips">
+            <%= link_to "?", "#", class: "btn btn-light btn btn-outline-dark btn-lg position-absolute top-50 start-50 translate-middle-y"  %>
           </li>
-          <li class="nav-item dropdown">
-          <a href="#" class="avatar" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <% if current_user.photo.key %>
-            <%= cl_image_tag current_user.photo.key, class: "avatar", alt: "dropdown menu" %>
-            <% end %>
-          </a>
-            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
-            </div>
+          <li class="home">
+            <%= link_to "+", "/", class: "btn btn-light btn btn-outline-dark btn-lg position-absolute top-0 end-0 " %>
           </li>
         <% else %>
           <li class="nav-item">
