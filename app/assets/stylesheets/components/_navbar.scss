@@ -7,11 +7,20 @@
   flex-grow: 0;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+.back-button {
+  border-radius: 0px;
 }
 
-.back {
- left: 50px;
+.btn {
+  --bs-btn-padding-x: 1rem;
+  --bs-btn-padding-y: 0.0rem;
+}
 
+.navbar-text {
+  font-size: 30px;
+  border-radius: 0px;
+  border-width: 3px;
+  background-color: lightgray;
+  font-family: handjet;
+  font-size: 25px;
 }

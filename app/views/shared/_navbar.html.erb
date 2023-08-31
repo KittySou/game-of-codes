@@ -1,10 +1,10 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon" style="height: 60px;">
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon" style="height: 74px; background-color: lightgray;">
   <div class="container-fluid">
 
       <% if user_signed_in? %>
-      <div> <%= link_to " < ", :back , class: "btn btn-light btn btn-outline-dark btn-lg  " %></div>
-      <div> <%= link_to " ? ", "#" , class: "btn btn-light btn btn-outline-dark btn-lg  " %></div>
-      <div> <%= link_to " + ", "/" , class: "btn btn-light btn btn-outline-dark btn-lg  " %></div>
+      <div> <%= link_to " < ", :back , class: "btn btn-outline-dark navbar-text" %></div>
+      <div> <%= link_to " ? ", "#" , class: "btn btn-outline-dark navbar-text" %></div>
+      <div> <%= link_to " + ", "/" , class: "btn btn-outline-dark  navbar-text" %></div>
       <% else %>
           <li class="nav-item">
             <%= link_to "Login", new_user_session_path, class: "nav-link" %>
