@@ -1,8 +1,6 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
     <%= link_to "#", class: "navbar-brand" do %>
-
-
     <% end %>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -12,35 +10,20 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
-          <li class="nav-item active">
-<<<<<<< HEAD
-            <%= link_to "X home", "/", class: "nav-link btn btn-flat" %>
+
+          <li class="back">
+            <%= link_to " < ", :back , class: "position-absolute top-0 start-0" %>
           </li>
-          <li class="nav-item">
-            <%= link_to "?tips", "/", class: "nav-link btn btn-flat" %>
+
+          <li class="tips">
+            <%= link_to "?", "#", class: "position-absolute top-50 start-50" %>
 
           </li>
-          <li class="nav-item">
-            <%= link_to "<back", "/", class: "text-left" %>
 
+          <li class="home">
+            <%= link_to "+", "/", class: "position-absolute bottom-0 end-0" %>
           </li>
-=======
-            <%= link_to "<", "#", class: "nav-link" %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "+", "#", class: "nav-link" %>
-          </li>
-          <li class="nav-item dropdown">
-          <a href="#" class="avatar" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <% if current_user.photo.key %>
-            <%= cl_image_tag current_user.photo.key, class: "avatar", alt: "dropdown menu" %>
-            <% end %>
-          </a>
-            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
-            </div>
->>>>>>> master
-          </li>
+
         <% else %>
           <li class="nav-item">
             <%= link_to "Login", new_user_session_path, class: "nav-link" %>
