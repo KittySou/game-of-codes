@@ -1,27 +1,65 @@
-<div class="container" data-controller="game">
-  <div data-game-target="gameArea">
-    <h1>Deck #1 (just as an example)</h1>
 
-    <h2>Name of the deck:</h2>
-    <h3><%= @deck.name %></h3>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.scss">
+  <style>
 
-    <div class="tips-card"
-        data-game-target="tips">
-      <h4>Tips:</h4>
-      <h5><%= @deck.tips %></h5>
-    </div>
+     body {
+    background-image: url("https://res.cloudinary.com/ddpxdkwin/image/upload/v1693491864/narrow-home-page-background_eeuynk.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+  }
 
-    <button class="btn btn-primary"
+  </style>
+
+  <title>Tips page</title>
+</head>
+<body>
+
+  </body>
+</html>
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Box</title>
+</head>
+<body>
+  <div class="box">
+    <div class="container" class="content" data-controller="game">
+      <div data-game-target="gameArea">
+
+    <h4>TIPS</h4>
+
+
+        <h3>#<%= @deck.name %> Deck</h3>
+
+        <div class="tips-card"
+          data-game-target="tips">
+          <h5><%= @deck.tips %></h5>
+        </div>
+
+          <button class="next"
             data-game-target="startButton"
             data-action="click->game#start">
-      Start/Next
-    </button>
+          Next
+        </button>
 
-    <div data-game-target="questionContainer"></div>
+      <div data-game-target="questionContainer"></div>
 
-    <div data-game-target="answerConfirmation"></div>
+      <div data-game-target="answerConfirmation"></div>
+
+    </div>
+
+  <%= render "question_and_answers_template" %>
 
   </div>
 
-  <%= render "question_and_answers_template" %>
-</div>
+</body>
+</html>
