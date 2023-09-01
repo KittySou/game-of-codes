@@ -4,7 +4,7 @@
       <% if user_signed_in? %>
       <div> <%= link_to " < ", :back , class: "btn btn-outline-dark navbar-text" %></div>
       <div> <%= link_to " ? ", "#" , class: "btn btn-outline-dark navbar-text" %></div>
-      <div> <%= link_to " + ", "/" , class: "btn btn-outline-dark  navbar-text" %></div>
+      <div> <%= link_to " + ", "/" , class: "btn btn-outline-dark  navbar-text", style: "font-family: math; font-weight: bolder;" %></div>
       <% else %>
           <li class="nav-item">
             <%= link_to "Login", new_user_session_path, class: "nav-link" %>
