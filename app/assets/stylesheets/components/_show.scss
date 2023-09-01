@@ -1,39 +1,42 @@
+h4 {
+  font-family: 'handjet';
+  font-size: 40px;
+  letter-spacing: 5px;
+  position: absolute;
+  top: -50px; /* Mova o h4 para cima para ficar na borda da box */
+  left: 38%;
+}
+
 .box {
-  width: 350px;
-  height: 450px;
+  width: 300px;
+  height: 400px;
   background-color: rgb(255, 255, 255);
-  border: 10px solid lightgray; /* Border style, width, and color */
+  border: 10px solid lightgray;
   border-bottom-width: 55px;
+  border-top-width: 55px;
   padding: 20px;
   position: absolute;
-  top: 15%;
-  left: 8%;
+  top: 18%;
+  left: 10%;
   outline: 5px solid rgb(4, 4, 4);
 }
+
 
  h3 {
   font-family: 'handjet';
   font-size: 25px;
   position: absolute;
-  top: 15%;
+  top: 5%;
   left: 4%;
   letter-spacing: 2px;
  }
 
- h4 {
-  font-family: 'handjet';
-  font-size: 35px;
-  letter-spacing: 5px;
-  position: absolute;
-  top: 2%;
-  left: 40%;
-}
 
 h5 {
   font-family: 'handjet';
-  font-size: 22px;
+  font-size: 23px;
   position: absolute;
-  top: 22%;
+  top: 15%;
   left: 4%;
   letter-spacing: 1px;
 }
@@ -43,12 +46,19 @@ h5 {
   background-color: lightgray;
   border-width: 4px;
   border-color: black;
-  font-size: 18px;
+  font-size: 20px;
   border-radius: 0px;
   letter-spacing: 1px;
   position: absolute;
-  top: 100%;
+  top: 103%;
   left: 30%;
   width: 40%;
-  height: 10%;
+  height: 12%;
+}
+
+.question h1{
+  font-family: 'handjet';
+  position: absolute;
+  top: 29%;
+  left: 4%;
 }
