@@ -1,9 +1,8 @@
-<div class="container" data-controller="game">
+<div class="container" data-controller="game" data-game-deck-id-value="<%= @deck.id %>">
   <div data-game-target="gameArea">
-    <h1>Deck #1 (just as an example)</h1>
+    <h1>Name of the deck:</h1>
 
-    <h2>Name of the deck:</h2>
-    <h3><%= @deck.name %></h3>
+    <h2><%= @deck.name %></h2>
 
     <div class="tips-card"
         data-game-target="tips">
