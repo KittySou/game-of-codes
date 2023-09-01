@@ -56,11 +56,31 @@
   // grid-gap: 16px;
   justify-items: center;
 }
+a {
+  text-decoration: none;
+}
 
 .easy-card {
   height: 115px;
   width: 115px;
   background-color: lightgray;
+  color: black;
+  margin-bottom: 40px;
+  font-family: handjet;
+  font-size: 25px;
+  text-align: center;
+  padding-top: 40px;
+  border-style: solid;
+  border-width:4px;
+  text-decoration: none;
+}
+
+
+.unlock-card {
+  height: 115px;
+  width: 115px;
+  background-color: $green;
+  color: black;
   margin-bottom: 40px;
   font-family: handjet;
   font-size: 25px;
@@ -72,7 +92,7 @@
 }
 
 .easy-card:hover {
-  background-color: $green;
+  background-color: $red;
 }
 
 #levels-container {
