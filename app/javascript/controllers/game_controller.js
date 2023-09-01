@@ -95,6 +95,14 @@ export default class extends Controller {
 
   #fetchDeckQuestions() {
     // TODO: will become FETCH so that we can use seeds
+    console.log("TODO: send request in AJAX")
+    fetch(this.deck, {headers: { "Accept": "application/json" }})
+      .then(response => response.json())
+      .then((data) => {
+        this.questionTemplateTarget.innerHTML = data
+      })
+
+    // The fetch will replace the array below :
     this.deck = [
       {
         "content": "Quel est la somme de 1 et 1?",
@@ -133,6 +141,7 @@ export default class extends Controller {
         ]
       }
     ]
+
     // TODO: will help for coding the progress bar
     this.totalNumberOfQuestions = this.deck.length
   }
