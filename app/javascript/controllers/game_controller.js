@@ -95,11 +95,12 @@ export default class extends Controller {
 
   #fetchDeckQuestions() {
     // TODO: will become FETCH so that we can use seeds
-    console.log("TODO: send request in AJAX")
-    fetch(this.deck, {headers: { "Accept": "application/json" }})
+    const id =
+    const url = `/decks/${id}/questions`
+    fetch(url, {headers: { "Accept": "application/json" }})
       .then(response => response.json())
       .then((data) => {
-        this.questionTemplateTarget.innerHTML = data
+        this.questionTemplateTarget.outerHTML = data
       })
 
     // The fetch will replace the array below :
