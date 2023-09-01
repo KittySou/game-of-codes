@@ -1,0 +1,28 @@
+<div class="box">
+  <div class="container" class="content" data-controller="game">
+    <div data-game-target="gameArea">
+
+  <h4>TIPS</h4>
+
+      <h3>#<%= @deck.name %> Deck</h3>
+
+      <div class="tips-card"
+        data-game-target="tips">
+        <h5><%= @deck.tips %></h5>
+      </div>
+
+        <button class="next"
+          data-game-target="startButton"
+          data-action="click->game#start">
+        Next
+      </button>
+
+    <div data-game-target="questionContainer" class="question"></div>
+
+    <div data-game-target="answerConfirmation" class="answer"></div>
+
+  </div>
+
+<%= render "question_and_answers_template" %>
+
+</div>

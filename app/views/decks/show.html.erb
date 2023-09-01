@@ -1,41 +1,21 @@
- <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.scss">
+<div class="box">
+  <div class="container" class="content" data-controller="game" data-game-deck-id-value="<%= @deck.id %>">
+    <div data-game-target="gameArea">
 
-  <style>
+      <h4>TIPS</h4>
 
-     body {
-    background-image: url("https://res.cloudinary.com/ddpxdkwin/image/upload/v1693491864/narrow-home-page-background_eeuynk.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-  }
+      <h3>#<%= @deck.name %> Deck</h3>
 
-  </style>
-  <title>Box</title>
-</head>
-<body>
-  <div class="box">
-    <div class="container" class="content" data-controller="game">
-      <div data-game-target="gameArea">
-
-    <h4>TIPS</h4>
-
-        <h3>#<%= @deck.name %> Deck</h3>
-
-        <div class="tips-card"
+      <div class="tips-card"
           data-game-target="tips">
-          <h5><%= @deck.tips %></h5>
-        </div>
+        <h5><%= @deck.tips %></h5>
+      </div>
 
-          <button class="next"
-            data-game-target="startButton"
-            data-action="click->game#start">
-          Next
-        </button>
+      <button class="next"
+              data-game-target="startButton"
+              data-action="click->game#start">
+        Next
+      </button>
 
       <div data-game-target="questionContainer" class="question"></div>
 
@@ -43,9 +23,6 @@
 
     </div>
 
-  <%= render "question_and_answers_template" %>
-
+    <%= render "question_and_answers_template" %>
   </div>
-
-</body>
-</html>
+</div>
