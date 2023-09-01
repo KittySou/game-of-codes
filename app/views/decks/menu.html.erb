@@ -1,0 +1,34 @@
+<style>
+  body {
+    background-image: url("https://res.cloudinary.com/ddpxdkwin/image/upload/v1693491864/Menu-background_ljsnhl.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+  }
+</style>
+
+
+<div style="font-family: handjet;">
+  <%# <h1 class="center my-5" id="levels-title">Levels</h1> %>
+    <div class="container justify-content-center" id="levels-container">
+
+      <div class="level-cards">
+        <%= link_to "/", style: "text-decoration: none;" do %>
+          <div class="level-card easy" style="border-style: solid; align-items:center">
+            <p>HOME</p>
+          </div>
+        <% end %>
+
+        <%= link_to "/levels", style: "text-decoration: none;" do %>
+          <div class="level-card intermediate" style="border-style: solid;">
+            <p>LEVELS</p>
+          </div>
+        <% end %>
+
+        <%= link_to destroy_user_session_path, data: {turbo_method: :delete}, style: "text-decoration: none;" do %>
+          <div class="level-card advanced" style="border-style: solid;">
+            <p>LOG OUT</p>
+          </div>
+        <% end %>
+      </div>
+    </div>
