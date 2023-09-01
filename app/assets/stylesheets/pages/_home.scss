@@ -1,22 +1,9 @@
-// .home-header {
-//   font-family: handjet;
-// }
-
-// .home-subheader {
-//   font-family: handjet;
-// }
-
-#home-button {
-  background-color: lightgray;
-}
-
 .btn a {
-  background-color: lightgray;
+  // background-color: lightgray;
   text-decoration: none;
   color: black;
-  border-width: 2px;
-  border-color: black;
-
+  // border-width: 2px;
+  // border-color: black;
 }
 
 // h1 {
@@ -26,17 +13,22 @@
 .content {
   width: 100%;
   position: absolute;
-  top: 25%;
+  top: 20%;
   transform: translateY(-50);
   text-align: center;
 }
 
 .content h1 {
   font-family: 'faster one';
-  font-size: 40px;
+  font-size: 45px;
 }
 
-.content h3{
+#home-container {
+  margin-top: 350px;
+  max-width: 130px;
+}
+
+.content h3 {
   font-family: 'handjet';
   margin: 2px;
   font-weight: 100;
@@ -49,23 +41,66 @@
 #start-button {
   font-family: 'handjet';
   background-color: lightgray;
-  color: black;
+  // color: black;
   border-width: 4px;
   text-decoration: none;
   border-color: black;
-  top: 50%;
-  width: 40%;
-  margin-top: 60%;
-  font-size: 25px;
+  // top: 50%;
+  // width: 40%;
+  // margin-top: 50%;
+  font-size: 35px;
+  border-radius: 0px;
+}
 
+#start-button:hover {
+  opacity: 0.4;
 }
 
 .ruby {
-
-  width: 100px;
+  width: 90px;
   height: 100px;
-  position: absolute;
-  top: 40%;
-  left: 165px;
+  // // position: relative;
+  margin: 0 auto 45px;
+  // left: 165px;
+  // justify-self: center;
+}
+
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,400i,700");
+
+$green: darken(#2980b9, 15%);
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+// Pattern from http://www.heropatterns.com/
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100%;
+  background-color: $green !important;
+  background-image: url("https://res.cloudinary.com/ddpxdkwin/image/upload/v1693491864/Untitled-5_udydmh.png");
+  background-repeat: repeat;
+  // font-family: "Montserrat", sans-serif;
   text-align: center;
+  animation: marquee 50s infinite linear;
+}
+
+@keyframes marquee {
+  0% {
+    background-position: 0;
+  }
+
+  100% {
+    background-position: -9190px;
+  }
 }
