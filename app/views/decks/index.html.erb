@@ -13,8 +13,11 @@
 
 <div class="easy-cards">
   <% @decks.each do |deck| %>
-    <div class="easy-card">
-      <%= deck.name %>
-    </div>
+    <%= link_to deck_path(deck) do %>
+    <%# link to , what appears, where %>
+      <div class="easy-card">
+        <%= deck.name %>
+      </div>
+    <% end %>
   <% end %>
 </div>

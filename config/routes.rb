@@ -10,6 +10,7 @@ Rails.application.routes.draw do
 
   resources :decks, only: [:index, :show]
   get "/levels", to: "decks#levels", as: "levels"
+  get "/decks/:id/questions", to: "decks#questions", as: "deck_questions"
 end
 # resources :bookings, only: [:index, :show, :edit, :update, :destroy]
 # resources :posters, only: [:index, :show, :create, :new] do
