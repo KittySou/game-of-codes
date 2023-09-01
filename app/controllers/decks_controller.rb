@@ -16,6 +16,9 @@ class DecksController < ApplicationController
     respond_to :json
   end
 
+  def menu
+  end
+
   private
 
   def set_deck

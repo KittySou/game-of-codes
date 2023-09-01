@@ -6,22 +6,16 @@
 }
 
 .level-card {
-  background-size: cover;
   background-color: lightgray;
-  background-position: center;
   height: 110px;
-  width: 340px;
+  width: 90vw;
   border-width: 3px;
   border-color: black;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   color: white;
   font-size: 44px;
-  font-weight: bold;
-  // text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  border-radius: 2px;
-  // box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  align-items: center;
+  display: flex;
+  justify-content: center;
 }
 
 .level-card:hover {
@@ -56,11 +50,31 @@
   // grid-gap: 16px;
   justify-items: center;
 }
+a {
+  text-decoration: none;
+}
 
 .easy-card {
   height: 115px;
   width: 115px;
   background-color: lightgray;
+  color: black;
+  margin-bottom: 40px;
+  font-family: handjet;
+  font-size: 25px;
+  text-align: center;
+  padding-top: 40px;
+  border-style: solid;
+  border-width:4px;
+  text-decoration: none;
+}
+
+
+.unlock-card {
+  height: 115px;
+  width: 115px;
+  background-color: $green;
+  color: black;
   margin-bottom: 40px;
   font-family: handjet;
   font-size: 25px;
@@ -72,13 +86,15 @@
 }
 
 .easy-card:hover {
-  background-color: $green;
+  background-color: $red;
 }
 
-#levels-container {
+.levels-container {
   padding-top: 20%;
-  margin-left: auto;
+  margin: auto 10px;
   align-items: center;
+  display: flex;
+
 }
 
 #decks-title-container {
@@ -92,4 +108,8 @@
       border-width: 4px;
       height: 50px;
     }
+}
+
+.body-margin {
+  margin: 5%;
 }
