@@ -12,12 +12,19 @@
 </div>
 
 <div class="easy-cards">
-  <% @decks.each do |deck| %>
+  <% @decks.each_with_index do |deck, index| %>
     <%= link_to deck_path(deck) do %>
     <%# link to , what appears, where %>
+    <% if index == 0 || index == 1 %>
+    <%# above logic can be reused if decks table adds a locked boolean %>
+       <div class="unlock-card">
+        <%= deck.name %>
+      </div>
+    <% else  %>
       <div class="easy-card">
         <%= deck.name %>
       </div>
+      <% end %>
     <% end %>
   <% end %>
 </div>
