@@ -29,7 +29,7 @@ user_5 = User.create!(email:"david@live.com", password:"123456" ,first_name:"Dav
 user_5.photo.attach(io: URI.open("https://res.cloudinary.com/ddpxdkwin/image/upload/v1693423130/wcsd5gataw9n12srxxbj.png"), filename: "user_5.png", content_type: "image/png")
 user_5.save
 
-deck_1 = Deck.create!(name: "STRINGS", tips: "check lecture", level: 1)
+deck_1 = Deck.create!(name: "LOGIC", tips: "check lecture", level: 1)
 deck_2 = Deck.create!(name: "INTEGERS", tips: "check lecture", level: 1)
 deck_3 = Deck.create!(name: "FLOATS", tips: "check lecture", level: 1)
 deck_4 = Deck.create!(name: "ARRAYS 1", tips: "check lecture", level: 1)
@@ -37,7 +37,7 @@ deck_5 = Deck.create!(name: "ARRAYS 2", tips: "check lecture", level: 1)
 deck_6 = Deck.create!(name: "RANGES", tips: "check lecture", level: 1)
 deck_7 = Deck.create!(name: "VARIABLES 1", tips: "check lecture", level: 1)
 deck_8 = Deck.create!(name: "VARIABLES 2", tips: "check lecture", level: 1)
-deck_9 = Deck.create!(name: "LOGIC", tips: "check lecture", level: 1)
+deck_9 = Deck.create!(name: "STRINGS", tips: "check lecture", level: 1)
 
 question_1 = Question.create!(content: "1+1", deck: deck_1)
 answer_1 = Answer.create!(content: "2", question: question_1, right_answer: true)
