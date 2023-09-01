@@ -12,8 +12,11 @@ export default class extends Controller {
     "answerConfirmation",
     "checkButton",
     "nextButton",
-    "gameArea"
+    "gameArea",
+    "answerInput"
   ]
+
+  static values = { deckId: Number }
 
   connect() {
     // INFO (Fred): This is a list of the instance variables used for the game's logic.
@@ -39,13 +42,12 @@ export default class extends Controller {
     this.tipsTarget.classList.add("d-none")
     this.startButtonTarget.classList.add("d-none")
     this.#fetchDeckQuestions()
-    this.#setNewQuestion()
   }
 
   send(event) {
     event.preventDefault()
     // TODO (Fred): Check if we can do the line below with Stimulus...
-    const userAnswer = Number.parseInt(document.querySelector("input[name=answer]:checked").value, 10)
+    const userAnswer = document.querySelector("input[name=answer]:checked").value
     const userGuessedRight = this.currentQuestion.answers.find(answer => answer.id === userAnswer).rightAnswer
     if (userGuessedRight) {
       this.#removeCurrentQuestionFromDeck()
@@ -64,6 +66,8 @@ export default class extends Controller {
     }
     this.nextButtonTarget.classList.remove("d-none")
     this.checkButtonTarget.classList.add("d-none")
+    //TODO: querySelectorAll on radio buttons .foreach -> disable = true
+    this.answerInputTarget.disabled = true
   }
 
   nextQuestion() {
@@ -93,47 +97,16 @@ export default class extends Controller {
     this.isDeckCompleted = this.deck.length === 0
   }
 
-  #fetchDeckQuestions() {
+  async #fetchDeckQuestions() {
     // TODO: will become FETCH so that we can use seeds
-    this.deck = [
-      {
-        "content": "Quel est la somme de 1 et 1?",
-        "answers": [
-          {"id": 1, "content": "3", "rightAnswer": false},
-          {"id": 2, "content": "1", "rightAnswer": false},
-          {"id": 3, "content": "2", "rightAnswer": true},
-          {"id": 4, "content": "4", "rightAnswer": false}
-        ]
-      },
-      {
-        "content": "J'ai quel age?",
-        "answers": [
-          {"id": 5, "content": "31", "rightAnswer": false},
-          {"id": 6, "content": "15", "rightAnswer": false},
-          {"id": 7, "content": "20", "rightAnswer": true},
-          {"id": 8, "content": "je ne sais pas", "rightAnswer": false}
-        ]
-      },
-      {
-        "content": "Quelle heure est-il?",
-        "answers": [
-          {"id": 9, "content": "midi", "rightAnswer": false},
-          {"id": 10, "content": "minuit", "rightAnswer": false},
-          {"id": 11, "content": "matin", "rightAnswer": true},
-          {"id": 12, "content": "happy hour!!!!", "rightAnswer": false}
-        ]
-      },
-      {
-        "content": "Les gateaux aux ________ sont les gateaux preferes de Kitty.",
-        "answers": [
-          {"id": 13, "content": "chocolat", "rightAnswer": false},
-          {"id": 14, "content": "vanille", "rightAnswer": false},
-          {"id": 15, "content": "red velvet", "rightAnswer": true},
-          {"id": 16, "content": "carotte", "rightAnswer": false}
-        ]
-      }
-    ]
-    // TODO: will help for coding the progress bar
-    this.totalNumberOfQuestions = this.deck.length
+    const url = `/decks/${this.deckIdValue}/questions`
+    await fetch(url, {headers: { "Accept": "application/json" }})
+      .then(response => response.json())
+      .then((data) => {
+        this.deck = data
+        // TODO: this line below will help for coding the progress bar
+        this.totalNumberOfQuestions = this.deck.length
+        this.#setNewQuestion()
+      })
   }
 }
