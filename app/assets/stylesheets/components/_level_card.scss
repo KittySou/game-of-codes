@@ -72,7 +72,7 @@ a {
 
 .unlock-card {
   height: 115px;
-  width: 115px;
+  width: 29vw;
   background-color: $green;
   color: black;
   margin-bottom: 40px;
@@ -82,7 +82,19 @@ a {
   padding-top: 40px;
   border-style: solid;
   border-width:4px;
-  text-decoration: none;
+}
+
+.lock-card {
+  height: 115px;
+  width: 29vw;
+  color: black;
+  margin-bottom: 40px;
+  font-family: handjet;
+  font-size: 25px;
+  text-align: center;
+  padding-top: 40px;
+  border-style: solid;
+  border-width:4px;
 }
 
 .easy-card:hover {
@@ -99,7 +111,7 @@ a {
 
 #decks-title-container {
   background-color: lightgray;
-  width: 350px;
+  width: 95vw;
   max-height: fit-content;
   margin: 0 auto 45px;
     h1 {
