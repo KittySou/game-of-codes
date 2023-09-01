@@ -1,4 +1,4 @@
-<div class="container" data-controller="game" data-game-deck-id-value="<%= @deck.id %>">
+<div class="show-container" data-controller="game" data-game-deck-id-value="<%= @deck.id %>">
   <div data-game-target="gameArea">
     <h1>Name of the deck:</h1>
 
@@ -10,10 +10,10 @@
       <h5><%= @deck.tips %></h5>
     </div>
 
-    <button class="btn btn-primary"
+    <button class="tips-button"
             data-game-target="startButton"
             data-action="click->game#start">
-      Start/Next
+      Start
     </button>
 
     <div data-game-target="questionContainer"></div>
@@ -21,6 +21,5 @@
     <div data-game-target="answerConfirmation"></div>
 
   </div>
-
   <%= render "question_and_answers_template" %>
 </div>
