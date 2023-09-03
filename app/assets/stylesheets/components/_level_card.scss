@@ -85,6 +85,7 @@ a {
 }
 
 .lock-card {
+  opacity: 0.5;
   height: 115px;
   width: 29vw;
   color: black;
@@ -106,7 +107,10 @@ a {
   margin: auto 10px;
   align-items: center;
   display: flex;
+}
 
+.decks-title {
+  padding-top: 5px;
 }
 
 #decks-title-container {

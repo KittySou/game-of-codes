@@ -13,29 +13,30 @@
 .content {
   width: 100%;
   position: absolute;
-  top: 20%;
-  transform: translateY(-50);
+  top: 15%;
+  // transform: translateY(-50);
   text-align: center;
 }
 
 .content h1 {
-  font-family: 'faster one';
-  font-size: 45px;
+  // font-family: 'faster one';
+  // font-size: 45px;
+  font-family: 'handjet';
+  font-size: 73px;
+  font-weight: bolder;
+  margin-bottom: 0px;
 }
 
 #home-container {
   margin-top: 350px;
   max-width: 130px;
+  height: 250px;
 }
 
-.content h3 {
+.content h2 {
   font-family: 'handjet';
-  margin: 2px;
-  font-weight: 100;
-  line-height: 25px;
-  line-height: 1.5;
-  word-spacing: 3px;
-  letter-spacing: 1px;
+  font-weight: 400;
+  font-size: 30px;
 }
 
 #start-button {
@@ -48,7 +49,8 @@
   // top: 50%;
   // width: 40%;
   // margin-top: 50%;
-  font-size: 35px;
+  // margin-top: 10px;
+  font-size: 45px;
   border-radius: 0px;
 }
 
@@ -57,17 +59,17 @@
 // }
 
 .ruby {
-  width: 90px;
-  height: 100px;
+  width: 30px;
+  height: 30px;
   // // position: relative;
-  margin: 0 auto 45px;
+  margin-left: 7px;
   // left: 165px;
   // justify-self: center;
 }
 
-@import url("https://fonts.googleapis.com/css?family=Montserrat:400,400i,700");
+// @import url("https://fonts.googleapis.com/css?family=Montserrat:400,400i,700");
 
-$green: darken(#2980b9, 15%);
+// $green: darken(#2980b9, 15%);
 
 * {
   box-sizing: border-box;
@@ -87,11 +89,11 @@ html, body {
   flex-direction: column;
   height: 100%;
   background-color: $green !important;
-  background-image: url("https://res.cloudinary.com/ddpxdkwin/image/upload/v1693491864/Untitled-5_udydmh.png");
-  background-repeat: repeat;
+  background-image: url("https://res.cloudinary.com/ddpxdkwin/image/upload/v1693688930/game-of-codes-full-scenario_gnzd5r.png");
+  // background-repeat: repeat;
   // font-family: "Montserrat", sans-serif;
   text-align: center;
-  animation: marquee 50s infinite linear;
+  animation: marquee 500s infinite linear;
   background-size: cover;
 }
 
@@ -101,6 +103,6 @@ html, body {
   }
 
   100% {
-    background-position: -9190px;
+    background-position: -20000px;
   }
 }
