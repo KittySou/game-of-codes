@@ -72,7 +72,7 @@ a {
 
 .unlock-card {
   height: 115px;
-  width: 115px;
+  width: 29vw;
   background-color: $green;
   color: black;
   margin-bottom: 40px;
@@ -82,7 +82,20 @@ a {
   padding-top: 40px;
   border-style: solid;
   border-width:4px;
-  text-decoration: none;
+}
+
+.lock-card {
+  opacity: 0.5;
+  height: 115px;
+  width: 29vw;
+  color: black;
+  margin-bottom: 40px;
+  font-family: handjet;
+  font-size: 25px;
+  text-align: center;
+  padding-top: 40px;
+  border-style: solid;
+  border-width:4px;
 }
 
 .easy-card:hover {
@@ -94,12 +107,15 @@ a {
   margin: auto 10px;
   align-items: center;
   display: flex;
+}
 
+.decks-title {
+  padding-top: 5px;
 }
 
 #decks-title-container {
   background-color: lightgray;
-  width: 350px;
+  width: 95vw;
   max-height: fit-content;
   margin: 0 auto 45px;
     h1 {
@@ -112,4 +128,14 @@ a {
 
 .body-margin {
   margin: 5%;
+}
+
+.show-container {
+
+  .tips-button {
+    align-items: center;
+    border-style: solid;
+    border-color: black;
+    width: 50px;
+  }
 }

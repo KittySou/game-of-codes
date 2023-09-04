@@ -1,14 +1,5 @@
-<style>
-  body {
-    background-image: url("https://res.cloudinary.com/ddpxdkwin/image/upload/v1693491864/narrow-home-page-background_eeuynk.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-  }
-</style>
-
 <div class="box">
-  <div class="container" class="content" data-controller="game" data-game-deck-id-value="<%= @deck.id %>">
+  <div class="container" class="content" data-controller="game">
     <div data-game-target="gameArea">
 
       <h4>TIPS</h4>
@@ -16,7 +7,7 @@
       <h3>#<%= @deck.name %> Deck</h3>
 
       <div class="tips-card"
-          data-game-target="tips" style="margin-top:"150px">
+          data-game-target="tips">
         <h5><%= @deck.tips %></h5>
       </div>
 
@@ -32,6 +23,6 @@
 
     </div>
 
-    <%= render "question_and_answers_template" %>
-  </div>
+  <%= render "question_and_answers_template" %>
+
 </div>
