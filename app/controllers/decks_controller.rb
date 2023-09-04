@@ -3,6 +3,9 @@ class DecksController < ApplicationController
 
   def index
     @decks = Deck.where(level: params[:level])
+    @completed_decks = current_user.decks.where(level: params[:level])
+    @last_completed_deck_index = @decks.find_index(@completed_decks.last)
+    @next_playable_deck_index = @last_completed_deck_index ? @last_completed_deck_index + 1 : 0
   end
 
   def show

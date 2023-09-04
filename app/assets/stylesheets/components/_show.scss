@@ -1,10 +1,17 @@
+body {
+  background-image: url("https://res.cloudinary.com/ddpxdkwin/image/upload/v1693491864/narrow-home-page-background_eeuynk.png");
+  background-repeat: repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  // animation: marquee 400s infinite linear;
+}
+
 .container {
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
 }
-
 
 .box-bigger {
   display: flex;
@@ -46,7 +53,6 @@ h4 {
 
 }
 
-
 .box-smaller {
   width: 250px;
   height: 320px;
@@ -57,7 +63,6 @@ h4 {
   justify-content: flex-start;
   align-items: center;
 }
-
 
  h3 {
   font-family: 'handjet';
@@ -74,8 +79,6 @@ h5 {
   letter-spacing: 1px;
 }
 
-
-
 .next {
   display: flex;
   flex-direction: column;
@@ -90,20 +93,16 @@ h5 {
   letter-spacing: 1px;
   width: 43%;
   height: 15%;
-  margin-top: 275px;
+  margin-top: 110px;
 }
 
 
 .question h1{
   font-family: 'handjet';
-  position: absolute;
-  top: 29%;
-  left: 4%;
 }
 
 
-/* Estilo comum para os rótulos dos botões de rádio */
-label {
+.answers-container {
   font-family: 'handjet';
   background-color: lightgray;
   border-width: 4px;
@@ -111,11 +110,11 @@ label {
   font-size: 20px;
   border-radius: 0px;
   letter-spacing: 1px;
-  width: 80%;
-  height: 15%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5px;
 }
-
-
 
 input[type="submit"] {
   cursor: pointer;
@@ -130,7 +129,12 @@ input[type="submit"] {
   font-size: 20px;
   border-radius: 0px;
   letter-spacing: 1px;
-  width: 80%;
-  height: 15%;
+}
 
+h1 {
+  font-family: 'handjet';
+  font-size: 33px;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+  margin-top: -10px;
 }
