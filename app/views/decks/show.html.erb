@@ -1,23 +1,16 @@
-<style>
-  body {
-    background-image: url("https://res.cloudinary.com/ddpxdkwin/image/upload/v1693491864/narrow-home-page-background_eeuynk.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-  }
-</style>
-
-<div class="container" data-controller="game" data-game-deck-id-value="<%= @deck.id %>">
+<div
+  class="container"
+  data-controller="game"
+  data-game-deck-id-value="<%= @deck.id %>"
+>
   <div class="box-bigger">
-    <h4>TIPS</h4>
+      <h4 data-game-target="header">TIPS</h4>
   </div>
 
-  <div class="container-smaller" class="content">
+  <div class="container-smaller" class="content" >
     <div data-game-target="gameArea">
       <div class="box-smaller">
-        <h3>
-          #<%= @deck.name %> Deck
-        </h3>
+        <h3><strong>#<%= @deck.name %>_DECK</strong></h3>
 
         <div class="tips-card" data-game-target="tips">
           <h5><%= @deck.tips %></h5>
