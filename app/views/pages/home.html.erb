@@ -1,74 +1,26 @@
-<%# <!DOCTYPE html>
-<html>
-<head>
-  <title>GAME OF CODES</title>
-  <link rel="stylesheet" href="style.scss">
-  <style>
-  body {
-   background-image: url("https://res.cloudinary.com/ddpxdkwin/image/upload/v1693491864/narrow-home-page-background_eeuynk.png");
-   background-repeat: no-repeat;
-   background-size: cover;
-   background-attachment: fixed;
-  }
-  </style>
-</head>
-<body>
+
+
+
+<div class="hero">
   <div class="content">
-    <h1 class="home-header center my-5">GAME OF CODES</h1>
-      <h2 class="home-subheader center my-3">Powered by Ruby</h2>
-      <div class="center my-3">
-        <div class="btn" id="home-button" style="font-family: 'handjet';border-color: black;border-width: 2px;padding: 3px; border-radius: 0px;">
-          <%= link_to "START GAME", levels_path %>
-        <%# </div> %>
-      <%# </div> %>
-  <%# </div> %>
-<%# </body> %>
-<%# </html> %>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Game Of Codes</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Borel&family=Faster+One&family=Kanit&family=Press+Start+2P&family=Raleway:wght@600&family=Rubik+Iso&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.scss">
-
-  <style>
-
-    body {
-      background-image: url("https://res.cloudinary.com/ddpxdkwin/image/upload/v1693688930/game-of-codes-full-scenario_gnzd5r.png");
-      background-repeat: repeat;
-      background-size: cover;
-      background-attachment: fixed;
-      /* animation: marquee 30s infinite linear; */
-    }
-
-
-  </style>
-
-</head>
-
-<body>
-  <div class="hero">
-    <div class="content">
-      <h1>GAME 0F C0DES</h1>
-      <h2>powered by ruby
-        <img src="https://www.nicepng.com/png/full/749-7492440_ruby-on-rails-logo.png"
-                  <%# "https://res.cloudinary.com/ddpxdkwin/image/upload/v1693495722/Ruby_logo_pixelated_30_qcziju.png" %>
-            class="ruby">
-      </h2>
-    </div>
-
-    <div class="container" id="home-container">
-
-      <div class="btn" id="start-button" >
-          <%= link_to "START", levels_path %>
-      </div>
-    </div>
+    <h1>GAME 0F C0DES</h1>
+    <h2>powered by ruby
+      <img src="https://www.nicepng.com/png/full/749-7492440_ruby-on-rails-logo.png"
+                <%# "https://res.cloudinary.com/ddpxdkwin/image/upload/v1693495722/Ruby_logo_pixelated_30_qcziju.png" %>
+          class="ruby">
+    </h2>
   </div>
-</body>
 
-</html>
+  <div class="container" id="home-container">
+
+    <div class="btn" id="start-button" >
+        <% if user_signed_in? %>
+          <%= link_to "START", levels_path %>
+        <% else %>
+          <%= link_to "LOGIN", new_user_session_path %>
+          <%= link_to "SIGN UP", new_user_registration_path %>
+        <% end %>
+    </div>
+
+  </div>
+</div>
