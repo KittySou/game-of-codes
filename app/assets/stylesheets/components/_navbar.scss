@@ -18,9 +18,42 @@
 
 .navbar-text {
   font-size: 30px;
-  border-radius: 0px;
   border-width: 3px;
   background-color: lightgray;
   font-family: handjet;
   font-size: 25px;
+}
+
+.modal-body {
+  font-size: 30px;
+  border-width: 3px;
+  background-color: rgba(255, 229, 98, 0.631);
+  font-family: handjet;
+  font-size: 25px;
+
+}
+
+.modal-header {
+  background-color: rgba(255, 229, 98, 0.631);
+}
+
+.modal-footer {
+  background-color: rgba(255, 229, 98, 0.631);
+}
+
+.button-secondary {
+  // display: flex;
+  // flex-direction: column;
+  // justify-content: flex-start;
+  // align-items: center;
+  font-family: 'handjet';
+  background-color: lightgray;
+  border-width: 4px;
+  border-color: black;
+  font-size: 20px;
+  border-radius: 0px;
+  letter-spacing: 1px;
+  width: 30%;
+  height: 10%;
+  // margin-top: 110px;
 }
