@@ -3,7 +3,11 @@
     <div class="container-fluid">
 
       <div>
+        <% if current_page?(:controller => 'decks', :action => 'menu') %>
+        <%= link_to "  ", "#" , class: "blank" %>
+        <% else %>
         <%= link_to " < ", :back , class: "btn btn-outline-dark navbar-text" %>
+        <% end %>
       </div>
 
       <% if current_page?(:controller => 'decks', :action => 'show') %>
