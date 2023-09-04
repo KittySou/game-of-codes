@@ -115,6 +115,7 @@ input[type="radio"] {
   display: none;
 }
 
+/* Estilo comum para os rótulos dos botões de rádio */
 label {
   font-family: 'handjet';
   background-color: lightgray;
@@ -123,13 +124,22 @@ label {
   font-size: 20px;
   border-radius: 0px;
   letter-spacing: 1px;
-  width: 20%;
-  height: 20%;
+  width: 40%;
+  height: 12%;
   display: flex;
   justify-content: center; /* Centralizar horizontalmente o conteúdo */
   align-items: center; /* Centralizar verticalmente o conteúdo */
-  margin: 5px; /* Espaço entre os labels */
+  margin: 30px; /* Espaço entre os botões */
 }
+
+/* Container que envolve os botões de rádio */
+.radio-container {
+  display: flex;
+  justify-content: flex-start; /* Alinha os botões à esquerda */
+  align-items: center;
+  flex-wrap: wrap; /* Quebra a linha quando não houver espaço horizontal */
+}
+
 
 
 input[type="submit"] {
