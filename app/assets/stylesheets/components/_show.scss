@@ -1,3 +1,5 @@
+
+
 h4 {
   font-family: 'handjet';
   font-size: 40px;
@@ -61,4 +63,42 @@ h5 {
   position: absolute;
   top: 29%;
   left: 4%;
+}
+
+// Estilizando os radio buttons como botões
+input[type="radio"] {
+  display: none; // Esconde os radio buttons padrão
+}
+
+label {
+  font-family: 'handjet';
+  width: 20%;
+  height: 20%;
+  background-color: lightgray;
+  border-width: 4px;
+  border-color: black;
+  font-size: 20px;
+  border-radius: 0px;
+  letter-spacing: 1px;
+  top: 80%;
+  // left: 30%;
+  // width: 40%;
+  // height: 12%;
+
+}
+
+input[type="submit"] {
+  cursor: pointer;
+  font-family: 'handjet';
+  width: 35%;
+  height: 13%;
+  background-color: lightgray;
+  border-width: 4px;
+  border-color: black;
+  font-size: 20px;
+  border-radius: 0px;
+  letter-spacing: 1px;
+  position: absolute;
+  top: 103%;
+  left: 32%;
 }

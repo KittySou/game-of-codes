@@ -1,3 +1,12 @@
+<style>
+  body {
+    background-image: url("https://res.cloudinary.com/ddpxdkwin/image/upload/v1693491864/narrow-home-page-background_eeuynk.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+  }
+</style>
+
 <div class="box">
   <div class="container" class="content" data-controller="game" data-game-deck-id-value="<%= @deck.id %>">
     <div data-game-target="gameArea">
@@ -7,7 +16,7 @@
       <h3>#<%= @deck.name %> Deck</h3>
 
       <div class="tips-card"
-          data-game-target="tips">
+          data-game-target="tips" style="margin-top:"150px">
         <h5><%= @deck.tips %></h5>
       </div>
 
