@@ -99,9 +99,6 @@ h5 {
 
 .question h1{
   font-family: 'handjet';
-  position: absolute;
-  top: 29%;
-  left: 4%;
 }
 
 
@@ -110,7 +107,13 @@ h5 {
   background-color: lightgray;
   border-width: 4px;
   border-color: black;
+<<<<<<< HEAD
   font-size: 35px;
+=======
+  font-size: 20px;
+  border-radius: 0px;
+  letter-spacing: 1px;
+>>>>>>> master
   display: flex;
   justify-content: center;
   align-items: center;
@@ -159,9 +162,12 @@ input[type="submit"] {
   font-size: 20px;
   border-radius: 0px;
   letter-spacing: 1px;
+<<<<<<< HEAD
   width: 43%;
   height: 15%;
   margin-top: 110px;
+=======
+>>>>>>> master
 }
 
 h1 {

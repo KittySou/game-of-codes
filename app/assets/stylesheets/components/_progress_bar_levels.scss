@@ -1,19 +1,28 @@
 .green-bar {
-  width: 90%;
+  width: 5%;
   height: 40px;
   background-color: green;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
 }
 .progress-box {
   background-color: red;
   display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
   height: 50px;
   border: solid 5px black;
   width: 100%;
 }
 .completed-text {
+  font-family: 'handjet';
   color: white;
-  font-size: 40px;
+  font-size: 24px;
   text-align: center;
+  z-index: 10;
 }
 .footer-container {
   background-color: lightgray;
