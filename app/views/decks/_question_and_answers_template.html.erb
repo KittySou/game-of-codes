@@ -1,18 +1,18 @@
-  <template data-game-target="questionTemplate">
-    <h1>{{content}}</h1>
-    <form action="" data-action="submit->game#send" data-game-target="form">
-      {{#answers}}
-        <input type="radio" name="answer" value="{{id}}" data-game-target="answerInput">
-        <label for="{{content}}">{{content}}</label>
-      {{/answers}}
-      <input type="submit" value="check" data-game-target="checkButton">
-      <button
-        type="button"
-        class="d-none"
-        data-game-target="nextButton"
-        data-action="click->game#nextQuestion"
-      >
-        Next
-      </button>
-    </form>
-  </template>
+<template data-game-target="questionTemplate">
+  <h1>{{content}}</h1>
+  <form action="" data-action="submit->game#send" data-game-target="form">
+    {{#answers}}
+      <input type="radio" name="answer" value="{{id}}" data-game-target="answerInput">
+      <label for="{{content}}">{{content}}</label>
+    {{/answers}}
+    <input type="submit" value="check" data-game-target="checkButton">
+    <button
+      type="button"
+      class="d-none"
+      data-game-target="nextButton"
+      data-action="click->game#nextQuestion"
+    >
+      Next
+    </button>
+  </form>
+</template>
