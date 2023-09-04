@@ -1,30 +1,35 @@
-<div class="show-container" data-controller="game" data-game-deck-id-value="<%= @deck.id %>">
-  <div data-game-target="gameArea">
-    <h1>Name of the deck:</h1>
+<style>
+  body {
+    background-image: url("https://res.cloudinary.com/ddpxdkwin/image/upload/v1693491864/narrow-home-page-background_eeuynk.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+  }
+</style>
 
-    <h2><%= @deck.name %></h2>
-
-    <div class="tips-card"
-        data-game-target="tips">
-      <h4>Tips:</h4>
-      <h5><%= @deck.tips %></h5>
-    </div>
-
-    <button class="tips-button"
-            data-game-target="startButton"
-            data-action="click->game#start">
-      Start
-    </button>
-
-    <div data-game-target="questionContainer"></div>
-
-    <div data-game-target="answerConfirmation"></div>
-
+<div class="container">
+  <div class="box-bigger">
+      <h4>TIPS</h4>
   </div>
-  <%= render "question_and_answers_template" %>
-</div>
+      <div class="container-smaller" class="content" data-controller="game" data-game-deck-id-value="<%= @deck.id %>">
+        <div data-game-target="gameArea">
+            <div class="box-smaller">
+              <h3>#<%= @deck.name %> Deck</h3>
+                <div class="tips-card"
+                  data-game-target="tips">
+                <h5><%= @deck.tips %></h5>
+              </div>
+                <button class="next" data-game-target="startButton" data-action="click->game#start">
+                Next
+              </button>
 
-<%# HTML setup - Layout 👇🏿%>
-<%# content_for :meta_title, "#{@restaurant.name} is on #{DEFAULT_META["meta_product_name"]}" %>
-<%# content_for :meta_description, @restaurant.description %>
-<%# content_for :meta_image, cl_image_path(@restaurant.photo.key) if @restaurant.photo.attached? %>
+              <div data-game-target="questionContainer" class="question"></div>
+
+              <div data-game-target="answerConfirmation" class="answer"></div>
+
+            </div>
+        </div>
+
+    <%= render "question_and_answers_template" %>
+
+</div>
