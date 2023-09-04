@@ -7,12 +7,12 @@
   }
 </style>
 
-<div class="container">
+<div class="container" data-controller="game" data-game-deck-id-value="<%= @deck.id %>">
   <div class="box-bigger">
-      <h4>TIPS</h4>
+    <h4>TIPS</h4>
   </div>
 
-  <div class="container-smaller" class="content" data-controller="game" data-game-deck-id-value="<%= @deck.id %>">
+  <div class="container-smaller" class="content">
     <div data-game-target="gameArea">
       <div class="box-smaller">
         <h3>#<%= @deck.name %> Deck</h3>
@@ -35,6 +35,6 @@
       </div>
     </div>
   </div>
-
-
 </div>
+
+<div>tips div</div>
