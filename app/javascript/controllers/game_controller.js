@@ -111,6 +111,6 @@ export default class extends Controller {
   }
 
   viewTips(event) {
-
+    console.log("view the tips");
   }
 }
