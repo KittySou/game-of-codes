@@ -54,6 +54,10 @@ export default class extends Controller {
       this.#removeCurrentQuestionFromDeck()
     }
     if (this.isDeckCompleted) {
+      const url = `/decks/${this.deckIdValue}/completed`
+      fetch(url, {
+        headers: { "Accept": "application/json" }
+      })
       const template = this.congratulationsTemplateTarget.innerHTML
       const output = Mustache.render(template)
       this.gameAreaTarget.innerHTML = output
@@ -103,16 +107,16 @@ export default class extends Controller {
   async #fetchDeckQuestions() {
     // INFO: this is for development purposes only
     // this.deck = [{
-      //   "content": "Quel est la somme de 1 et 1?",
-      //   "answers": [
-        //     {"id": "1", "content": "3", "rightAnswer": false},
-        //     {"id": "2", "content": "1", "rightAnswer": false},
-        //     {"id": "3", "content": "2", "rightAnswer": true},
-        //     {"id": "4", "content": "4", "rightAnswer": false}
-        //   ]
-        // }]
-        //     this.totalNumberOfQuestions = this.deck.length
-        //     this.#setNewQuestion()
+    //     "content": "Quel est la somme de 1 et 1?",
+    //     "answers": [
+    //         {"id": "1", "content": "3", "rightAnswer": true},
+    //         {"id": "2", "content": "1", "rightAnswer": false},
+    //         {"id": "3", "content": "2", "rightAnswer": false},
+    //         {"id": "4", "content": "4", "rightAnswer": false}
+    //       ]
+    //     }]
+    //         this.totalNumberOfQuestions = this.deck.length
+    //         this.#setNewQuestion()
 
     // INFO: this is the NEEDED code to make the game work
     const url = `/decks/${this.deckIdValue}/questions`

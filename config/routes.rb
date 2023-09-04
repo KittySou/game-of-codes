@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   get "/show", to: "decks#show", as: "show"
   get "/menu", to: "decks#menu", as: "menu"
   get "/decks/:id/questions", to: "decks#questions", as: "deck_questions"
+  get "/decks/:id/completed", to: "decks#completed", as: "deck_completed"
 end
 # resources :bookings, only: [:index, :show, :edit, :update, :destroy]
 # resources :posters, only: [:index, :show, :create, :new] do
