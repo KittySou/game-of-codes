@@ -1,7 +1,9 @@
-<template data-game-target="congratulationsTemplate">
+
+<template class="congratulations-template" data-game-target="congratulationsTemplate">
   <h1>Congratulations!!</h1>
+  <br>
   <h1>You have unlocked a new deck!!</h1>
-  <%= link_to decks_path(level: "beginner") do %>
-    <h2>Decks index</h2>
-  <% end %>
+  <div class="btn back-to-index-btn">
+    <h1><%= link_to "BACK TO DECKS", decks_path(level: "beginner") %></h1>
+  </div>
 </template>
