@@ -109,4 +109,8 @@ export default class extends Controller {
         this.#setNewQuestion()
       })
   }
+
+  viewTips(event) {
+
+  }
 }
