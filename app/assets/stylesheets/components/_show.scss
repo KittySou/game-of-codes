@@ -110,20 +110,26 @@ h5 {
 }
 
 
-/* Estilo comum para os rótulos dos botões de rádio */
+/* Ocultar os botões de rádio */
+input[type="radio"] {
+  display: none;
+}
+
 label {
   font-family: 'handjet';
-  width: 20%;
-  height: 20%;
   background-color: lightgray;
   border-width: 4px;
   border-color: black;
   font-size: 20px;
   border-radius: 0px;
   letter-spacing: 1px;
-  top: 80%;
+  width: 20%;
+  height: 20%;
+  display: flex;
+  justify-content: center; /* Centralizar horizontalmente o conteúdo */
+  align-items: center; /* Centralizar verticalmente o conteúdo */
+  margin: 5px; /* Espaço entre os labels */
 }
-
 
 
 input[type="submit"] {

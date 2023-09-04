@@ -69,11 +69,25 @@ a {
   text-decoration: none;
 }
 
-
 .unlock-card {
   height: 115px;
   width: 29vw;
   background-color: $green;
+  color: black;
+  margin-bottom: 40px;
+  font-family: handjet;
+  font-size: 25px;
+  text-align: center;
+  padding-top: 40px;
+  border-style: solid;
+  border-width:4px;
+}
+
+.incomplete-card {
+  // opacity: 0.5;
+  background-color: $light-gray;
+  height: 115px;
+  width: 29vw;
   color: black;
   margin-bottom: 40px;
   font-family: handjet;
