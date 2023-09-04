@@ -13,7 +13,8 @@ export default class extends Controller {
     "checkButton",
     "nextButton",
     "gameArea",
-    "answerInput"
+    "answerInput",
+    "progressBar"
   ]
 
   static values = { deckId: Number }
@@ -36,6 +37,8 @@ export default class extends Controller {
     // removing corrently answered questions from the deck, having the initial number
     // will be useful for display purposes (ie. show the completion %)
     this.totalNumberOfQuestions = null
+
+    this.numberOfCorrectAnswers = 0
   }
 
   start() {
@@ -51,6 +54,8 @@ export default class extends Controller {
     const userGuessedRight = this.currentQuestion.answers.find(answer => answer.id === userAnswer).rightAnswer
     if (userGuessedRight) {
       this.#removeCurrentQuestionFromDeck()
+      this.numberOfCorrectAnswers++
+      this.#updateProgressBar()
     }
     if (this.isDeckCompleted) {
       this.gameAreaTarget.innerHTML = "<h1>Congratulations!!</h1>"
@@ -68,6 +73,16 @@ export default class extends Controller {
     this.checkButtonTarget.classList.add("d-none")
     //TODO: querySelectorAll on radio buttons .foreach -> disable = true
     this.answerInputTarget.disabled = true
+  }
+
+  #updateProgressBar() {
+    console.log(this.progressBarTarget)
+    console.log('Score:', this.numberOfCorrectAnswers / this.totalNumberOfQuestions * 100)
+    const percentage = this.numberOfCorrectAnswers / this.totalNumberOfQuestions * 100
+    // 1. update the progressbar width
+    this.progressBarTarget.querySelector('.green-bar').style.width = `${percentage}%`
+    // 2. update the text
+    this.progressBarTarget.querySelector('.completed-text').innerText = `DECK ${percentage}% COMPLETED!`
   }
 
   nextQuestion() {
