@@ -1,34 +1,36 @@
-<div
-  class="container"
-  data-controller="game"
-  data-game-deck-id-value="<%= @deck.id %>"
->
-  <div class="box-bigger">
-      <h4 data-game-target="header">TIPS</h4>
-  </div>
+<div data-controller="game" data-game-deck-id-value="<%= @deck.id %>">
+  <div class="container">
 
-  <div class="container-smaller" class="content" >
-    <div data-game-target="gameArea">
-      <div class="box-smaller">
-        <h3><strong>#<%= @deck.name %>_DECK</strong></h3>
+    <div class="box-bigger">
+        <h4 data-game-target="header">TIPS</h4>
+    </div>
 
-        <div class="tips-card" data-game-target="tips">
-          <h5><%= @deck.tips %></h5>
+    <div class="container-smaller" class="content">
+
+      <div data-game-target="gameArea">
+
+        <div class="box-smaller">
+
+          <h3><strong>#<%= @deck.name %>_DECK</strong></h3>
+
+          <div class="tips-card"
+            data-game-target="tips">
+            <h5><%= @deck.tips %></h5>
+          </div>
+
+          <button class="next" data-game-target="startButton" data-action="click->game#start">
+            Next
+          </button>
+
+          <div data-game-target="questionContainer" class="question"></div>
+
+          <div data-game-target="answerConfirmation" class="answer"></div>
+
+          <%= render "question_and_answers_template" %>
+          <%= render "congratulations_template" %>
         </div>
-
-        <button class="next" data-game-target="startButton" data-action="click->game#start">
-          Next
-        </button>
-
-        <div data-game-target="questionContainer" class="question"></div>
-
-        <div data-game-target="answerConfirmation" class="answer"></div>
-
-        <%= render "question_and_answers_template" %>
-        <%= render "congratulations_template" %>
       </div>
     </div>
   </div>
+  <%= render "decks/progress_bar_levels" %>
 </div>
-
-<div>tips div</div>
