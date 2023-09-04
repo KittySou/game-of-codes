@@ -2,13 +2,41 @@
   <div class="navbar navbar-expand-sm navbar-light navbar-lewagon" style="height: 74px; background-color: lightgray;">
     <div class="container-fluid">
 
-      <div> <%= link_to " < ", :back , class: "btn btn-outline-dark navbar-text" %></div>
+      <div>
+        <% if current_page?(:controller => 'decks', :action => 'menu') %>
+        <%= link_to "  ", "#" , class: "blank" %>
+        <% else %>
+        <%= link_to " < ", :back , class: "btn btn-outline-dark navbar-text" %>
+        <% end %>
+      </div>
 
       <% if current_page?(:controller => 'decks', :action => 'show') %>
-        <div> <%= link_to " ? ", "https://ruby-doc.org/" , class: "btn btn-outline-dark navbar-text", target: "_blank" %></div>
+        <div data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-outline-dark navbar-text">
+          ?
+        </div>
+        <!-- Modal (tips popup) -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">tips</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+
+              <div class="modal-body">
+                <%= @deck.tips %>
+              </div>
+
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
       <% end %>
 
-      <div> <%= link_to " ≡ ", "/menu" , class: "btn btn-outline-dark  navbar-text", style: "font-family: math; color: black;" %>
+      <div>
+        <%= link_to " ≡ ", "/menu" , class: "btn btn-outline-dark  navbar-text", style: "font-family: math; color: black;" %>
       </div>
 
     </div>

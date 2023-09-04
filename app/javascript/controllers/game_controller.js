@@ -14,7 +14,8 @@ export default class extends Controller {
     "nextButton",
     "gameArea",
     "answerInput",
-    "congratulationsTemplate"
+    "congratulationsTemplate",
+    "header"
   ]
 
   static values = { deckId: Number }
@@ -119,14 +120,18 @@ export default class extends Controller {
     //         this.#setNewQuestion()
 
     // INFO: this is the NEEDED code to make the game work
+    this.setHeader()
     const url = `/decks/${this.deckIdValue}/questions`
     await fetch(url, {headers: { "Accept": "application/json" }})
       .then(response => response.json())
       .then((data) => {
         this.deck = data
-
         this.totalNumberOfQuestions = this.deck.length
         this.#setNewQuestion()
       })
+  }
+
+  setHeader() {
+    this.headerTarget.innerText = "Question"
   }
 }
