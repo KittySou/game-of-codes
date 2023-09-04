@@ -13,7 +13,6 @@ body {
   text-align: center;
 }
 
-
 .box-bigger {
   display: flex;
   flex-direction: column;
@@ -54,7 +53,6 @@ h4 {
 
 }
 
-
 .box-smaller {
   width: 250px;
   height: 320px;
@@ -65,7 +63,6 @@ h4 {
   justify-content: flex-start;
   align-items: center;
 }
-
 
  h3 {
   font-family: 'handjet';
@@ -82,8 +79,6 @@ h5 {
   letter-spacing: 1px;
 }
 
-
-
 .next {
   display: flex;
   flex-direction: column;
@@ -98,7 +93,7 @@ h5 {
   letter-spacing: 1px;
   width: 43%;
   height: 15%;
-  margin-top: 275px;
+  margin-top: 110px;
 }
 
 
@@ -110,13 +105,7 @@ h5 {
 }
 
 
-/* Ocultar os botões de rádio */
-input[type="radio"] {
-  display: none;
-}
-
-/* Estilo comum para os rótulos dos botões de rádio */
-label {
+.answers-container {
   font-family: 'handjet';
   background-color: lightgray;
   border-width: 4px;
@@ -127,20 +116,10 @@ label {
   width: 40%;
   height: 12%;
   display: flex;
-  justify-content: center; /* Centralizar horizontalmente o conteúdo */
-  align-items: center; /* Centralizar verticalmente o conteúdo */
-  margin: 30px; /* Espaço entre os botões */
-}
-
-/* Container que envolve os botões de rádio */
-.radio-container {
-  display: flex;
-  justify-content: flex-start; /* Alinha os botões à esquerda */
+  justify-content: center;
   align-items: center;
-  flex-wrap: wrap; /* Quebra a linha quando não houver espaço horizontal */
+  margin: 5px;
 }
-
-
 
 input[type="submit"] {
   cursor: pointer;
@@ -157,5 +136,13 @@ input[type="submit"] {
   letter-spacing: 1px;
   width: 80%;
   height: 15%;
+  margin: 70px;
+}
 
+h1 {
+  font-family: 'handjet';
+  font-size: 33px;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+  margin-top: -10px;
 }
