@@ -2,35 +2,34 @@
   <div class="container">
 
     <div class="box-bigger">
-        <h4 data-game-target="header">TIPS</h4>
-    </div>
+        <h4 data-game-target="tipsHeader">TIPS</h4>
+        <h4 data-game-target="deckHeader" class="d-none">#<%= @deck.name %>_DECK</h4>
+        <div class="container-smaller" class="content">
 
-    <div class="container-smaller" class="content">
+          <div data-game-target="gameArea" style="font-family: handjet;">
 
-      <div data-game-target="gameArea" style="font-family: handjet;">
+            <div class="box-smaller">
 
-        <div class="box-smaller">
+              <div class="tips-card"
+                data-game-target="tips">
+                <h5><%= @deck.tips %></h5>
+              </div>
 
-          <h3><strong>#<%= @deck.name %>_DECK</strong></h3>
+              <button class="next" data-game-target="startButton" data-action="click->game#start">
+                Next
+              </button>
 
-          <div class="tips-card"
-            data-game-target="tips">
-            <h5><%= @deck.tips %></h5>
+              <div data-game-target="questionContainer" class="question"></div>
+
+              <div data-game-target="answerConfirmation" class="answer"></div>
+
+              <%= render "question_and_answers_template" %>
+              <%= render "congratulations_template" %>
+            </div>
           </div>
-
-          <button class="next" data-game-target="startButton" data-action="click->game#start">
-            Next
-          </button>
-
-          <div data-game-target="questionContainer" class="question"></div>
-
-          <div data-game-target="answerConfirmation" class="answer"></div>
-
-          <%= render "question_and_answers_template" %>
-          <%= render "congratulations_template" %>
         </div>
       </div>
     </div>
-  </div>
+
   <%= render "decks/progress_bar_levels" %>
 </div>

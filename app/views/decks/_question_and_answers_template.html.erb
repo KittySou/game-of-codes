@@ -2,11 +2,13 @@
   <div class="questions-container">
   <h1>{{content}}</h1>
   <form action="" data-action="submit->game#send" data-game-target="form">
-    </div>
+
     <div class="answers-container">
       {{#answers}}
-        <input type="radio" name="answer" value="{{id}}" data-game-target="answerInput">
-        <label for="{{content}}">{{content}}</label>
+        <div>
+          <input class="btn-check" id="answer-{{id}}" type="radio" name="answer" value="{{id}}" data-game-target="answerInput">
+          <label class="btn btn-secondary" for="answer-{{id}}">{{content}}</label>
+        </div>
       {{/answers}}
     </div>
     <input type="submit" value="check" data-game-target="checkButton">
