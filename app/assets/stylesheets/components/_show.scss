@@ -110,8 +110,8 @@ h5 {
 
 .answers-container{
   font-family: 'handjet';
-  background-color: lightgray;
   border-width: 4px;
+  color: lightgray;
   border-color: black;
   font-size: 20px;
   border-radius: 0px;
@@ -121,8 +121,7 @@ h5 {
   justify-content: center;
   align-items: center;
   // margin: 110px;
-  border-radius: 4px;
-  letter-spacing: 5px;
+  letter-spacing: 2px;
   // width: 40%;
   // height: 12%;
   // display: flex;
@@ -152,20 +151,22 @@ h5 {
 
 
 
-input[type="submit"] {
-  cursor: pointer;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  font-family: 'handjet';
-  background-color: lightgray;
-  border-width: 4px;
-  border-color: black;
-  font-size: 20px;
-  border-radius: 0px;
-  letter-spacing: 1px;
-}
+// #check {
+//   cursor: pointer;
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: center;
+//   align-items: center;
+//   font-family: 'handjet';
+//   background-color: lightgray;
+//   border-width: 4px;
+//   border-color: black;
+//   font-size: 20px;
+//   border-radius: 0px;
+//   letter-spacing: 1px;
+//   width: 43%;
+//   height: 100%;
+// }
 
 h1 {
   font-family: 'handjet';
@@ -173,4 +174,37 @@ h1 {
   letter-spacing: 1px;
   margin-bottom: 10px;
   margin-top: -10px;
+}
+
+.btn-primary {
+  width: 43%;
+  height: 100%;
+  margin-top: 20px;
+  border-radius: 0;
+  background-color: lightgray;
+  border-width: 4px;
+  border-color: black;
+  cursor: pointer;
+}
+
+[data-game-target="nextButton"] {
+  width: 43%;
+  height: 100%;
+  margin-top: 20px;
+  border-radius: 0;
+  background-color: lightgray;
+  border-width: 4px;
+  border-color: black;
+  cursor: pointer;
+}
+
+label.btn.btn-secondary {
+  width: 120%;
+  height: 100%;
+  margin-top: 15px;
+  border-radius: 0;
+  background-color: rgb(114, 114, 233);
+  border-width: 4px;
+  border-color: black;
+  cursor: pointer;
 }
