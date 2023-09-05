@@ -16,6 +16,23 @@
   --bs-btn-padding-y: 0.0rem;
 }
 
+// This only works for the "?" button
+.nav-btn {
+  display: inline-flex;
+  height: 50px;
+  border: 5px solid black;
+  width: 20vw;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-family: handjet;
+  font-size: 24px;
+}
+
+.black-text {
+  color: black;
+}
+
 .navbar-text {
   font-size: 30px;
   border-width: 3px;
