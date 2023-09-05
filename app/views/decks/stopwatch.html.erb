@@ -1,32 +1,17 @@
-<div data-controller="game" data-game-deck-id-value="<%= @deck.id %>">
-  <div class="container">
-
-    <div class="box-bigger">
-        <h4 data-game-target="header">TIPS</h4>
-    </div>
-
-    <div class="container-smaller" class="content">
-
-      <div data-game-target="gameArea" style="font-family: handjet;">
-
-        <div class="box-smaller">
-
-          <h3><strong>#<%= @deck.name %>_DECK</strong></h3>
-
-          <div class="tips-card"
-            data-game-target="tips">
-            <h5><%= @deck.tips %></h5>
-          </div>
-
-          <button class="next" data-game-target="startButton" data-action="click->game#start">
-            Next
-          </button>
-
-          <div data-game-target="questionContainer" class="question"></div>
-
-          <div data-game-target="answerConfirmation" class="answer"></div>
-
-          <div class="wrapper">
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Create a Stopwatch in JavaScript</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@200;300;400&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <div class="wrapper">
       <div id="stopwatch">00:00:00:00</div>
       <ul id="buttons">
         <li><button id="start">Start</button></li>
@@ -64,7 +49,7 @@
       function timeReset(){
         setInterval(timer)
         millisecound = 0;
-        watch.innerHTML = "00:00:00";
+        watch.innerHTML = "00:00:00:00";
       }
 
       document.addEventListener('click', (e) => {
@@ -75,15 +60,5 @@
         if(el.id === 'reset') timeReset();
       })
     </script>
-
-          <%= render "question_and_answers_template" %>
-          <%= render "congratulations_template" %>
-
-
-
-        </div>
-      </div>
-    </div>
-  </div>
-  <%= render "decks/progress_bar_levels" %>
-</div>
+  </body>
+</html>
