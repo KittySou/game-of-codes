@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_08_30_182030) do
+ActiveRecord::Schema[7.0].define(version: 2023_09_05_143328) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -67,6 +67,20 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_30_182030) do
     t.index ["deck_id"], name: "index_questions_on_deck_id"
   end
 
+  create_table "racetracks", force: :cascade do |t|
+    t.bigint "player_1_id", null: false
+    t.bigint "player_2_id", null: false
+    t.bigint "deck_id", null: false
+    t.bigint "winner_id"
+    t.boolean "completed", default: false, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["deck_id"], name: "index_racetracks_on_deck_id"
+    t.index ["player_1_id"], name: "index_racetracks_on_player_1_id"
+    t.index ["player_2_id"], name: "index_racetracks_on_player_2_id"
+    t.index ["winner_id"], name: "index_racetracks_on_winner_id"
+  end
+
   create_table "user_decks", force: :cascade do |t|
     t.integer "tries"
     t.bigint "user_id", null: false
@@ -97,6 +111,10 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_30_182030) do
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "answers", "questions"
   add_foreign_key "questions", "decks"
+  add_foreign_key "racetracks", "decks"
+  add_foreign_key "racetracks", "users", column: "player_1_id"
+  add_foreign_key "racetracks", "users", column: "player_2_id"
+  add_foreign_key "racetracks", "users", column: "winner_id"
   add_foreign_key "user_decks", "decks"
   add_foreign_key "user_decks", "users"
 end
