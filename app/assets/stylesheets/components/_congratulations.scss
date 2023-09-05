@@ -1,13 +1,50 @@
 .back-to-index-btn {
-  border-style: solid;
-  border-color: black;
+  width: 50vw;
+  height: 100%;
+  border-radius: 0;
   background-color: lightgray;
-  border-width: 3px;
-  border-radius: 0px;
-  margin-top: 20px;
-  padding-top: 8px;
+  border-width: 4px;
+  border-color: black;
+  margin-bottom: 3px;
+  cursor: pointer;
+}
+
+h4 {
+  font-family: 'handjet';
+  font-size: 19px;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
 }
 
 .congratulations-template {
   font-family: handjet;
+}
+
+h1 {
+  font-family: 'handjet';
+  font-size: 33px;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+  margin-top: 12px;
+}
+
+p {
+  margin-top: -0.5rem;
+  margin-bottom: 1rem;
+  color: rgb(114, 114, 233);
+  font-size: 20px;
+}
+
+h3 {
+font-family: 'handjet';
+font-size: 23px;
+text-align: center;
+letter-spacing: 2px;
+margin-bottom: 10px;
+margin-top: -20px;
+}
+
+.cat{
+  width: 200px;
+  margin-top: -22px;
 }
