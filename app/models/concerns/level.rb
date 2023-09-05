@@ -5,7 +5,8 @@ module Level
     enum :level, {
       beginner: 1,
       intermediate: 2,
-      advanced: 3
+      advanced: 3,
+      multiplayer: 100
     }, default: :beginner
   end
 end

@@ -20,7 +20,7 @@
        <div class="unlock-card">
         <%= deck.name %>
       </div>
-    <% elsif index == @next_playable_deck_index %>
+    <% elsif index == @next_playable_deck_index || deck.level == "multiplayer" %>
       <div class="incomplete-card">
         <%= deck.name %>
       </div>

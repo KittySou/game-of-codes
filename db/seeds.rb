@@ -6,7 +6,8 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
-require "open-uri"
+Racetrack.destroy_all
+UserDeck.destroy_all
 Answer.destroy_all
 Question.destroy_all
 Deck.destroy_all
@@ -110,8 +111,6 @@ deck_7_level_3 = Deck.create!(name: "boolean3", tips: "check lecture", level: 3)
 deck_8_level_3 = Deck.create!(name: "boolean3", tips: "check lecture", level: 3)
 deck_9_level_3 = Deck.create!(name: "boolean3", tips: "check lecture", level: 3)
 
-
-
 question_11 = Question.create!(content: "What is a float?", deck: deck_3)
 answer_41 = Answer.create!(content: "Number", question: question_11, right_answer: true)
 answer_42 = Answer.create!(content: "Word", question: question_11)
@@ -136,3 +135,34 @@ question_15 = Question.create!(content: "How do you print a float ?", deck: deck
 answer_57 = Answer.create!(content: "puts 3.13", question: question_15, right_answer: true)
 answer_58 = Answer.create!(content: "puts 365", question: question_15)
 answer_59 = Answer.create!(content: 'puts "wagon"', question: question_15)
+
+deck_1_multiplayer = Deck.create!(name: "Floats", tips: "check lecture", level: 100)
+deck_2_multiplayer = Deck.create!(name: "Boolean", tips: "check lecture", level: 100)
+deck_3_multiplayer = Deck.create!(name: "Integers", tips: "check lecture", level: 100)
+deck_4_multiplayer = Deck.create!(name: "Arrays", tips: "check lecture", level: 100)
+deck_5_multiplayer = Deck.create!(name: "Variables", tips: "check lecture", level: 100)
+
+question_16 = Question.create!(content: "Will dividing one integer by another integer give you a float?", deck: deck_1_multiplayer)
+answer_60 = Answer.create!(content: "Never", question: question_16)
+answer_61 = Answer.create!(content: "Sometimes", question: question_16, right_answer: true)
+answer_62 = Answer.create!(content: "Always", question: question_16)
+
+question_17 = Question.create!(content: "If you divide 4 by 3, is the result a float?", deck: deck_1_multiplayer)
+answer_63 = Answer.create!(content: "Yes", question: question_17, right_answer: true)
+answer_64 = Answer.create!(content: "No", question: question_17)
+answer_65 = Answer.create!(content: "Sometimes", question: question_17)
+
+question_18 = Question.create!(content: "All floats contain a ____", deck: deck_1_multiplayer)
+answer_63a = Answer.create!(content: "url", question: question_18)
+answer_64b = Answer.create!(content: "fraction", question: question_18)
+answer_65c = Answer.create!(content: "decimal point", question: question_18, right_answer: true)
+
+question_19 = Question.create!(content: "Choose the float.", deck: deck_1_multiplayer)
+answer_66 = Answer.create!(content: "Rootbeer", question: question_19)
+answer_67 = Answer.create!(content: "3.14", question: question_19, right_answer: true)
+answer_68 = Answer.create!(content: "25", question: question_19)
+
+question_20 = Question.create!(content: "Is rootbeer a float?", deck: deck_1_multiplayer)
+answer_69 = Answer.create!(content: "No", question: question_20, right_answer: true)
+answer_70 = Answer.create!(content: "5", question: question_20)
+answer_71 = Answer.create!(content: "Yum", question: question_20)
