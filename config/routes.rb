@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   get "/levels", to: "decks#levels", as: "levels"
   get "/show", to: "decks#show", as: "show"
   get "/menu", to: "decks#menu", as: "menu"
+  get "/stopwatch", to: "decks#stopwatch", as: "stopwatch"
   get "/decks/:id/questions", to: "decks#questions", as: "deck_questions"
   get "/decks/:id/completed", to: "decks#completed", as: "deck_completed"
 end
