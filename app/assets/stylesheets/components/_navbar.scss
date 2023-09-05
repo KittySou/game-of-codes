@@ -47,7 +47,6 @@
   background-color: rgba(255, 229, 98, 0.631);
   font-family: handjet;
   font-size: 25px;
-
 }
 
 .modal-header {
@@ -73,4 +72,8 @@
   width: 30%;
   height: 10%;
   // margin-top: 110px;
+}
+
+.modal-tips .modal-content {
+  border-radius: 0;
 }
