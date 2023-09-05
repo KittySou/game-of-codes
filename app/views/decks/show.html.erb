@@ -18,6 +18,20 @@
             <h5><%= @deck.tips %></h5>
           </div>
 
+          <template data-game-target="questionTemplate">
+            <div class="questions-container">
+              <h1>{{content}}</h1>
+              <form action="" data-action="submit->game#send" data-game-target="form">
+            </div>
+
+             <%# <div class="answers-container">
+            {{#answers}}
+              <input type="radio" name="answer" value="{{id}}" data-game-target="answerInput">
+              <label for="{{content}}">{{content}}</label>
+            {{/answers}}
+          </div> %>
+          </template>
+
           <button class="next" data-game-target="startButton" data-action="click->game#start">
             Next
           </button>

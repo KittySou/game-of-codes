@@ -96,14 +96,17 @@ h5 {
   // margin-top: 110px;
 }
 
-
-.question h1{
+.question h1 {
+  display: flex;
+  justify-content: center; /* Alinha horizontalmente ao centro */
+  align-items: center; /* Alinha verticalmente ao centro */
   font-family: 'handjet';
   font-size: 25px;
-  text-align: left;
+  text-align: center; /* Se você deseja alinhar o texto à esquerda, deixe como está */
   letter-spacing: 2px;
-  align-items: left;
+  margin: 0; /* Remove a margem padrão do h1 */
 }
+
 
 
 .answers-container{
