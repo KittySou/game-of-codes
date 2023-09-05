@@ -84,6 +84,13 @@
     background-color: rgba(255, 229, 98, 0.631);
 }
 
-.red-name {
-  color: red;
+.picture-name-info {
+  display: flex;
+  align-items: center;
+}
+
+.name-beside-photo {
+  margin-left: 8px;
+  font-family: handjet;
+  font-size: 24px;
 }
