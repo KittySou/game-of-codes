@@ -36,7 +36,11 @@
       <% end %>
 
       <div>
+        <% if current_page?(:controller => 'decks', :action => 'menu') %>
+        <%= link_to " ≡ ", :back , class: "btn btn-outline-dark  navbar-text", style: "font-family: math; color: black;" %>
+        <% else %>
         <%= link_to " ≡ ", "/menu" , class: "btn btn-outline-dark  navbar-text", style: "font-family: math; color: black;" %>
+        <% end %>
       </div>
 
     </div>
