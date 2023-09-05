@@ -90,7 +90,7 @@ export default class extends Controller {
       const output = Mustache.render(template, { time: this.#getCurrentTime() })
       this.gameAreaTarget.innerHTML = output
       this.#timeStop()
-      this.stopwatchTarget.innerText = "⏲"
+      this.stopwatchTarget.innerText = "DONE"
 
       return
     }

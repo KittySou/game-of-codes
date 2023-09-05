@@ -1,10 +1,10 @@
 
-<template class="congratulations-template" data-game-target="congratulationsTemplate">
-  <h1>Congratulations!!</h1>
+<template class="congratulations-template" data-game-target="box-smaller congratulationsTemplate">
+  <h1>Congratulations!</h1>
   <p>Your time was: {{time}}</p>
-  <br>
-  <h1>You have unlocked a new deck!!</h1>
+  <img src="https://res.cloudinary.com/ddpxdkwin/image/upload/v1693945173/728a020d5290efa08d853c061307eb31_zwvzmw.gif" class="cat">
+  <h3>You have unlocked a new deck!</h3>
   <div class="btn back-to-index-btn">
-    <h1><%= link_to "BACK TO DECKS", decks_path(level: "beginner") %></h1>
+    <h6><%= link_to "BACK TO DECKS", decks_path(level: "beginner") %></h6>
   </div>
 </template>
