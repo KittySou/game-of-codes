@@ -64,7 +64,6 @@ question_5 = Question.create!(content: "Which method transforms a number into a 
 answer_17 = Answer.create!(content: "100.to_s", question: question_5, right_answer: true)
 answer_18 = Answer.create!(content: "100 = string", question: question_5)
 answer_19 = Answer.create!(content: "100_become_string", question: question_5)
-answer_20 = Answer.create!(content: "8", question: question_5)
 
 deck_1_level_2 = Deck.create!(name: "array2", tips: "check lecture", level: 2)
 deck_2_level_2 = Deck.create!(name: "array2", tips: "check lecture", level: 2)
