@@ -15,6 +15,8 @@ Rails.application.routes.draw do
   get "/stopwatch", to: "decks#stopwatch", as: "stopwatch"
   get "/decks/:id/questions", to: "decks#questions", as: "deck_questions"
   get "/decks/:id/completed", to: "decks#completed", as: "deck_completed"
+  get "/decks/:id/racetracks/new", to: "racetracks#new", as: "new_racetrack"
+  post "/decks/:id/racetracks", to: "racetracks#create", as: "deck_racetracks"
 end
 # resources :bookings, only: [:index, :show, :edit, :update, :destroy]
 # resources :posters, only: [:index, :show, :create, :new] do

@@ -13,6 +13,8 @@ Question.destroy_all
 Deck.destroy_all
 User.destroy_all
 
+# add avatar to each user. need username!
+
 user_1 = User.create!(email:"marcelo@live.com", password:"123456" ,first_name:"Marcelo", last_name:"User")
 user_1.photo.attach(io: URI.open("https://res.cloudinary.com/ddpxdkwin/image/upload/v1693430408/marcelo_kiroir.jpg"), filename: "user_1.png", content_type: "image/png")
 
@@ -26,7 +28,7 @@ user_4 = User.create!(email:"kitty@live.com", password:"123456" ,first_name:"Kit
 user_4.photo.attach(io: URI.open("https://res.cloudinary.com/ddpxdkwin/image/upload/v1693948791/138801531_bsishx.png"), filename: "user_4.png", content_type: "image/png")
 user_4.save
 
-user_5 = User.create!(email:"david@live.com", password:"123456" ,first_name:"David", last_name:"User")
+user_5 = User.create!(email:"david@live.com", password:"123456" ,first_name:"David", last_name:"User", username: "Batman")
 user_5.photo.attach(io: URI.open("https://res.cloudinary.com/ddpxdkwin/image/upload/v1693423130/wcsd5gataw9n12srxxbj.png"), filename: "user_5.png", content_type: "image/png")
 user_5.save
 

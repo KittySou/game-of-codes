@@ -48,6 +48,14 @@ export default class extends Controller {
     // will be useful for display purposes (ie. show the completion %)
     this.totalNumberOfQuestions = null
 
+    // Contains whether a game is single player or multiplayer.
+    // By default, the games are single player.
+    this.isMultiplayer = false
+
+    if (this.racetrackIdValue > 0) {
+      this.isMultiplayer = true
+    }
+
     this.numberOfCorrectAnswers = 0
 
     this.startDate = null
