@@ -90,6 +90,13 @@
     border-bottom: none;
 }
 
-.red-name {
-  color: red;
+.picture-name-info {
+  display: flex;
+  align-items: center;
+}
+
+.name-beside-photo {
+  margin-left: 8px;
+  font-family: handjet;
+  font-size: 24px;
 }
