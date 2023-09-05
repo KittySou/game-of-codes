@@ -158,8 +158,8 @@ answer_64b = Answer.create!(content: "fraction", question: question_18)
 answer_65c = Answer.create!(content: "decimal point", question: question_18, right_answer: true)
 
 question_19 = Question.create!(content: "Choose the float.", deck: deck_1_multiplayer)
-answer_66 = Answer.create!(content: "Rootbeer", question: question_19, right_answer: true)
-answer_67 = Answer.create!(content: "3.14", question: question_19)
+answer_66 = Answer.create!(content: "Rootbeer", question: question_19)
+answer_67 = Answer.create!(content: "3.14", question: question_19, right_answer: true)
 answer_68 = Answer.create!(content: "25", question: question_19)
 
 question_20 = Question.create!(content: "Is rootbeer a float?", deck: deck_1_multiplayer)
