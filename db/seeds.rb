@@ -23,7 +23,7 @@ user_3 = User.create!(email:"grant@live.com", password:"123456" ,first_name:"Gra
 user_3.photo.attach(io: URI.open("https://res.cloudinary.com/ddpxdkwin/image/upload/v1693430408/grant_gbqxfk.jpg"), filename: "user_3.png", content_type: "image/png")
 
 user_4 = User.create!(email:"kitty@live.com", password:"123456" ,first_name:"Kitty", last_name:"User")
-user_4.photo.attach(io: URI.open("https://res.cloudinary.com/ddpxdkwin/image/upload/v1693423131/b7qgeg70ut2b7hvqqyxp.png"), filename: "user_4.png", content_type: "image/png")
+user_4.photo.attach(io: URI.open("https://res.cloudinary.com/ddpxdkwin/image/upload/v1693948791/138801531_bsishx.png"), filename: "user_4.png", content_type: "image/png")
 user_4.save
 
 user_5 = User.create!(email:"david@live.com", password:"123456" ,first_name:"David", last_name:"User")
