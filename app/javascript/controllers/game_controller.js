@@ -21,7 +21,10 @@ export default class extends Controller {
     "stopwatch",
   ]
 
-  static values = { deckId: Number }
+  static values = {
+    deckId: Number,
+    racetrackId: Number
+  }
 
   connect() {
     // INFO (Fred): This is a list of the instance variables used for the game's logic.
@@ -41,6 +44,14 @@ export default class extends Controller {
     // removing corrently answered questions from the deck, having the initial number
     // will be useful for display purposes (ie. show the completion %)
     this.totalNumberOfQuestions = null
+
+    // Contains whether a game is single player or multiplayer.
+    // By default, the games are single player.
+    this.isMultiplayer = false
+
+    if (this.racetrackIdValue > 0) {
+      this.isMultiplayer = true
+    }
 
     this.numberOfCorrectAnswers = 0
 

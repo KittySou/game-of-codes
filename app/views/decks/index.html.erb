@@ -13,14 +13,14 @@
 
 <div class="easy-cards">
   <% @decks.each_with_index do |deck, index| %>
-    <%= link_to deck_path(deck) do %>
+    <%= link_to deck.multiplayer? ? new_racetrack_path(deck) : deck_path(deck) do %>
     <%# link to , what appears, where %>
     <% if @completed_decks.include?(deck) %>
     <%# above logic can be reused if decks table adds a locked boolean %>
        <div class="unlock-card">
         <%= deck.name %>
       </div>
-    <% elsif index == @next_playable_deck_index || deck.level == "multiplayer" %>
+    <% elsif index == @next_playable_deck_index || deck.multiplayer? %>
       <div class="incomplete-card">
         <%= deck.name %>
       </div>
