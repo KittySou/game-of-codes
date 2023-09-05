@@ -29,7 +29,7 @@ body {
 
 h4 {
   font-family: 'handjet';
-  font-size: 40px;
+  font-size: 30px;
   letter-spacing: 5px;
   margin-bottom: 10px;
   margin-top: -10px;
@@ -89,8 +89,8 @@ h5 {
   border-color: black;
   font-size: 20px;
   border-radius: 0px;
-  letter-spacing: 1px;
-  width: 43%;
+  letter-spacing: 2px;
+  width: 50vw;
   height: 15%;
   // margin-top: 110px;
 }
@@ -110,8 +110,8 @@ h5 {
 
 .answers-container{
   font-family: 'handjet';
-  background-color: lightgray;
   border-width: 4px;
+  color: lightgray;
   border-color: black;
   font-size: 20px;
   border-radius: 0px;
@@ -121,8 +121,7 @@ h5 {
   justify-content: center;
   align-items: center;
   // margin: 110px;
-  border-radius: 4px;
-  letter-spacing: 5px;
+  letter-spacing: 2px;
   // width: 40%;
   // height: 12%;
   // display: flex;
@@ -142,30 +141,39 @@ h5 {
 //   align-items: center;
 // }
 
-.question .h1{
+.question h1{
   font-family: 'handjet';
-  font-size: 33px;
-  letter-spacing: 1px;
-  margin-bottom: 10px;
-  margin-top: -10px;
-}
-
-
-
-input[type="submit"] {
-  cursor: pointer;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  font-family: 'handjet';
-  background-color: lightgray;
-  border-width: 4px;
-  border-color: black;
   font-size: 20px;
-  border-radius: 0px;
   letter-spacing: 1px;
+  //margin-bottom: 10px;
+  // margin-top: -10px;
 }
+
+[data-game-target="answerConfirmation"] h3 {
+  font-family: 'handjet';
+  font-size: 20px;
+  text-align: left;
+  letter-spacing: 2px;
+  align-items: left;
+  margin-top: 10px;
+}
+
+// #check {
+//   cursor: pointer;
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: center;
+//   align-items: center;
+//   font-family: 'handjet';
+//   background-color: lightgray;
+//   border-width: 4px;
+//   border-color: black;
+//   font-size: 20px;
+//   border-radius: 0px;
+//   letter-spacing: 1px;
+//   width: 43%;
+//   height: 100%;
+// }
 
 h1 {
   font-family: 'handjet';
@@ -173,4 +181,42 @@ h1 {
   letter-spacing: 1px;
   margin-bottom: 10px;
   margin-top: -10px;
+}
+
+.btn-primary {
+  width: 50vw;
+  height: 100%;
+  margin-top: 20px;
+  border-radius: 0;
+  background-color: lightgray;
+  border-width: 4px;
+  border-color: black;
+  letter-spacing: 2px;
+  cursor: pointer;
+}
+
+[data-game-target="nextButton"] {
+  width: 50vw;
+  height: 100%;
+  margin-top: 20px;
+  border-radius: 0;
+  background-color: lightgray;
+  border-width: 4px;
+  border-color: black;
+  cursor: pointer;
+}
+
+label.btn.btn-secondary {
+  width: 50vw;
+  height: 100%;
+  margin-top: 20px;
+  border-radius: 0;
+  background-color: rgb(114, 114, 233);
+  border-width: 4px;
+  border-color: black;
+  cursor: pointer;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding: -10px;
 }
