@@ -6,12 +6,12 @@
         <% if current_page?(:controller => 'decks', :action => 'menu') %>
         <%= link_to "  ", "#" , class: "blank" %>
         <% else %>
-        <%= link_to " < ", :back , class: "btn btn-outline-dark navbar-text" %>
+        <%= link_to " < ", :back , class: "nav-btn black-text"%>
         <% end %>
       </div>
 
       <% if current_page?(:controller => 'decks', :action => 'show') %>
-        <div data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-outline-dark navbar-text">
+        <div data-bs-toggle="modal" data-bs-target="#exampleModal" class="nav-btn">
           ?
         </div>
         <!-- Modal (tips popup) -->
@@ -36,7 +36,11 @@
       <% end %>
 
       <div>
-        <%= link_to " ≡ ", "/menu" , class: "btn btn-outline-dark  navbar-text", style: "font-family: math; color: black;" %>
+        <% if current_page?(:controller => 'decks', :action => 'menu') %>
+        <%= link_to " ≡ ", :back , class: "nav-btn", style: "font-family: math; color: black;" %>
+        <% else %>
+        <%= link_to " ≡ ", "/menu" , class: "nav-btn", style: "font-family: math; color: black;" %>
+        <% end %>
       </div>
 
     </div>
