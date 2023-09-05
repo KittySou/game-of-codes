@@ -121,7 +121,7 @@ answer_46 = Answer.create!(content: "Yes", question: question_12)
 answer_47 = Answer.create!(content: "Only if odd", question: question_12)
 
 question_13 = Question.create!(content: "Does a float contain a decimal point?", deck: deck_3)
-answer_49 = Answer.create!(content:  "Yes", question: question_3, right_answer: true)
+answer_49 = Answer.create!(content:  "Yes", question: question_13, right_answer: true)
 answer_50 = Answer.create!(content: "No", question: question_13)
 answer_51 = Answer.create!(content: "Sometimes", question: question_13)
 
