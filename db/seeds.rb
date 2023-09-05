@@ -64,7 +64,6 @@ question_5 = Question.create!(content: "Which method transforms a number into a 
 answer_17 = Answer.create!(content: "100.to_s", question: question_5, right_answer: true)
 answer_18 = Answer.create!(content: "100 = string", question: question_5)
 answer_19 = Answer.create!(content: "100_become_string", question: question_5)
-answer_20 = Answer.create!(content: "8", question: question_5)
 
 deck_1_level_2 = Deck.create!(name: "array2", tips: "check lecture", level: 2)
 deck_2_level_2 = Deck.create!(name: "array2", tips: "check lecture", level: 2)
@@ -122,7 +121,7 @@ answer_46 = Answer.create!(content: "Yes", question: question_12)
 answer_47 = Answer.create!(content: "Only if odd", question: question_12)
 
 question_13 = Question.create!(content: "Does a float contain a decimal point?", deck: deck_3)
-answer_49 = Answer.create!(content:  "Yes", question: question_3, right_answer: true)
+answer_49 = Answer.create!(content:  "Yes", question: question_13, right_answer: true)
 answer_50 = Answer.create!(content: "No", question: question_13)
 answer_51 = Answer.create!(content: "Sometimes", question: question_13)
 
