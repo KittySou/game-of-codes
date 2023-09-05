@@ -1,10 +1,4 @@
-<div
-  data-controller="game"
-  data-game-deck-id-value="<%= @deck.id %>"
-  data-game-racetrack-id-value="<%= params[:racetrack] %>"
-  data-game-racetrack-progress-url-value="<%= racetrack_progress_path(params[:racetrack]) %>"
-  data-game-player-id-value="<%= current_user.id %>"
->
+<div data-controller="game" data-game-deck-id-value="<%= @deck.id %>">
   <div class="container">
 
     <div class="box-bigger">
