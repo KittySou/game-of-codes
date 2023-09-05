@@ -18,6 +18,7 @@ export default class extends Controller {
     "congratulationsTemplate",
     "tipsHeader",
     "deckHeader",
+    "stopwatch",
   ]
 
   static values = { deckId: Number }
@@ -42,12 +43,35 @@ export default class extends Controller {
     this.totalNumberOfQuestions = null
 
     this.numberOfCorrectAnswers = 0
+
+    this.startDate = null
+    this.timer = null
   }
 
   start() {
     this.tipsTarget.classList.add("d-none")
     this.startButtonTarget.classList.add("d-none")
     this.#fetchDeckQuestions()
+    this.#timeStart()
+  }
+
+  #getCurrentTime() {
+    const dateTimer = new Date(new Date().valueOf() - this.startDate.valueOf());
+
+    return ('0'+dateTimer.getUTCMinutes()).slice(-2) + ':' +
+      ('0'+dateTimer.getUTCSeconds()).slice(-2) + ':' +
+      ('0'+dateTimer.getUTCMilliseconds()).slice(-3,-1);
+  }
+
+  #timeStart() {
+    this.startDate = new Date();
+    this.timer = setInterval(() => {
+      this.stopwatchTarget.innerHTML = this.#getCurrentTime()
+    }, 100);
+  }
+
+  #timeStop() {
+    clearInterval(this.timer);
   }
 
   send(event) {
@@ -68,6 +92,8 @@ export default class extends Controller {
       const template = this.congratulationsTemplateTarget.innerHTML
       const output = Mustache.render(template)
       this.gameAreaTarget.innerHTML = output
+      this.#timeStop()
+
       return
     }
 

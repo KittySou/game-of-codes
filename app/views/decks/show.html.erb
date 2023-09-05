@@ -28,72 +28,10 @@
             </div>
           </div>
 
-          <button class="next" data-game-target="startButton" data-action="click->game#start">
-            Next
-          </button>
-
           <div data-game-target="questionContainer" class="question"></div>
 
           <div data-game-target="answerConfirmation" class="answer"></div>
 
-          <div class="wrapper">
-      <div id="stopwatch">00:00:00:00</div>
-      <ul id="buttons">
-        <li><button id="start">Start</button></li>
-        <li><button id="pause">Stop</button></li>
-        <li><button id="reset">Reset</button></li>
-      </ul>
-    </div>
 
-    <script>
-      const watch = document.querySelector("#stopwatch");
-      let millisecound = 0;
-      let timer;
-
-      function timeStart(){
-        watch.style.color = "#0f62fe";
-        clearInterval(timer);
-        timer = setInterval(() => {
-          millisecound += 10;
-
-          let dateTimer = new Date(millisecound);
-
-          watch.innerHTML =
-          ('0'+dateTimer.getUTCMinutes()).slice(-2) + ':' +
-          ('0'+dateTimer.getUTCSeconds()).slice(-2) + ':' +
-          ('0'+dateTimer.getUTCMilliseconds()).slice(-3,-1);
-        }, 10);
-      }
-
-
-      function timePaused() {
-        watch.style.color = "red";
-        clearInterval(timer);
-      }
-
-      function timeReset(){
-        setInterval(timer)
-        millisecound = 0;
-        watch.innerHTML = "00:00:00";
-      }
-
-      document.addEventListener('click', (e) => {
-        const el = e.target;
-
-        if(el.id === 'start') timeStart();
-        if(el.id === 'pause') timePaused();
-        if(el.id === 'reset') timeReset();
-      })
-    </script>
-
-          <%= render "question_and_answers_template" %>
-          <%= render "congratulations_template" %>
-
-
-
+        <%= render "decks/progress_bar_levels" %>
         </div>
-      </div>
-    </div>
-
-  <%= render "decks/progress_bar_levels" %>
-</div>
