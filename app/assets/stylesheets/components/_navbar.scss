@@ -85,5 +85,12 @@
 }
 
 .picture-name-info {
-  color: red;
+  display: flex;
+  align-items: center;
+}
+
+.name-beside-photo {
+  margin-left: 8px;
+  font-family: handjet;
+  font-size: 24px;
 }
