@@ -1,5 +1,6 @@
 .green-bar {
   width: 5%;
+  transition: width 0.5s ease-in;
   height: 40px;
   background-color: green;
   position: absolute;
