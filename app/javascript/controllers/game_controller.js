@@ -1,5 +1,7 @@
 import { Controller } from "@hotwired/stimulus"
 import Mustache from "mustache"
+import { createConsumer } from "@rails/actioncable"
+
 
 // Connects to data-controller="game"
 export default class extends Controller {
@@ -23,7 +25,9 @@ export default class extends Controller {
 
   static values = {
     deckId: Number,
-    racetrackId: Number
+    racetrackId: Number,
+    racetrackProgressUrl: String,
+    playerId: Number
   }
 
   connect() {
@@ -48,15 +52,15 @@ export default class extends Controller {
     // Contains whether a game is single player or multiplayer.
     // By default, the games are single player.
     this.isMultiplayer = false
-
-    if (this.racetrackIdValue > 0) {
-      this.isMultiplayer = true
-    }
+    this.#checkIfMultiplayer()
 
     this.numberOfCorrectAnswers = 0
 
     this.startDate = null
     this.timer = null
+    if(this.isMultiplayer) {
+      this.#subscribeToRacetrack()
+    }
   }
 
   start() {
@@ -104,11 +108,14 @@ export default class extends Controller {
       const output = Mustache.render(template)
       this.gameAreaTarget.innerHTML = output
       this.#timeStop()
+      this.#broadcastProgress()
+
 
       return
     }
 
     if (userGuessedRight) {
+      this.#broadcastProgress()
       this.answerConfirmationTarget.innerHTML = "<h3>You guessed right!</h3>"
       // make question disappear from array of questions
       // move on to the next question
@@ -192,5 +199,48 @@ export default class extends Controller {
   setHeader() {
     this.tipsHeaderTarget.classList.add('d-none')
     this.deckHeaderTarget.classList.remove('d-none')
+  }
+
+  #checkIfMultiplayer() {
+    this.isMultiplayer = this.racetrackIdValue > 0
+  }
+
+  #subscribeToRacetrack() {
+    this.channel = createConsumer().subscriptions.create(
+      { channel: "RacetrackChannel", id: this.racetrackIdValue },
+      { received: (data) => {
+        if (data.playerId !== this.playerIdValue) {
+          if (data.isDeckCompleted) {
+            this.gameAreaTarget.innerHTML = "<h4>You lost!</h4>"
+              // need new LOST template
+              // stop clock for loser
+          }
+        }
+      }}
+    )
+    console.log(`Subscribed to the chatroom with the id ${this.racetrackIdValue}.`)
+  }
+
+  #broadcastProgress() {
+    const body = {
+      numberOfCorrectAnswers: this.numberOfCorrectAnswers,
+      isDeckCompleted: this.isDeckCompleted,
+      playerId: this.playerIdValue
+    }
+
+    const token = document.getElementsByName(
+      "csrf-token"
+    )[0].content;
+
+    fetch(this.racetrackProgressUrlValue, {
+      method: "POST",
+      headers: {
+        "Accept": "application/json",
+        "X-CSRF-Token": token,
+        "Content-Type": "application/json"
+       },
+
+      body: JSON.stringify(body)
+    })
   }
 }
