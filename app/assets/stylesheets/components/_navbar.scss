@@ -42,19 +42,26 @@
 }
 
 .modal-body {
-  font-size: 30px;
   border-width: 3px;
   background-color: rgba(255, 229, 98, 0.631);
   font-family: handjet;
-  font-size: 25px;
+  font-size: 27px;
 }
 
 .modal-header {
   background-color: rgba(255, 229, 98, 0.631);
+  border-radius: 0%;
+}
+
+.modal-header h1{
+  font-family: 'handjet';
+  font-size: 50px;
+  letter-spacing: 1px;
 }
 
 .modal-footer {
   background-color: rgba(255, 229, 98, 0.631);
+  border-radius: 0%;
 }
 
 .button-secondary {
@@ -76,4 +83,20 @@
 
 .modal-tips .modal-content {
   border-radius: 0;
+}
+
+.modal-header {
+    background-color: rgba(255, 229, 98, 0.631);
+    border-bottom: none;
+}
+
+.picture-name-info {
+  display: flex;
+  align-items: center;
+}
+
+.name-beside-photo {
+  margin-left: 8px;
+  font-family: handjet;
+  font-size: 24px;
 }

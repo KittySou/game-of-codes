@@ -55,7 +55,8 @@ h4 {
 .box-smaller {
   // width: 250px;
   // height: 320px;
-  background-color: rgb(255, 255, 255);
+  width: 80vw;
+  background-color: white;
   padding: 20px;
   display: flex;
   flex-direction: column;
@@ -92,7 +93,6 @@ h5 {
   letter-spacing: 2px;
   width: 50vw;
   height: 15%;
-  // margin-top: 110px;
 }
 
 .question h1 {
@@ -219,4 +219,13 @@ label.btn.btn-secondary {
   margin-left: auto;
   margin-right: auto;
   padding: -10px;
+}
+
+.stopwatch{
+  background-color: rgb(249, 242, 118);
+  border-width: 4px;
+  border: solid 5px black;
+  font-size: 25px;
+  height: 50px;
+  letter-spacing: 1px;
 }

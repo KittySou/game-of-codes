@@ -12,7 +12,6 @@ export default class extends Controller {
     "questionTemplate",
     "form",
     "answerConfirmation",
-    "checkButton",
     "nextButton",
     "gameArea",
     "answerInput",
@@ -74,8 +73,7 @@ export default class extends Controller {
     const dateTimer = new Date(new Date().valueOf() - this.startDate.valueOf());
 
     return ('0'+dateTimer.getUTCMinutes()).slice(-2) + ':' +
-      ('0'+dateTimer.getUTCSeconds()).slice(-2) + ':' +
-      ('0'+dateTimer.getUTCMilliseconds()).slice(-3,-1);
+      ('0'+dateTimer.getUTCSeconds()).slice(-2);
   }
 
   #timeStart() {
@@ -89,8 +87,7 @@ export default class extends Controller {
     clearInterval(this.timer);
   }
 
-  send(event) {
-    event.preventDefault()
+  send() {
     // TODO (Fred): Check if we can do the line below with Stimulus...
     const userAnswer = document.querySelector("input[name=answer]:checked").value
     const userGuessedRight = this.currentQuestion.answers.find(answer => answer.id === userAnswer).rightAnswer
@@ -105,11 +102,11 @@ export default class extends Controller {
         headers: { "Accept": "application/json" }
       })
       const template = this.congratulationsTemplateTarget.innerHTML
-      const output = Mustache.render(template)
+      const output = Mustache.render(template, { time: this.#getCurrentTime() })
       this.gameAreaTarget.innerHTML = output
       this.#timeStop()
       this.#broadcastProgress()
-
+      this.stopwatchTarget.innerText = "DONE"
 
       return
     }
@@ -123,7 +120,6 @@ export default class extends Controller {
       this.answerConfirmationTarget.innerHTML = "<h3>Oops wrong answer!</h3>"
     }
     this.nextButtonTarget.classList.remove("d-none")
-    this.checkButtonTarget.classList.add("d-none")
     //TODO: querySelectorAll on radio buttons .foreach -> disable = true
     this.answerInputTarget.disabled = true
   }
@@ -148,6 +144,11 @@ export default class extends Controller {
     this.currentQuestion = this.#getRandomElementFromArray(this.deck)
     const output = Mustache.render(template, this.currentQuestion)
     this.questionContainerTarget.innerHTML = output
+    this.questionContainerTarget.querySelectorAll('input[type=radio]').forEach((input) => {
+      input.addEventListener('change', () => {
+        this.send()
+      })
+    })
   }
 
   #getRandomElementFromArray(array) {

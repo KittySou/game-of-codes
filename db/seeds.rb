@@ -25,7 +25,7 @@ user_3 = User.create!(email:"grant@live.com", password:"123456" ,first_name:"Gra
 user_3.photo.attach(io: URI.open("https://res.cloudinary.com/ddpxdkwin/image/upload/v1693430408/grant_gbqxfk.jpg"), filename: "user_3.png", content_type: "image/png")
 
 user_4 = User.create!(email:"kitty@live.com", password:"123456" ,first_name:"Kitty", last_name:"User", username: "hello_kitty123")
-user_4.photo.attach(io: URI.open("https://res.cloudinary.com/ddpxdkwin/image/upload/v1693423131/b7qgeg70ut2b7hvqqyxp.png"), filename: "user_4.png", content_type: "image/png")
+user_4.photo.attach(io: URI.open("https://res.cloudinary.com/ddpxdkwin/image/upload/v1693948791/138801531_bsishx.png"), filename: "user_4.png", content_type: "image/png")
 user_4.save
 
 user_5 = User.create!(email:"david@live.com", password:"123456" ,first_name:"David", last_name:"User", username: "davidwagon")
@@ -66,7 +66,6 @@ question_5 = Question.create!(content: "Which method transforms a number into a 
 answer_17 = Answer.create!(content: "100.to_s", question: question_5, right_answer: true)
 answer_18 = Answer.create!(content: "100 = string", question: question_5)
 answer_19 = Answer.create!(content: "100_become_string", question: question_5)
-answer_20 = Answer.create!(content: "8", question: question_5)
 
 deck_1_level_2 = Deck.create!(name: "array2", tips: "check lecture", level: 2)
 deck_2_level_2 = Deck.create!(name: "array2", tips: "check lecture", level: 2)
@@ -124,7 +123,7 @@ answer_46 = Answer.create!(content: "Yes", question: question_12)
 answer_47 = Answer.create!(content: "Only if odd", question: question_12)
 
 question_13 = Question.create!(content: "Does a float contain a decimal point?", deck: deck_3)
-answer_49 = Answer.create!(content:  "Yes", question: question_3, right_answer: true)
+answer_49 = Answer.create!(content:  "Yes", question: question_13, right_answer: true)
 answer_50 = Answer.create!(content: "No", question: question_13)
 answer_51 = Answer.create!(content: "Sometimes", question: question_13)
 

@@ -1,7 +1,7 @@
 <template data-game-target="questionTemplate">
   <div class="questions-container">
   <h1>{{content}}</h1>
-  <form action="" data-action="submit->game#send" data-game-target="form">
+  <form action="" data-game-target="form">
 
     <div class="answers-container">
       {{#answers}}
@@ -11,7 +11,6 @@
         </div>
       {{/answers}}
     </div>
-    <input type="submit" class="btn btn-primary" value="Check" data-game-target="checkButton">
     <button
       type="button"
       class="d-none"
