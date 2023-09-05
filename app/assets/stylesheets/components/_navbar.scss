@@ -42,16 +42,21 @@
 }
 
 .modal-body {
-  font-size: 30px;
   border-width: 3px;
   background-color: rgba(255, 229, 98, 0.631);
   font-family: handjet;
-  font-size: 25px;
+  font-size: 27px;
 }
 
 .modal-header {
   background-color: rgba(255, 229, 98, 0.631);
   border-radius: 0%;
+}
+
+.modal-header h1{
+  font-family: 'handjet';
+  font-size: 50px;
+  letter-spacing: 1px;
 }
 
 .modal-footer {
@@ -82,4 +87,5 @@
 
 .modal-header {
     background-color: rgba(255, 229, 98, 0.631);
+    border-bottom: none;
 }
