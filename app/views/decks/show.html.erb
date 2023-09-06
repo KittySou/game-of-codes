@@ -2,9 +2,12 @@
   data-controller="game"
   data-game-deck-id-value="<%= @deck.id %>"
   data-game-racetrack-id-value="<%= params[:racetrack] %>"
-  data-game-racetrack-progress-url-value="<%= racetrack_progress_path(params[:racetrack]) %>"
   data-game-player-id-value="<%= current_user.id %>"
+  data-game-opponent-id-value="<%= @opponent.id if @multiplayer %>"
 >
+
+
+
   <div class="container">
 
     <div class="box-bigger">
@@ -37,7 +40,9 @@
           <div data-game-target="questionContainer" class="question"></div>
 
           <div data-game-target="answerConfirmation" class="answer"></div>
+        <% if @multiplayer %>
+        <%= render "decks/progress_bar_levels", user: @opponent, opponent: true %>
+        <% end %>
+        <%= render "decks/progress_bar_levels", user: current_user, opponent: false %>
 
-
-        <%= render "decks/progress_bar_levels" %>
         </div>

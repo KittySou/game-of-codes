@@ -20,13 +20,14 @@ export default class extends Controller {
     "tipsHeader",
     "deckHeader",
     "stopwatch",
+    "opponentProgressBar"
   ]
 
   static values = {
     deckId: Number,
     racetrackId: Number,
-    racetrackProgressUrl: String,
-    playerId: Number
+    playerId: Number,
+    opponentId: Number
   }
 
   connect() {
@@ -87,6 +88,14 @@ export default class extends Controller {
     clearInterval(this.timer);
   }
 
+  #endGame(template) {
+    const output = Mustache.render(template, { time: this.#getCurrentTime() })
+    this.gameAreaTarget.innerHTML = output
+    this.#timeStop()
+    if (this.isMultiplayer) { this.#broadcastProgress() }
+    this.stopwatchTarget.innerText = "DONE"
+  }
+
   send() {
     // TODO (Fred): Check if we can do the line below with Stimulus...
     const userAnswer = document.querySelector("input[name=answer]:checked").value
@@ -94,25 +103,42 @@ export default class extends Controller {
     if (userGuessedRight) {
       this.#removeCurrentQuestionFromDeck()
       this.numberOfCorrectAnswers++
-      this.#updateProgressBar()
+      this.#updateProgressBar( this.progressBarTarget, this.numberOfCorrectAnswers)
     }
     if (this.isDeckCompleted) {
-      const url = `/decks/${this.deckIdValue}/completed`
-      fetch(url, {
-        headers: { "Accept": "application/json" }
-      })
-      const template = this.congratulationsTemplateTarget.innerHTML
-      const output = Mustache.render(template, { time: this.#getCurrentTime() })
-      this.gameAreaTarget.innerHTML = output
-      this.#timeStop()
-      this.#broadcastProgress()
-      this.stopwatchTarget.innerText = "DONE"
+      const token = document.getElementsByName(
+        "csrf-token"
+      )[0].content;
+      const headers = {
+        "Accept": "application/json",
+        "X-CSRF-Token": token,
+        "Content-Type": "application/json"
+      }
 
+      if (this.isMultiplayer) {
+        const body = {
+          winning_player_id: this.playerIdValue
+        }
+        const url = `/racetracks/${this.racetrackIdValue}`
+        fetch(url, {
+          headers: headers,
+          method: "PATCH",
+          body: JSON.stringify(body)
+        })
+      } else {
+        const url = `/decks/${this.deckIdValue}/completed`
+        fetch(url, {
+          headers: headers,
+          method: "POST"
+        })
+      }
+
+      this.#endGame(this.congratulationsTemplateTarget.innerHTML)
       return
     }
 
     if (userGuessedRight) {
-      this.#broadcastProgress()
+      if (this.isMultiplayer) { this.#broadcastProgress() }
       this.answerConfirmationTarget.innerHTML = "<h3>You guessed right!</h3>"
       // make question disappear from array of questions
       // move on to the next question
@@ -124,14 +150,12 @@ export default class extends Controller {
     this.answerInputTarget.disabled = true
   }
 
-  #updateProgressBar() {
-    console.log(this.progressBarTarget)
-    console.log('Score:', this.numberOfCorrectAnswers / this.totalNumberOfQuestions * 100)
-    const percentage = this.numberOfCorrectAnswers / this.totalNumberOfQuestions * 100
-    // 1. update the progressbar width
-    this.progressBarTarget.querySelector('.green-bar').style.width = `${percentage}%`
+  #updateProgressBar(progressBar, numberOfCorrectAnswers) {
+    const percentage = numberOfCorrectAnswers / this.totalNumberOfQuestions * 100
+    // 1. update the progress bar width
+    progressBar.querySelector('.green-bar').style.width = `${percentage}%`
     // 2. update the text
-    this.progressBarTarget.querySelector('.completed-text').innerText = `DECK ${percentage}% COMPLETED!`
+    progressBar.querySelector('.completed-text').innerText = `DECK ${percentage}% COMPLETED!`
   }
 
   nextQuestion() {
@@ -168,28 +192,28 @@ export default class extends Controller {
 
   async #fetchDeckQuestions() {
     // INFO: this is for development purposes only
-    // this.deck = [{
-      //   "content": "Quel est la somme de 1 et 1?",
-      //   "answers": [
-        //     {"id": "1", "content": "3", "rightAnswer": false},
-        //     {"id": "2", "content": "1", "rightAnswer": false},
-        //     {"id": "3", "content": "2", "rightAnswer": true},
-        //     {"id": "4", "content": "4", "rightAnswer": false}
-        //   ]
-        // }]
-        //     this.totalNumberOfQuestions = this.deck.length
-        //     this.#setNewQuestion()
+    this.deck = [{
+        "content": "Quel est la somme de 1 et 1?",
+        "answers": [
+            {"id": "1", "content": "3", "rightAnswer": false},
+            {"id": "2", "content": "1", "rightAnswer": false},
+            {"id": "3", "content": "2", "rightAnswer": true},
+            {"id": "4", "content": "4", "rightAnswer": false}
+          ]
+        }]
+            this.totalNumberOfQuestions = this.deck.length
+            this.#setNewQuestion()
 
     // INFO: this is the NEEDED code to make the game work
-    const url = `/decks/${this.deckIdValue}/questions`
-    await fetch(url, {headers: { "Accept": "application/json" }})
-    .then(response => response.json())
-    .then((data) => {
-      this.deck = data
-      this.totalNumberOfQuestions = this.deck.length
-      this.#setNewQuestion()
-      this.setHeader()
-      })
+    // const url = `/decks/${this.deckIdValue}/questions`
+    // await fetch(url, {headers: { "Accept": "application/json" }})
+    // .then(response => response.json())
+    // .then((data) => {
+    //   this.deck = data
+    //   this.totalNumberOfQuestions = this.deck.length
+    //   this.#setNewQuestion()
+    //   this.setHeader()
+    //   })
   }
 
 //   setHeader() {
@@ -210,16 +234,16 @@ export default class extends Controller {
     this.channel = createConsumer().subscriptions.create(
       { channel: "RacetrackChannel", id: this.racetrackIdValue },
       { received: (data) => {
-        if (data.playerId !== this.playerIdValue) {
+        if (data.playerId === this.opponentIdValue) {
+          this.#updateProgressBar(this.opponentProgressBarTarget, data.numberOfCorrectAnswers)
           if (data.isDeckCompleted) {
-            this.gameAreaTarget.innerHTML = "<h4>You lost!</h4>"
+            this.#endGame('<h3>Oh no, you lost :(<h3>')
               // need new LOST template
               // stop clock for loser
           }
         }
       }}
     )
-    console.log(`Subscribed to the chatroom with the id ${this.racetrackIdValue}.`)
   }
 
   #broadcastProgress() {
@@ -229,19 +253,6 @@ export default class extends Controller {
       playerId: this.playerIdValue
     }
 
-    const token = document.getElementsByName(
-      "csrf-token"
-    )[0].content;
-
-    fetch(this.racetrackProgressUrlValue, {
-      method: "POST",
-      headers: {
-        "Accept": "application/json",
-        "X-CSRF-Token": token,
-        "Content-Type": "application/json"
-       },
-
-      body: JSON.stringify(body)
-    })
+    this.channel.send(body)
   }
 }
