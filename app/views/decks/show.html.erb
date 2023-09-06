@@ -11,14 +11,15 @@
             <div class="box-smaller">
 
               <div class="tips-card"
-                data-game-target="tips">
+                data-game-target="tips"
+                style="margin-top: -40px">
+                <iframe src="https://giphy.com/embed/59ADeszMVpHgNBe7Ju" width="150" height="150" frameBorder="0" class="giphy-embed" style="margin-bottom: -20px" allowFullScreen></iframe>
                 <h5><%= @deck.tips %></h5>
               </div>
 
               <button class="next" data-game-target="startButton" data-action="click->game#start">
                 Next
               </button>
-
               <div data-game-target="questionContainer" class="question"></div>
 
               <div data-game-target="answerConfirmation" class="answer"></div>
