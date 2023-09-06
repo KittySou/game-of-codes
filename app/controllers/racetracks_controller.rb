@@ -1,5 +1,5 @@
 class RacetracksController < ApplicationController
-  before_action :set_deck, except: [:progress]
+  before_action :set_deck, except: [:update]
   # skip_before_action :verify_authenticity_token, only: [:progress]
 
   def new
@@ -18,16 +18,15 @@ class RacetracksController < ApplicationController
     end
   end
 
-  def progress
+  def update
     @racetrack = Racetrack.find(params[:id])
-    RacetrackChannel.broadcast_to(
-      @racetrack,
-      {
-        numberOfCorrectAnswers: params[:numberOfCorrectAnswers],
-        isDeckCompleted: params[:isDeckCompleted],
-        playerId: params[:playerId]
-      }
-    )
+    return head :forbidden if @racetrack.completed
+
+    @winner = User.find(params[:winning_player_id])
+    @racetrack.completed = true
+    @racetrack.winner = @winner
+    @racetrack.save
+    head :no_content
   end
 
   private

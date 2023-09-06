@@ -144,13 +144,13 @@ deck_4_multiplayer = Deck.create!(name: "Arrays", tips: "check lecture", level: 
 deck_5_multiplayer = Deck.create!(name: "Variables", tips: "check lecture", level: 100)
 
 question_16 = Question.create!(content: "Will dividing one integer by another integer give you a float?", deck: deck_1_multiplayer)
-answer_60 = Answer.create!(content: "Never", question: question_16)
-answer_61 = Answer.create!(content: "Sometimes", question: question_16, right_answer: true)
+answer_60 = Answer.create!(content: "Never", question: question_16, right_answer: true)
+answer_61 = Answer.create!(content: "Sometimes", question: question_16)
 answer_62 = Answer.create!(content: "Always", question: question_16)
 
 question_17 = Question.create!(content: "If you divide 4 by 3, is the result a float?", deck: deck_1_multiplayer)
-answer_63 = Answer.create!(content: "Yes", question: question_17, right_answer: true)
-answer_64 = Answer.create!(content: "No", question: question_17)
+answer_63 = Answer.create!(content: "Yes", question: question_17)
+answer_64 = Answer.create!(content: "No", question: question_17, right_answer: true)
 answer_65 = Answer.create!(content: "Sometimes", question: question_17)
 
 question_18 = Question.create!(content: "All floats contain a ____", deck: deck_1_multiplayer)
