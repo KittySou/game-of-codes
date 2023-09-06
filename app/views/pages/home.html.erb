@@ -8,25 +8,10 @@
   </div>
 
   <% if user_signed_in? %>
-    <div class="start-container">
-      <div class="home-btn" id="black-text">
-        <%= link_to "START", levels_path %>
-      </div>
-    </div>
-
+      <%= link_to "START", levels_path, class: "start-container home-btn", style: "color: black", id: "black-text" %>
     <% else %>
-
-      <div class="start-container">
-         <div class="home-btn" id="login-button">
-          <%= link_to "LOGIN", new_user_session_path, style: "color: black" %>
-         </div>
-       </div>
-
-     <div class="start-container">
-        <div class="home-btn" id="signup-button">
-          <%= link_to "SIGN UP", new_user_registration_path, style: "color: black" %>
-        </div>
-      </div>
-    <% end %>
+      <%= link_to "LOGIN", new_user_session_path, class: "start-container home-btn", style: "color: black", id: "black-text" %>
+      <%= link_to "SIGN UP", new_user_registration_path, class: "start-container home-btn", style: "color: black", id: "black-text" %>
+  <% end %>
 
 </div>
