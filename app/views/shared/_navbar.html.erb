@@ -14,7 +14,7 @@
       </div>
 
       <% if current_page?(:controller => 'decks', :action => 'show') %>
-       <button data-bs-toggle="modal" data-bs-target="#exampleModal" class="nav-btn">?</button>
+       <button data-bs-toggle="modal" data-bs-target="#exampleModal" class="nav-btn tips-btn d-none">?</button>
 
         <!-- Modal (tips popup) -->
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -26,7 +26,7 @@
               </div>
 
               <div class="modal-body">
-                <%= @deck.tips %>
+                <h2><%= @deck.tips %></h2>
               </div>
 
               <div class="modal-footer">
@@ -46,19 +46,25 @@
           ≡
         </div>
         <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModal2Label" aria-hidden="true">
-          <div class="modal-dialog modal-tips">
+          <div class="modal-dialog modal-tips modal-menu">
             <div class="modal-content">
               <div class="modal-header-menu">
 
-                <h1 class="modal-title-menu" id="exampleModal2Label">MENU</h1>
+              <h1 class="modal-title-menu" id="exampleModal2Label">MENU</h1>
+                <div class="user-first-name">
+                    <%= current_user.first_name %>
+                  <div class="user-avatar">
+                    <%= cl_image_tag current_user.photo.key, class: "avatar" %>
+                  </div>
+                </div>
               </div>
 
               <div class="modal-body-menu">
                 <%= render "decks/menu" %>
               </div>
 
-              <div class="modal-footer" id="menu">
-                <button type="button" class="button-secondary" data-bs-dismiss="modal">Close</button>
+              <div class="modal-footer-menu" id="menu">
+                <button type="button" class="close-button" data-bs-dismiss="modal">Close</button>
               </div>
             </div>
           </div>

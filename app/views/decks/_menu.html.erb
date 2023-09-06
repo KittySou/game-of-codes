@@ -5,19 +5,19 @@
       <div class="level-cards">
         <%= link_to "/", style: "text-decoration: none;" do %>
           <div class="level-card easy" style="border-style: solid; align-items:center">
-            <p>HOME</p>
+            <h1>HOME</h1>
           </div>
         <% end %>
 
         <%= link_to "/levels", style: "text-decoration: none;" do %>
           <div class="level-card intermediate" style="border-style: solid;">
-            <p>LEVELS</p>
+            <h1>LEVELS</h1>
           </div>
         <% end %>
 
         <%= link_to destroy_user_session_path, data: {turbo_method: :delete}, style: "text-decoration: none;" do %>
           <div class="level-card advanced" style="border-style: solid;">
-            <p>LOG OUT</p>
+            <h1>LOG OUT</h1>
           </div>
         <% end %>
       </div>
