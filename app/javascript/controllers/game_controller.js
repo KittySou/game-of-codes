@@ -17,7 +17,6 @@ export default class extends Controller {
     "congratulationsTemplate",
     "tipsHeader",
     "deckHeader",
-<<<<<<< HEAD
     "stopwatch",
     "opponentProgressBar"
   ]
@@ -28,12 +27,6 @@ export default class extends Controller {
     playerId: Number,
     opponentId: Number
   }
-=======
-    "stopwatch"
-  ]
-
-  static values = { deckId: Number }
->>>>>>> master
 
   connect() {
     // INFO (Fred): This is a list of the instance variables used for the game's logic.
@@ -103,7 +96,6 @@ export default class extends Controller {
       this.#updateProgressBar( this.progressBarTarget, this.numberOfCorrectAnswers)
     }
     if (this.isDeckCompleted) {
-<<<<<<< HEAD
       const token = document.getElementsByName(
         "csrf-token"
       )[0].content;
@@ -112,17 +104,6 @@ export default class extends Controller {
         "X-CSRF-Token": token,
         "Content-Type": "application/json"
       }
-=======
-      const url = `/decks/${this.deckIdValue}/completed`
-      fetch(url, {
-        headers: { "Accept": "application/json" }
-      })
-      const template = this.congratulationsTemplateTarget.innerHTML
-      const output = Mustache.render(template, { time: this.#getCurrentTime() })
-      this.gameAreaTarget.innerHTML = output
-      this.#timeStop()
-      this.stopwatchTarget.innerText = "DONE"
->>>>>>> master
 
       if (this.isMultiplayer) {
         const body = {
@@ -147,10 +128,7 @@ export default class extends Controller {
     }
 
     if (userGuessedRight) {
-<<<<<<< HEAD
       if (this.isMultiplayer) { this.#broadcastProgress() }
-=======
->>>>>>> master
       this.answerConfirmationTarget.innerHTML = "<h3>You guessed right!</h3>"
       // make question disappear from array of questions
       // move on to the next question
@@ -241,7 +219,6 @@ export default class extends Controller {
     this.tipsHeaderTarget.classList.add('d-none')
     this.deckHeaderTarget.classList.remove('d-none')
   }
-<<<<<<< HEAD
 
   #checkIfMultiplayer() {
     this.isMultiplayer = this.racetrackIdValue > 0
@@ -272,6 +249,4 @@ export default class extends Controller {
 
     this.channel.send(body)
   }
-=======
->>>>>>> master
 }
