@@ -41,12 +41,33 @@
 
       <div>
         <% if current_page?(:controller => 'decks', :action => 'menu') %>
-        <%= link_to " ≡ ", 'javascript:history.back()' , class: "nav-btn", style: "font-family: math; color: black;" %>
+        <%= link_to " ≡ ", 'javascript:history.back()', class: "nav-btn", style: "font-family: math; color: black;" %>
         <% else %>
-        <%= link_to " ≡ ", "/menu" , class: "nav-btn", style: "font-family: math; color: black;" %>
+          <%#= link_to " ≡ ", "/menu" , class: "nav-btn", style: "font-family: math; color: black;" %>
+         <div data-bs-toggle="modal" data-bs-target="#exampleModal2" class="nav-btn">
+          ≡
+        </div>
+        <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModal2Label" aria-hidden="true">
+          <div class="modal-dialog modal-tips">
+            <div class="modal-content">
+              <div class="modal-header">
+
+                <h1 class="modal-title" id="exampleModal2Label">MENU</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+
+              <div class="modal-body">
+                <%= render "decks/menu" %>
+              </div>
+
+              <div class="modal-footer">
+                <button type="button" class="button-secondary" data-bs-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
         <% end %>
       </div>
-
     </div>
   </div>
 <% end %>
