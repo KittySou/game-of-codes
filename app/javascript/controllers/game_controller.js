@@ -17,7 +17,7 @@ export default class extends Controller {
     "congratulationsTemplate",
     "tipsHeader",
     "deckHeader",
-    "stopwatch",
+    "stopwatch"
   ]
 
   static values = { deckId: Number }
@@ -103,8 +103,12 @@ export default class extends Controller {
       this.answerConfirmationTarget.innerHTML = "<h3>Oops wrong answer!</h3>"
     }
     this.nextButtonTarget.classList.remove("d-none")
-    //TODO: querySelectorAll on radio buttons .foreach -> disable = true
-    this.answerInputTarget.disabled = true
+    // this.answerInputTarget.disabled = true (disables only the first answer)
+    //👇 querySelectorAll on radio buttons .foreach -> disabled = true
+    const answersInput = document.querySelectorAll("input[name=answer]");
+    answersInput.forEach(input => {
+      input.disabled = true
+    });
   }
 
   #updateProgressBar() {
