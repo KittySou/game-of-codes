@@ -50,17 +50,21 @@
             <div class="modal-content">
               <div class="modal-header-menu">
 
-                <h1 class="modal-title-menu" id="exampleModal2Label">MENU</h1>
-                <%= current_user.username %>
-                <%= cl_image_tag current_user.photo.key, class: "avatar" %>
+              <h1 class="modal-title-menu" id="exampleModal2Label">MENU</h1>
+                <div class="user-first-name">
+                    <%= current_user.first_name %>
+                  <div class="user-avatar">
+                    <%= cl_image_tag current_user.photo.key, class: "avatar" %>
+                  </div>
+                </div>
               </div>
 
               <div class="modal-body-menu">
                 <%= render "decks/menu" %>
               </div>
 
-              <div class="modal-footer" id="menu">
-                <button type="button" class="button-secondary" data-bs-dismiss="modal">Close</button>
+              <div class="modal-footer-menu" id="menu">
+                <button type="button" class="close-button" data-bs-dismiss="modal">Close</button>
               </div>
             </div>
           </div>

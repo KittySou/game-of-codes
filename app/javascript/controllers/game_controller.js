@@ -17,22 +17,17 @@ export default class extends Controller {
     "congratulationsTemplate",
     "tipsHeader",
     "deckHeader",
-    "stopwatch",
-    "opponentProgressBar"
+    "stopwatch"
   ]
 
-<<<<<<< HEAD
   static outlets = [ "tips-button" ]
 
-  static values = { deckId: Number }
-=======
   static values = {
     deckId: Number,
     racetrackId: Number,
     playerId: Number,
     opponentId: Number
   }
->>>>>>> master
 
   connect() {
     // INFO (Fred): This is a list of the instance variables used for the game's logic.
@@ -85,14 +80,6 @@ export default class extends Controller {
     clearInterval(this.timer);
   }
 
-  #endGame(template) {
-    const output = Mustache.render(template, { time: this.#getCurrentTime() })
-    this.gameAreaTarget.innerHTML = output
-    this.#timeStop()
-    if (this.isMultiplayer) { this.#broadcastProgress() }
-    this.stopwatchTarget.innerText = "DONE"
-  }
-
   send() {
     // TODO (Fred): Check if we can do the line below with Stimulus...
     const userAnswer = document.querySelector("input[name=answer]:checked").value
@@ -100,42 +87,23 @@ export default class extends Controller {
     if (userGuessedRight) {
       this.#removeCurrentQuestionFromDeck()
       this.numberOfCorrectAnswers++
-      this.#updateProgressBar( this.progressBarTarget, this.numberOfCorrectAnswers)
+      this.#updateProgressBar()
     }
     if (this.isDeckCompleted) {
-      const token = document.getElementsByName(
-        "csrf-token"
-      )[0].content;
-      const headers = {
-        "Accept": "application/json",
-        "X-CSRF-Token": token,
-        "Content-Type": "application/json"
-      }
+      const url = `/decks/${this.deckIdValue}/completed`
+      fetch(url, {
+        headers: { "Accept": "application/json" }
+      })
+      const template = this.congratulationsTemplateTarget.innerHTML
+      const output = Mustache.render(template, { time: this.#getCurrentTime() })
+      this.gameAreaTarget.innerHTML = output
+      this.#timeStop()
+      this.stopwatchTarget.innerText = "DONE"
 
-      if (this.isMultiplayer) {
-        const body = {
-          winning_player_id: this.playerIdValue
-        }
-        const url = `/racetracks/${this.racetrackIdValue}`
-        fetch(url, {
-          headers: headers,
-          method: "PATCH",
-          body: JSON.stringify(body)
-        })
-      } else {
-        const url = `/decks/${this.deckIdValue}/completed`
-        fetch(url, {
-          headers: headers,
-          method: "POST"
-        })
-      }
-
-      this.#endGame(this.congratulationsTemplateTarget.innerHTML)
       return
     }
 
     if (userGuessedRight) {
-      if (this.isMultiplayer) { this.#broadcastProgress() }
       this.answerConfirmationTarget.innerHTML = "<h3>You guessed right!</h3>"
       // make question disappear from array of questions
       // move on to the next question
@@ -151,12 +119,14 @@ export default class extends Controller {
     });
   }
 
-  #updateProgressBar(progressBar, numberOfCorrectAnswers) {
-    const percentage = numberOfCorrectAnswers / this.totalNumberOfQuestions * 100
-    // 1. update the progress bar width
-    progressBar.querySelector('.green-bar').style.width = `${percentage}%`
+  #updateProgressBar() {
+    console.log(this.progressBarTarget)
+    console.log('Score:', this.numberOfCorrectAnswers / this.totalNumberOfQuestions * 100)
+    const percentage = this.numberOfCorrectAnswers / this.totalNumberOfQuestions * 100
+    // 1. update the progressbar width
+    this.progressBarTarget.querySelector('.green-bar').style.width = `${percentage}%`
     // 2. update the text
-    progressBar.querySelector('.completed-text').innerText = `DECK ${percentage}% COMPLETED!`
+    this.progressBarTarget.querySelector('.completed-text').innerText = `DECK ${percentage}% COMPLETED!`
   }
 
   nextQuestion() {
@@ -193,28 +163,28 @@ export default class extends Controller {
 
   async #fetchDeckQuestions() {
     // INFO: this is for development purposes only
-    this.deck = [{
-        "content": "Quel est la somme de 1 et 1?",
-        "answers": [
-            {"id": "1", "content": "3", "rightAnswer": false},
-            {"id": "2", "content": "1", "rightAnswer": false},
-            {"id": "3", "content": "2", "rightAnswer": true},
-            {"id": "4", "content": "4", "rightAnswer": false}
-          ]
-        }]
-            this.totalNumberOfQuestions = this.deck.length
-            this.#setNewQuestion()
+    // this.deck = [{
+      //   "content": "Quel est la somme de 1 et 1?",
+      //   "answers": [
+        //     {"id": "1", "content": "3", "rightAnswer": false},
+        //     {"id": "2", "content": "1", "rightAnswer": false},
+        //     {"id": "3", "content": "2", "rightAnswer": true},
+        //     {"id": "4", "content": "4", "rightAnswer": false}
+        //   ]
+        // }]
+        //     this.totalNumberOfQuestions = this.deck.length
+        //     this.#setNewQuestion()
 
     // INFO: this is the NEEDED code to make the game work
-    // const url = `/decks/${this.deckIdValue}/questions`
-    // await fetch(url, {headers: { "Accept": "application/json" }})
-    // .then(response => response.json())
-    // .then((data) => {
-    //   this.deck = data
-    //   this.totalNumberOfQuestions = this.deck.length
-    //   this.#setNewQuestion()
-    //   this.setHeader()
-    //   })
+    const url = `/decks/${this.deckIdValue}/questions`
+    await fetch(url, {headers: { "Accept": "application/json" }})
+    .then(response => response.json())
+    .then((data) => {
+      this.deck = data
+      this.totalNumberOfQuestions = this.deck.length
+      this.#setNewQuestion()
+      this.setHeader()
+      })
   }
 
 //   setHeader() {
@@ -225,35 +195,5 @@ export default class extends Controller {
   setHeader() {
     this.tipsHeaderTarget.classList.add('d-none')
     this.deckHeaderTarget.classList.remove('d-none')
-  }
-
-  #checkIfMultiplayer() {
-    this.isMultiplayer = this.racetrackIdValue > 0
-  }
-
-  #subscribeToRacetrack() {
-    this.channel = createConsumer().subscriptions.create(
-      { channel: "RacetrackChannel", id: this.racetrackIdValue },
-      { received: (data) => {
-        if (data.playerId === this.opponentIdValue) {
-          this.#updateProgressBar(this.opponentProgressBarTarget, data.numberOfCorrectAnswers)
-          if (data.isDeckCompleted) {
-            this.#endGame('<h3>Oh no, you lost :(<h3>')
-              // need new LOST template
-              // stop clock for loser
-          }
-        }
-      }}
-    )
-  }
-
-  #broadcastProgress() {
-    const body = {
-      numberOfCorrectAnswers: this.numberOfCorrectAnswers,
-      isDeckCompleted: this.isDeckCompleted,
-      playerId: this.playerIdValue
-    }
-
-    this.channel.send(body)
   }
 }
