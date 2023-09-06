@@ -145,3 +145,38 @@ html, body {
   margin-top: -100px;
   height: 150px;
 }
+
+.ruby-levels-page {
+  height: 50px;
+}
+
+.ruby-size-on-button {
+  height: 25px;
+}
+
+.hide {
+  display: none;
+}
+
+.hide-1 {
+  display: none;
+}
+
+.hide-2 {
+  display: none;
+}
+
+.myDIV:hover + .hide {
+  // display: block;
+  color: red;
+}
+
+.myDIV:hover + .hide-1 {
+  display: block;
+  color: red;
+}
+
+.myDIV:hover + .hide-2 {
+  display: block;
+  color: red;
+}
