@@ -185,3 +185,17 @@ export default class extends Controller {
     this.deckHeaderTarget.classList.remove('d-none')
   }
 }
+
+// document.getElementById("lock-card").disabled = true;
+
+// document.getElementById("input").addEventListener("input", function(event){
+
+//     var conteudo = document.getElementById("input").value;
+
+//     if (conteudo !== null && conteudo !== '') {
+
+//       document.getElementById("lock-card").disabled = false;
+//     } else {
+//       document.getElementById("lock-card").disabled = true;
+//     }
+// });
