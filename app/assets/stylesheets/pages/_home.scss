@@ -138,6 +138,40 @@ html, body {
   font-family: 'handjet';
 }
 .ruby-size {
-  max-width: 100px;
-  height: auto;
+  height: 100px;
+}
+
+.ruby-size-spinning {
+  // max-width: 900px;
+  margin-top: -100px;
+  height: 150px;
+}
+
+.ruby-levels-page {
+  height: 50px;
+}
+
+.ruby-size-on-button {
+  height: 25px;
+}
+
+.hide {
+  display: none;
+}
+
+.hide-1 {
+  display: none;
+}
+
+.hide-2 {
+  display: none;
+}
+
+.level-card:hover {
+  justify-content: space-between;
+}
+
+.level-card:hover .hide {
+  display: block;
+  color: red;
 }
