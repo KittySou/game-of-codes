@@ -9,7 +9,7 @@
         <%= current_user.first_name %>
         </div>
         <% else %>
-        <%= link_to " < ", :back , class: "nav-btn black-text"%>
+        <%= link_to " < ", 'javascript:history.back()', class: "nav-btn black-text"%>
         <% end %>
       </div>
 
@@ -41,7 +41,7 @@
 
       <div>
         <% if current_page?(:controller => 'decks', :action => 'menu') %>
-        <%= link_to " ≡ ", :back , class: "nav-btn", style: "font-family: math; color: black;" %>
+        <%= link_to " ≡ ", 'javascript:history.back()' , class: "nav-btn", style: "font-family: math; color: black;" %>
         <% else %>
         <%= link_to " ≡ ", "/menu" , class: "nav-btn", style: "font-family: math; color: black;" %>
         <% end %>
