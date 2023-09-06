@@ -2,10 +2,13 @@
   justify-content: center;
   align-items: center;
   text-align: center;
-  border: solid black 5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: black;
+  border-image: initial;
   margin: 5px 0px;
-  border-radius: 0;
   background-color: lightgray;
+  border-radius: 0;
 }
 
 h6 {
