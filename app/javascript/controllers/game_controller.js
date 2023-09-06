@@ -20,6 +20,8 @@ export default class extends Controller {
     "stopwatch"
   ]
 
+  static outlets = [ "tips-button" ]
+
   static values = { deckId: Number }
 
   connect() {
@@ -48,6 +50,7 @@ export default class extends Controller {
   }
 
   start() {
+    document.querySelector('.tips-btn').classList.remove('d-none')
     this.tipsTarget.classList.add("d-none")
     this.startButtonTarget.classList.add("d-none")
     this.#fetchDeckQuestions()

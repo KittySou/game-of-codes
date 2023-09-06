@@ -16,7 +16,6 @@
   --bs-btn-padding-y: 0.0rem;
 }
 
-// This only works for the "?" button
 .nav-btn {
   display: inline-flex;
   height: 50px;
@@ -43,23 +42,36 @@
   font-size: 25px;
 }
 
+
+// TIPS MODAL
 .modal-body {
   border-width: 3px;
   background-color: rgba(255, 229, 98, 0.631);
+  // display: flex;
+  // justify-content: center; /* Centralizar horizontalmente */
+  // align-items: center; /* Centralizar verticalmente */
+}
+
+.modal-body h2{
   font-family: handjet;
   font-size: 27px;
+  margin-top: -20px;
 }
 
 .modal-header {
   background-color: rgba(255, 229, 98, 0.631);
   border-radius: 0%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.modal-header h1{
+.modal-header h1 {
   font-family: 'handjet';
   font-size: 50px;
   letter-spacing: 1px;
 }
+
 
 .modal-footer {
   background-color: rgba(255, 229, 98, 0.631);
@@ -67,20 +79,16 @@
 }
 
 .button-secondary {
-  // display: flex;
-  // flex-direction: column;
-  // justify-content: flex-start;
-  // align-items: center;
   font-family: 'handjet';
-  background-color: lightgray;
-  border-width: 4px;
-  border-color: black;
-  font-size: 20px;
-  border-radius: 0px;
-  letter-spacing: 1px;
-  width: 30%;
-  height: 10%;
-  // margin-top: 110px;
+    background-color: lightgray;
+    border-width: 4px;
+    border-color: black;
+    font-size: 20px;
+    border-radius: 0px;
+    letter-spacing: 1px;
+    width: 30%;
+    height: 10%;
+    margin: 0 auto;
 }
 
 .modal-tips .modal-content {
@@ -91,8 +99,6 @@
     background-color: rgba(255, 229, 98, 0.631);
     border-bottom: none;
 }
-
-
 
 .picture-name-info {
   display: flex;
@@ -105,25 +111,22 @@
   font-size: 24px;
 }
 
+
+// MENU MODAL
 .modal-header-menu h1{
   font-family: 'handjet';
   font-size: 50px;
   letter-spacing: 1px;
   padding: 19px;
   color: white;
-  background-color: lightgray;
-  background-image: url(https://res.cloudinary.com/ddpxdkwin/image/upload/v1693491864/Menu-background_ljsnhl.png);
+  display: flex;
+  justify-content: center;
 }
 
 .modal-body-menu {
   border-width: 3px;
   font-family: handjet;
   font-size: 27px;
-  background-image: url(https://res.cloudinary.com/ddpxdkwin/image/upload/v1693491864/Menu-background_ljsnhl.png)
-}
-
-#menu {
-  background-image: url(https://res.cloudinary.com/ddpxdkwin/image/upload/v1693491864/Menu-background_ljsnhl.png)
 }
 
 #levels-container {
@@ -132,4 +135,11 @@
   align-items: center;
   display: flex;
   margin-top: -40px;
+}
+
+.modal-menu {
+  background-image: url(https://res.cloudinary.com/ddpxdkwin/image/upload/v1693491864/Menu-background_ljsnhl.png)
+}
+.modal-menu .modal-content {
+  background-color: rgba($color: #000000, $alpha: 0.5);
 }
