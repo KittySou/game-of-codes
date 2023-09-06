@@ -104,3 +104,32 @@
   font-family: handjet;
   font-size: 24px;
 }
+
+.modal-header-menu h1{
+  font-family: 'handjet';
+  font-size: 50px;
+  letter-spacing: 1px;
+  padding: 19px;
+  color: white;
+  background-color: lightgray;
+  background-image: url(https://res.cloudinary.com/ddpxdkwin/image/upload/v1693491864/Menu-background_ljsnhl.png);
+}
+
+.modal-body-menu {
+  border-width: 3px;
+  font-family: handjet;
+  font-size: 27px;
+  background-image: url(https://res.cloudinary.com/ddpxdkwin/image/upload/v1693491864/Menu-background_ljsnhl.png)
+}
+
+#menu {
+  background-image: url(https://res.cloudinary.com/ddpxdkwin/image/upload/v1693491864/Menu-background_ljsnhl.png)
+}
+
+#levels-container {
+  padding-top: 20%;
+  margin: auto 10px;
+  align-items: center;
+  display: flex;
+  margin-top: -40px;
+}

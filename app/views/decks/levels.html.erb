@@ -13,36 +13,36 @@
     <div class="justify-content-center levels-container">
         <div class="level-cards">
           <div class="level-cards">
-  <%= link_to decks_path(level: "beginner"), style: "text-decoration: none;" do %>
-    <div class="level-card easy" style="border-style: solid; align-items:center">
-      <p>BEGINNER</p>
-    </div>
-  <% end %>
+            <%= link_to decks_path(level: "beginner"), style: "text-decoration: none;" do %>
+              <div class="level-card easy" style="border-style: solid; align-items:center">
+                <p>BEGINNER</p>
+              </div>
+            <% end %>
 
-  <% unless params[:level] == "beginner" %>
-    <div class="level-card intermediate" style="border-style: solid; opacity: .4;">
-      <p>INTERMEDIATE</p>
-    </div>
-  <% else %>
-    <%= link_to decks_path(level: "intermediate"), style: "text-decoration: none;" do %>
-      <div class="level-card intermediate" style="border-style: solid;">
-        <p>INTERMEDIATE</p>
-      </div>
-    <% end %>
-  <% end %>
+            <% unless params[:level] == "beginner" %>
+              <div class="level-card intermediate" style="border-style: solid; opacity: .4;">
+                <p>INTERMEDIATE</p>
+              </div>
+            <% else %>
+              <%= link_to decks_path(level: "intermediate"), style: "text-decoration: none;" do %>
+                <div class="level-card intermediate" style="border-style: solid;">
+                  <p>INTERMEDIATE</p>
+                </div>
+              <% end %>
+            <% end %>
 
-  <% unless params[:level] == "beginner" %>
-    <div class="level-card advanced" style="border-style: solid; opacity: .4;">
-      <p>ADVANCED</p>
-    </div>
-  <% else %>
-    <%= link_to decks_path(level: "advanced"), style: "text-decoration: none;" do %>
-      <div class="level-card advanced" style="border-style: solid;">
-        <p>ADVANCED</p>
-      </div>
-    <% end %>
-  <% end %>
-</div>
+            <% unless params[:level] == "beginner" %>
+              <div class="level-card advanced" style="border-style: solid; opacity: .4;">
+                <p>ADVANCED</p>
+              </div>
+            <% else %>
+              <%= link_to decks_path(level: "advanced"), style: "text-decoration: none;" do %>
+                <div class="level-card advanced" style="border-style: solid;">
+                  <p>ADVANCED</p>
+                </div>
+              <% end %>
+            <% end %>
+          </div>
 
           <%= link_to decks_path(level: "multiplayer"), style: "text-decoration: none;" do %>
             <div class="level-card easy" style="border-style: solid; align-items:center">
