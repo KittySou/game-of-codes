@@ -25,7 +25,7 @@
   font-size: 73px;
   font-weight: bolder;
   margin-bottom: 0px;
-
+  text-shadow: 1px 4px 1px black;
 }
 
 #home-container {
@@ -129,13 +129,15 @@ html, body {
 }
 
 .game-title {
-  color: black;
+  color: #f8f9fa;
   font-size: 70px;
+  text-shadow: 1px 4px 1px black;
 }
 .game-sub-title {
-  color: black;
+  color: #f8f9fa;
   font-size: 40px;
   font-family: 'handjet';
+  text-shadow: 1px 4px 1px black;
 }
 .ruby-size {
   height: 100px;
