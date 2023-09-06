@@ -14,24 +14,30 @@
         <div class="level-cards">
           <%= link_to decks_path(level: "beginner"), style: "text-decoration: none;" do %>
             <div class="level-card easy" style="border-style: solid; align-items:center; color: black">
-              <div class="hide-1"><img class="ruby-size-on-button" src="https://www.nicepng.com/png/full/749-7492440_ruby-on-rails-logo.png"></div>
+              <div class="hide" style="padding: 20px"><img class="ruby-size-on-button" src="https://www.nicepng.com/png/full/749-7492440_ruby-on-rails-logo.png"></div>
               <div class="myDIV"><h1>BEGINNER</h1></div>
-              <div class="hide-2"><img class="ruby-size-on-button" src="https://www.nicepng.com/png/full/749-7492440_ruby-on-rails-logo.png"></div>
+              <div class="hide" style="padding: 20px"><img class="ruby-size-on-button" src="https://www.nicepng.com/png/full/749-7492440_ruby-on-rails-logo.png"></div>
             </div>
           <% end %>
           <%= link_to decks_path(level: "intermediate"), style: "text-decoration: none; opacity: .4;" do %>
             <div class="level-card intermediate" style="border-style: solid; color: black">
+            <div class="hide" style="padding: 20px"><img class="ruby-size-on-button" src="https://www.nicepng.com/png/full/749-7492440_ruby-on-rails-logo.png"></div>
               <h1>INTERMEDIATE</h1>
+            <div class="hide" style="padding: 20px"><img class="ruby-size-on-button" src="https://www.nicepng.com/png/full/749-7492440_ruby-on-rails-logo.png"></div>
             </div>
           <% end %>
           <%= link_to decks_path(level: "advanced"), style: "text-decoration: none; opacity: .4;" do %>
             <div class="level-card advanced" style="border-style: solid; color: black">
+              <div class="hide" style="padding: 20px"><img class="ruby-size-on-button" src="https://www.nicepng.com/png/full/749-7492440_ruby-on-rails-logo.png"></div>
               <h1>ADVANCED</h1>
+              <div class="hide" style="padding: 20px"><img class="ruby-size-on-button" src="https://www.nicepng.com/png/full/749-7492440_ruby-on-rails-logo.png"></div>
             </div>
           <% end %>
           <%= link_to decks_path(level: "multiplayer"), style: "text-decoration: none" do %>
             <div class="level-card easy" style="border-style: solid; align-items:center; color: black">
+              <div class="hide" style="padding: 20px"><img class="ruby-size-on-button" src="https://www.nicepng.com/png/full/749-7492440_ruby-on-rails-logo.png"></div>
               <h1>MULTIPLAYER</h1>
+              <div class="hide" style="padding: 20px"><img class="ruby-size-on-button" src="https://www.nicepng.com/png/full/749-7492440_ruby-on-rails-logo.png"></div>
             </div>
           <% end %>
         </div>
@@ -40,16 +46,3 @@
 
 
    <%# <%= render "decks/progress_bar_levels"  %>
-
-</div>
-  <div style="background-color: red; height: 80px; width: 90vw; display: flex">
-    <div style="background-color: yellow; height: 80px; width: 100%; display: flex; justify-content: center; align-items: center" class="hide-1">hi</div>
-    <div style="background-color: cyan; height: 80px; width: 100%; display: flex; justify-content: center; align-items: center" class="myDIV">BeginnerBeginnerBeginner</div>
-    <div style="background-color: blue; height: 80px; width: 100%; display: flex; justify-content: center; align-items: center" class="hide-2">hi</div>
-</div>
-
-<div class="myDIV"><h1>Hover over me.</h1></div>
-<div class="hide" style="display: flex; justify-content: space-between">
-  <div>I am shown when someone hovers over the div above.</div>
-  <div>I am shown when someone hovers over the div above.</div>
-</div>

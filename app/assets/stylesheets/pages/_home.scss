@@ -166,17 +166,11 @@ html, body {
   display: none;
 }
 
-.myDIV:hover + .hide {
-  // display: block;
-  color: red;
+.level-card:hover {
+  justify-content: space-between;
 }
 
-.myDIV:hover + .hide-1 {
-  display: block;
-  color: red;
-}
-
-.myDIV:hover + .hide-2 {
+.level-card:hover .hide {
   display: block;
   color: red;
 }
