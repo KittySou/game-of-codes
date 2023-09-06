@@ -20,7 +20,14 @@ export default class extends Controller {
     "stopwatch"
   ]
 
-  static values = { deckId: Number }
+  static outlets = [ "tips-button" ]
+
+  static values = {
+    deckId: Number,
+    racetrackId: Number,
+    playerId: Number,
+    opponentId: Number
+  }
 
   connect() {
     // INFO (Fred): This is a list of the instance variables used for the game's logic.
@@ -48,6 +55,7 @@ export default class extends Controller {
   }
 
   start() {
+    document.querySelector('.tips-btn').classList.remove('d-none')
     this.tipsTarget.classList.add("d-none")
     this.startButtonTarget.classList.add("d-none")
     this.#fetchDeckQuestions()
