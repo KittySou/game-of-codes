@@ -1,14 +1,18 @@
 .level-cards {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-gap: 16px;
-  justify-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: stretch;
+  width: 100%;
+}
+
+.level-cards a {
+  display: block;
 }
 
 .level-card {
   background-color: lightgray;
   height: 80px;
-  width: 90vw;
   border-width: 5px;
   border-color: black;
   color: white;
@@ -16,6 +20,12 @@
   align-items: center;
   display: flex;
   justify-content: center;
+}
+
+.level-card h1 {
+  text-align: center;
+  width: 100%;
+  color: black;
 }
 
 .level-card:hover {

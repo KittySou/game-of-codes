@@ -13,20 +13,22 @@ Question.destroy_all
 Deck.destroy_all
 User.destroy_all
 
-user_1 = User.create!(email:"marcelo@live.com", password:"123456" ,first_name:"Marcelo", last_name:"User")
+# add avatar to each user. need username!
+
+user_1 = User.create!(email:"marcelo@live.com", password:"123456" ,first_name:"Marcelo", last_name:"User", username: "marcelovsk1")
 user_1.photo.attach(io: URI.open("https://res.cloudinary.com/ddpxdkwin/image/upload/v1693430408/marcelo_kiroir.jpg"), filename: "user_1.png", content_type: "image/png")
 
-user_2 = User.create!(email:"justin@live.com", password:"123456" ,first_name:"Justin", last_name:"User")
+user_2 = User.create!(email:"justin@live.com", password:"123456" ,first_name:"Justin", last_name:"User", username: "justincredible")
 user_2.photo.attach(io: URI.open("https://res.cloudinary.com/ddpxdkwin/image/upload/v1693430408/justin_dkrsph.jpg"), filename: "user_2.png", content_type: "image/png")
 
-user_3 = User.create!(email:"grant@live.com", password:"123456" ,first_name:"Grant", last_name:"User")
+user_3 = User.create!(email:"grant@live.com", password:"123456" ,first_name:"Grant", last_name:"User", username: "boyCapel")
 user_3.photo.attach(io: URI.open("https://res.cloudinary.com/ddpxdkwin/image/upload/v1693430408/grant_gbqxfk.jpg"), filename: "user_3.png", content_type: "image/png")
 
-user_4 = User.create!(email:"kitty@live.com", password:"123456" ,first_name:"Kitty", last_name:"User")
-user_4.photo.attach(io: URI.open("https://res.cloudinary.com/ddpxdkwin/image/upload/v1693948791/138801531_bsishx.png"), filename: "user_4.png", content_type: "image/png")
+user_4 = User.create!(email:"kitty@live.com", password:"123456" ,first_name:"Kitty", last_name:"User", username: "hello_kitty123")
+user_4.photo.attach(io: URI.open("https://res.cloudinary.com/ddpxdkwin/image/upload/v1693423131/b7qgeg70ut2b7hvqqyxp.png"), filename: "user_4.png", content_type: "image/png")
 user_4.save
 
-user_5 = User.create!(email:"david@live.com", password:"123456" ,first_name:"David", last_name:"User")
+user_5 = User.create!(email:"david@live.com", password:"123456" ,first_name:"David", last_name:"User", username: "davidwagon")
 user_5.photo.attach(io: URI.open("https://res.cloudinary.com/ddpxdkwin/image/upload/v1693423130/wcsd5gataw9n12srxxbj.png"), filename: "user_5.png", content_type: "image/png")
 user_5.save
 
@@ -142,13 +144,13 @@ deck_4_multiplayer = Deck.create!(name: "Arrays", tips: "check lecture", level: 
 deck_5_multiplayer = Deck.create!(name: "Variables", tips: "check lecture", level: 100)
 
 question_16 = Question.create!(content: "Will dividing one integer by another integer give you a float?", deck: deck_1_multiplayer)
-answer_60 = Answer.create!(content: "Never", question: question_16)
-answer_61 = Answer.create!(content: "Sometimes", question: question_16, right_answer: true)
+answer_60 = Answer.create!(content: "Never", question: question_16, right_answer: true)
+answer_61 = Answer.create!(content: "Sometimes", question: question_16)
 answer_62 = Answer.create!(content: "Always", question: question_16)
 
 question_17 = Question.create!(content: "If you divide 4 by 3, is the result a float?", deck: deck_1_multiplayer)
-answer_63 = Answer.create!(content: "Yes", question: question_17, right_answer: true)
-answer_64 = Answer.create!(content: "No", question: question_17)
+answer_63 = Answer.create!(content: "Yes", question: question_17)
+answer_64 = Answer.create!(content: "No", question: question_17, right_answer: true)
 answer_65 = Answer.create!(content: "Sometimes", question: question_17)
 
 question_18 = Question.create!(content: "All floats contain a ____", deck: deck_1_multiplayer)
