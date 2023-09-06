@@ -1,16 +1,6 @@
-<style>
-  body {
-    background-image: url("https://res.cloudinary.com/ddpxdkwin/image/upload/v1693491864/Menu-background_ljsnhl.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-  }
-</style>
-
-
 <div style="font-family: handjet;">
   <%# <h1 class="center my-5" id="levels-title">Levels</h1> %>
-    <div class="justify-content-center levels-container">
+    <div class="justify-content-center levels-container" id="levels-container">
 
       <div class="level-cards">
         <%= link_to "/", style: "text-decoration: none;" do %>
@@ -32,3 +22,4 @@
         <% end %>
       </div>
     </div>
+  </div>

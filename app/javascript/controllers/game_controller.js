@@ -1,7 +1,5 @@
 import { Controller } from "@hotwired/stimulus"
 import Mustache from "mustache"
-import { createConsumer } from "@rails/actioncable"
-
 
 // Connects to data-controller="game"
 export default class extends Controller {
@@ -49,18 +47,10 @@ export default class extends Controller {
     // will be useful for display purposes (ie. show the completion %)
     this.totalNumberOfQuestions = null
 
-    // Contains whether a game is single player or multiplayer.
-    // By default, the games are single player.
-    this.isMultiplayer = false
-    this.#checkIfMultiplayer()
-
     this.numberOfCorrectAnswers = 0
 
     this.startDate = null
     this.timer = null
-    if(this.isMultiplayer) {
-      this.#subscribeToRacetrack()
-    }
   }
 
   start() {
@@ -146,8 +136,12 @@ export default class extends Controller {
       this.answerConfirmationTarget.innerHTML = "<h3>Oops wrong answer!</h3>"
     }
     this.nextButtonTarget.classList.remove("d-none")
-    //TODO: querySelectorAll on radio buttons .foreach -> disable = true
-    this.answerInputTarget.disabled = true
+    // this.answerInputTarget.disabled = true (disables only the first answer)
+    //👇 querySelectorAll on radio buttons .foreach -> disabled = true
+    const answersInput = document.querySelectorAll("input[name=answer]");
+    answersInput.forEach(input => {
+      input.disabled = true
+    });
   }
 
   #updateProgressBar(progressBar, numberOfCorrectAnswers) {
