@@ -27,6 +27,8 @@
   text-align: center;
   font-family: handjet;
   font-size: 24px;
+  background-color: lightgray;
+  cursor: pointer;
 }
 
 .black-text {
@@ -89,6 +91,8 @@
     background-color: rgba(255, 229, 98, 0.631);
     border-bottom: none;
 }
+
+
 
 .picture-name-info {
   display: flex;

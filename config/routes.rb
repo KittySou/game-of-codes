@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   get "/menu", to: "decks#menu", as: "menu"
   get "/stopwatch", to: "decks#stopwatch", as: "stopwatch"
   get "/decks/:id/questions", to: "decks#questions", as: "deck_questions"
+
   post "/decks/:id/completed", to: "decks#completed", as: "deck_completed"
   get "/decks/:deck_id/racetracks/new", to: "racetracks#new", as: "new_racetrack"
   post "/decks/:deck_id/racetracks", to: "racetracks#create", as: "deck_racetracks"

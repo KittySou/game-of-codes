@@ -1,7 +1,5 @@
 import { Controller } from "@hotwired/stimulus"
 import Mustache from "mustache"
-import { createConsumer } from "@rails/actioncable"
-
 
 // Connects to data-controller="game"
 export default class extends Controller {
@@ -19,6 +17,7 @@ export default class extends Controller {
     "congratulationsTemplate",
     "tipsHeader",
     "deckHeader",
+<<<<<<< HEAD
     "stopwatch",
     "opponentProgressBar"
   ]
@@ -29,6 +28,12 @@ export default class extends Controller {
     playerId: Number,
     opponentId: Number
   }
+=======
+    "stopwatch"
+  ]
+
+  static values = { deckId: Number }
+>>>>>>> master
 
   connect() {
     // INFO (Fred): This is a list of the instance variables used for the game's logic.
@@ -49,18 +54,10 @@ export default class extends Controller {
     // will be useful for display purposes (ie. show the completion %)
     this.totalNumberOfQuestions = null
 
-    // Contains whether a game is single player or multiplayer.
-    // By default, the games are single player.
-    this.isMultiplayer = false
-    this.#checkIfMultiplayer()
-
     this.numberOfCorrectAnswers = 0
 
     this.startDate = null
     this.timer = null
-    if(this.isMultiplayer) {
-      this.#subscribeToRacetrack()
-    }
   }
 
   start() {
@@ -106,6 +103,7 @@ export default class extends Controller {
       this.#updateProgressBar( this.progressBarTarget, this.numberOfCorrectAnswers)
     }
     if (this.isDeckCompleted) {
+<<<<<<< HEAD
       const token = document.getElementsByName(
         "csrf-token"
       )[0].content;
@@ -114,6 +112,17 @@ export default class extends Controller {
         "X-CSRF-Token": token,
         "Content-Type": "application/json"
       }
+=======
+      const url = `/decks/${this.deckIdValue}/completed`
+      fetch(url, {
+        headers: { "Accept": "application/json" }
+      })
+      const template = this.congratulationsTemplateTarget.innerHTML
+      const output = Mustache.render(template, { time: this.#getCurrentTime() })
+      this.gameAreaTarget.innerHTML = output
+      this.#timeStop()
+      this.stopwatchTarget.innerText = "DONE"
+>>>>>>> master
 
       if (this.isMultiplayer) {
         const body = {
@@ -138,7 +147,10 @@ export default class extends Controller {
     }
 
     if (userGuessedRight) {
+<<<<<<< HEAD
       if (this.isMultiplayer) { this.#broadcastProgress() }
+=======
+>>>>>>> master
       this.answerConfirmationTarget.innerHTML = "<h3>You guessed right!</h3>"
       // make question disappear from array of questions
       // move on to the next question
@@ -146,8 +158,12 @@ export default class extends Controller {
       this.answerConfirmationTarget.innerHTML = "<h3>Oops wrong answer!</h3>"
     }
     this.nextButtonTarget.classList.remove("d-none")
-    //TODO: querySelectorAll on radio buttons .foreach -> disable = true
-    this.answerInputTarget.disabled = true
+    // this.answerInputTarget.disabled = true (disables only the first answer)
+    //👇 querySelectorAll on radio buttons .foreach -> disabled = true
+    const answersInput = document.querySelectorAll("input[name=answer]");
+    answersInput.forEach(input => {
+      input.disabled = true
+    });
   }
 
   #updateProgressBar(progressBar, numberOfCorrectAnswers) {
@@ -225,6 +241,7 @@ export default class extends Controller {
     this.tipsHeaderTarget.classList.add('d-none')
     this.deckHeaderTarget.classList.remove('d-none')
   }
+<<<<<<< HEAD
 
   #checkIfMultiplayer() {
     this.isMultiplayer = this.racetrackIdValue > 0
@@ -255,4 +272,6 @@ export default class extends Controller {
 
     this.channel.send(body)
   }
+=======
+>>>>>>> master
 }
