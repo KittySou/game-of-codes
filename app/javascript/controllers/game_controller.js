@@ -210,9 +210,9 @@ export default class extends Controller {
       })
   }
 
-  setHeader() {
-    this.headerTarget.innerText = "Question"
-  }
+  // setHeader() {
+  //   this.headerTarget.innerText = "Question"
+  // }
 }
 
   setHeader() {
@@ -249,4 +249,4 @@ export default class extends Controller {
 
     this.channel.send(body)
   }
-}
+// }
