@@ -46,15 +46,11 @@
 .home-btn {
   font-family: 'handjet';
   background-color: lightgray;
-  // color: black;
   border-width: 5px;
   text-decoration: none;
   border-color: black;
-  // top: 50%;
   width: 50vw;
-  height: 20vw;
-  // margin-top: 50%;
-  // margin-top: 10px;
+  height: 75px;
   font-size: 45px;
   border-radius: 0px;
   align-items: center;
@@ -114,4 +110,34 @@ html, body {
   100% {
     background-position: -20000px;
   }
+}
+
+.start-container {
+  // display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border: solid black 5px;
+  margin: 5px 0px;
+}
+#black-text {
+  color: black;
+}
+
+.home-page-body {
+  height: 50vh;
+}
+
+.game-title {
+  color: black;
+  font-size: 70px;
+}
+.game-sub-title {
+  color: black;
+  font-size: 40px;
+  font-family: 'handjet';
+}
+.ruby-size {
+  max-width: 100px;
+  height: auto;
 }
