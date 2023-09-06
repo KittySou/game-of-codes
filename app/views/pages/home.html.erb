@@ -1,27 +1,17 @@
 <div class="hero">
-  <div class="content">
-    <h1>GAME 0F C0DES</h1>
-    <h2>powered by ruby
-      <img src="https://www.nicepng.com/png/full/749-7492440_ruby-on-rails-logo.png"
+  <div class="home-page-body">
+    <h1 class="game-title">GAME 0F C0DES</h1>
+    <h2 class="game-sub-title">powered by ruby</h2>
+    <img class="ruby-size" src="https://www.nicepng.com/png/full/749-7492440_ruby-on-rails-logo.png"
                 <%# "https://res.cloudinary.com/ddpxdkwin/image/upload/v1693495722/Ruby_logo_pixelated_30_qcziju.png" %>
-          class="ruby">
-    </h2>
+    >
   </div>
 
-  <div class="container" id="home-container">
-
-    <% if user_signed_in? %>
-      <div class="btn home-btn" id="start-button">
-        <%= link_to "START", levels_path %>
-      </div>
+  <% if user_signed_in? %>
+      <%= link_to "START", levels_path, class: "start-container home-btn", style: "color: black", id: "black-text" %>
     <% else %>
-      <div class="btn home-btn" id="login-button">
-        <%= link_to "LOGIN", new_user_session_path %>
-      </div>
-      <div class="btn home-btn" id="signup-button">
-        <%= link_to "SIGN UP", new_user_registration_path %>
-      </div>
-    <% end %>
+      <%= link_to "LOGIN", new_user_session_path, class: "start-container home-btn", style: "color: black", id: "black-text" %>
+      <%= link_to "SIGN UP", new_user_registration_path, class: "start-container home-btn", style: "color: black", id: "black-text" %>
+  <% end %>
 
-  </div>
 </div>
