@@ -177,6 +177,16 @@
   margin-left: 5px;
 }
 
-.level-cards h1{
-  color:black;
+.level-card-easy{
+  height: 80px;
+  width: 300px;
+  border-width: 5px;
+  margin-bottom: 10px;
+  color: white;
+  border-style: solid;
+  align-items: center;
+  background-color: lightgray;
+  display: flex;
+  justify-content: center;
+  color: black;
 }
