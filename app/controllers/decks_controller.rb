@@ -15,11 +15,6 @@ class DecksController < ApplicationController
   end
 
   def show
-    @multiplayer = params[:racetrack].present?
-    if @multiplayer
-      @racetrack = Racetrack.find(params[:racetrack])
-      @opponent = @racetrack.player_1 == current_user ? @racetrack.player_2 : @racetrack.player_1
-    end
   end
 
   def levels
