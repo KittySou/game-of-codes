@@ -13,22 +13,24 @@
 
 <div class="easy-cards">
   <% @decks.each_with_index do |deck, index| %>
-    <%= link_to deck_path(deck) do %>
-    <%# link to , what appears, where %>
+
     <% if @completed_decks.include?(deck) %>
-    <%# above logic can be reused if decks table adds a locked boolean %>
-       <div class="unlock-card">
-        <%= deck.name %>
-      </div>
+      <%= link_to deck_path(deck) do %>
+        <%# above logic can be reused if decks table adds a locked boolean %>
+        <div class="unlock-card">
+          <%= deck.name %>
+        </div>
+      <% end %>
     <% elsif index == @next_playable_deck_index || deck.level == "multiplayer" %>
-      <div class="incomplete-card">
-        <%= deck.name %>
-      </div>
+      <%= link_to deck_path(deck) do %>
+        <div class="incomplete-card">
+          <%= deck.name %>
+        </div>
+      <% end %>
     <% else  %>
       <div class="lock-card" id="input">
         <%= deck.name %>
       </div>
-      <% end %>
     <% end %>
   <% end %>
 </div>
