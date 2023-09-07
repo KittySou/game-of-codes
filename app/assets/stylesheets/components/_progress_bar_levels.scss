@@ -8,6 +8,16 @@
   bottom: 0;
   left: 0;
 }
+.red-bar {
+  width: 5%;
+  transition: width 0.5s ease-in;
+  height: 40px;
+  background-color: red;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+}
 .progress-box {
   background-color: red;
   display: flex;
@@ -18,10 +28,28 @@
   border: solid 5px black;
   width: 100%;
 }
+.progress-box-multi {
+  background-color: grey;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  height: 30px;
+  border: solid 5px black;
+  width: 80vw;
+}
 .completed-text {
   font-family: 'handjet';
   color: white;
   font-size: 24px;
+  text-align: center;
+  z-index: 10;
+  letter-spacing: 2px;
+}
+.completed-text-multi {
+  font-family: 'handjet';
+  color: white;
+  font-size: 18px;
   text-align: center;
   z-index: 10;
   letter-spacing: 2px;
