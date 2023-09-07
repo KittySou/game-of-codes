@@ -1,7 +1,7 @@
 .green-bar {
   width: 5%;
   transition: width 0.5s ease-in;
-  height: 40px;
+  height: 100%;
   background-color: green;
   position: absolute;
   top: 0;
@@ -11,7 +11,7 @@
 .green-bar-multi {
   width: 5%;
   transition: width 0.5s ease-in;
-  height: 20px;
+  height: 100%;
   background-color: green;
   position: absolute;
   top: 0;
@@ -24,9 +24,8 @@
   align-items: center;
   justify-content: center;
   position: relative;
-  height: 50px;
+  height: 40px;
   border: solid 5px black;
-  width: 100%;
 }
 .progress-box-multi {
   background-color: grey;
@@ -34,30 +33,36 @@
   align-items: center;
   justify-content: center;
   position: relative;
-  height: 30px;
+  height: 40px;
   border: solid 5px black;
-  width: 80vw;
 }
 .completed-text {
   font-family: 'handjet';
   color: white;
-  font-size: 24px;
+  font-size: 20px;
   text-align: center;
   z-index: 10;
   letter-spacing: 2px;
+
 }
 .completed-text-multi {
   font-family: 'handjet';
   color: white;
-  font-size: 18px;
+  font-size: 20px;
   text-align: center;
   z-index: 10;
   letter-spacing: 2px;
 }
+.completed-text img,
+.completed-text-multi img {
+  height: 30px;
+  border-radius: 50%;
+  border: 2px solid black;
+}
 .footer-container {
   background-color: lightgray;
   padding: 5%;
-  align-items: flex-end;
+  align-items: stretch;
   display: flex;
 }
 
@@ -70,9 +75,14 @@
 .stopwatch {
   width: 25%;
   font-family: 'handjet';
-  font-size: 24px;
-  justify-content: space-between;
-  margin-left: 20px;
+  margin-left: 8px;
+  background-color: rgb(249, 242, 118);
+  border: solid 5px black;
+  font-size: 20px;
+  letter-spacing: 1px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .completed-text {
