@@ -19,6 +19,14 @@ h6 {
   margin: 10px;
 }
 
+.loser-template {
+  font-family: handjet;
+}
+
+.winner-template {
+  font-family: handjet;
+}
+
 .congratulations-template {
   font-family: handjet;
 }
@@ -57,4 +65,9 @@ margin-top: -20px;
   margin-top: -22px;
   margin-bottom: 30px;
   margin-left: 20px;
+}
+
+.winner{
+  width: 200px;
+  margin-top: -22px;
 }
