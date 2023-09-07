@@ -130,14 +130,16 @@ export default class extends Controller {
           method: "PATCH",
           body: JSON.stringify(body)
         })
-        this.#endGame(this.winnerTemplate.innerHTML)
+        this.#endGame(this.winnerTemplateTarget.innerHTML)
+        return
       } else {
         const url = `/decks/${this.deckIdValue}/completed`
         fetch(url, {
           headers: headers,
           method: "POST"
         })
-        this.#endGame(this.congratulationsTemplate.innerHTML)
+        this.#endGame(this.congratulationsTemplateTarget.innerHTML)
+        return
 
       }
 
