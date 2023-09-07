@@ -130,16 +130,19 @@ export default class extends Controller {
           method: "PATCH",
           body: JSON.stringify(body)
         })
+        this.#endGame(this.winnerTemplate.innerHTML)
       } else {
         const url = `/decks/${this.deckIdValue}/completed`
         fetch(url, {
           headers: headers,
           method: "POST"
         })
+        this.#endGame(this.congratulationsTemplate.innerHTML)
+
       }
 
-      this.#endGame(this.winnerTemplateTarget.innerHTML)
-      this.stopwatchTarget.innerText = "DONE"
+     // this.#endGame(this.winnerTemplateTarget.innerHTML)
+      // this.stopwatchTarget.innerText = "DONE"
 
       return
     }
@@ -246,11 +249,13 @@ export default class extends Controller {
           if (data.isDeckCompleted) {
             // this.#endGame('<h3>Oh no, you lost :(<h3>')
             this.#endGame(this.loserTemplateTarget.innerHTML)
-            this.stopwatchTarget.innerText = "DONE"
+
 
               // need new LOST template
               // stop clock for loser
           }
+          return
+
         }
       }}
     )
