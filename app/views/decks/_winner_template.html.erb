@@ -1,0 +1,10 @@
+
+<template class="winner-template" data-game-target="box-smaller winnerTemplate">
+  <h1>You won!</h1>
+  <p>Your time was: {{time}}</p>
+  <img src="https://res.cloudinary.com/ddpxdkwin/image/upload/v1694036855/super-mario-dancing-with-banana-pixel-art-sbfc9utlc81ptxe2_t0mgpk.gif" class="cat">
+  <h3></h3>
+  <div class="btn back-to-index-btn">
+    <button class="button-back"><%= link_to "BACK TO DECKS", decks_path(level: "multiplayer") %></button>
+  </div>
+</template>
