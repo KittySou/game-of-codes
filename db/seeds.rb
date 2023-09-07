@@ -45,7 +45,7 @@ user_5.save
 deck_1 = Deck.create!(name: "STRING", tips: "Strings are texts that exist within either single quotes or double quotes. You create a string by enclosing a sequence of characters in one or the other.", level: 1)
 deck_2 = Deck.create!(name: "INTEGER", tips: "Numbers without decimal points are called integers. Example: 2 (Integer) vs 2.0 (Float)", level: 1)
 deck_3 = Deck.create!(name: "FLOAT", tips: "Numbers with decimal points are called floating-point numbers or floats. Example: 1.3", level: 1)
-deck_4 = Deck.create!(name: "ARRAY", tips: "An array is a collection of objects of any kind (strings, integers, etc.). It is enlo", level: 1)
+deck_4 = Deck.create!(name: "ARRAY", tips: "An array is a collection of objects (strings, integers, etc.). It consists of enclosing those objects inside square brackets [...] each object separated by a comma.", level: 1)
 deck_5 = Deck.create!(name: "RANGE", tips: "check lecture", level: 1)
 deck_6 = Deck.create!(name: "SPECIAL VALUES", tips: "check lecture", level: 1)
 deck_7 = Deck.create!(name: "VARIABLES", tips: "check lecture", level: 1)
