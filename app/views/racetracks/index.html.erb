@@ -5,7 +5,7 @@
 <div class="center">
 
   <% @racetracks.each do |race| %>
-    <div class="btn btn-primary join-race-button" style="font-family: handjet; width: 80%; ;">
+    <div class="btn btn-primary join-race-button" style="font-family: handjet; width: 80%; border-width: 6px;">
       <%# <li><p> %>
       <%= link_to "/decks/#{race.deck_id}?racetrack=#{race.id}" do %>
         <h2><%= race.deck.name.upcase %>
