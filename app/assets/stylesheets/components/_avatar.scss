@@ -40,7 +40,7 @@
   flex-direction: column;
   justify-content: center; /* Mudamos para "center" para centralizar verticalmente */
   align-items: center;
-  width: 350px;
+  // width: 350px;
   height: 420px;
   background-color: lightgray;
   border: 5px solid rgb(6, 6, 6);
@@ -49,12 +49,28 @@
   margin: 29px 10px;
 }
 
-h2 {
+h4.multiplayer {
   font-family: 'handjet';
-  font-size: 30px;
+  font-size: 40px;
   letter-spacing: 5px;
   margin-bottom: 10px;
   margin-top: -10px;
+  margin-top: -430px;
+  margin-left: 80px;
+}
+
+.duel-1 {
+  height: 50px;
+  display: flex;
+  margin-top: -65px;
+  margin-left: 20px;
+}
+
+.duel-2 {
+  height: 50px;
+  display: flex;
+  margin-top: -48px;
+  margin-left: 304px;
 }
 
 // White Card
@@ -89,6 +105,8 @@ input[type="submit"][value="Invite"] {
   width: 50vw;
   height: 15%;
   margin-left: 5px;
+  margin-top: 10px;
+  margin-bottom: 20px;
 }
 
 .form-check-input.radio_buttons.required {
@@ -106,9 +124,9 @@ input[type="submit"][value="Invite"] {
   border-radius: 0.15em;
   transform: translateY(-0.075em);
   margin-right: 5px;
+  --bs-form-check-bg-image: url()
 }
 
-// .form-check-input.radio_buttons.required:checked::before {
-//   background-color: #007bff; /* Cor de fundo quando selecionado */
-//   border-color: #007bff; /* Cor da borda quando selecionado */
-// }
+input[type="radio"]:checked {
+  background-color: rgb(114, 114, 233);
+}
