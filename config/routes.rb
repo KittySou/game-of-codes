@@ -18,6 +18,8 @@ Rails.application.routes.draw do
   get "/decks/:deck_id/racetracks/new", to: "racetracks#new", as: "new_racetrack"
   post "/decks/:deck_id/racetracks", to: "racetracks#create", as: "deck_racetracks"
   patch "/racetracks/:id", to: "racetracks#update", as: "update_racetrack"
+  get "/racetracks/history", to: "racetracks#history", as: "history_racetrack"
+  # get "/"
 end
 # resources :bookings, only: [:index, :show, :edit, :update, :destroy]
 # resources :posters, only: [:index, :show, :create, :new] do
