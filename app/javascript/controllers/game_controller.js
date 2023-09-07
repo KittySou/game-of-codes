@@ -138,7 +138,7 @@ export default class extends Controller {
           headers: headers,
           method: "POST"
         })
-        this.#endGame(this.loserTemplateTarget.innerHTML)
+        this.#endGame(this.winnerTemplateTarget.innerHTML)
         return
 
       }
