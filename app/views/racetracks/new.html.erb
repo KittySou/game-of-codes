@@ -1,4 +1,25 @@
-<%= simple_form_for([@deck, @racetrack]) do |f| %>
-<%= f.association :player_2, as: :radio_buttons, collection: @users, label_method: :username %>
-<%= f.submit "Invite" %>
-<% end %>
+<div class="container-multiplayer">
+  <div class="bigbox-multiplayer">
+
+    <h4 class="multiplayer">
+      <img src="https://res.cloudinary.com/ddpxdkwin/image/upload/v1693947476/multiplayer_lij6sl.png">
+      <span>MULTIPLAYER</span>
+      <img src="https://res.cloudinary.com/ddpxdkwin/image/upload/v1693947476/multiplayer_lij6sl.png">
+    </h4>
+
+    <div class="container-small">
+      <div class="smallbox-multiplayer">
+        <div data-game-target="gameArea" style="font-family: handjet;">
+          <div class="container-multiplayer-two">
+            <%= simple_form_for([@deck, @racetrack]) do |f| %>
+              <%= f.association :player_2, as: :radio_buttons, collection: @users, label_method: :multiplayer_label %>
+              <%= f.submit "Invite" %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%= render "decks/progress_bar_levels", user: current_user, opponent: false %>

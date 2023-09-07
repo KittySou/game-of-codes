@@ -25,7 +25,7 @@
   font-size: 73px;
   font-weight: bolder;
   margin-bottom: 0px;
-
+  text-shadow: 1px 4px 1px black;
 }
 
 #home-container {
@@ -89,7 +89,7 @@ html, body {
   flex-direction: column;
   height: 100%;
   background-color: $green !important;
-  background-image: url("https://res.cloudinary.com/ddpxdkwin/image/upload/v1693688930/game-of-codes-full-scenario_gnzd5r.png");
+  background-image: url("https://res.cloudinary.com/ddpxdkwin/image/upload/v1694043552/last-background_qoh4b2.png");
   // background-repeat: repeat;
   // font-family: "Montserrat", sans-serif;
   text-align: center;
@@ -129,13 +129,15 @@ html, body {
 }
 
 .game-title {
-  color: black;
+  color: #f8f9fa;
   font-size: 70px;
+  text-shadow: 1px 4px 1px black;
 }
 .game-sub-title {
-  color: black;
+  color: #f8f9fa;
   font-size: 40px;
   font-family: 'handjet';
+  text-shadow: 1px 4px 1px black;
 }
 .ruby-size {
   height: 100px;
