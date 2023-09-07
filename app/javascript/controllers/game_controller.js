@@ -146,7 +146,7 @@ export default class extends Controller {
      // this.#endGame(this.winnerTemplateTarget.innerHTML)
       // this.stopwatchTarget.innerText = "DONE"
 
-      return
+
     }
 
     if (userGuessedRight) {
