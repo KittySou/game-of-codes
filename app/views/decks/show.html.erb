@@ -42,7 +42,7 @@
 
           <div data-game-target="answerConfirmation" class="answer"></div>
         <% if @multiplayer %>
-        <%= render "decks/progress_bar_levels", user: @opponent, opponent: true %>
+        <%= render "decks/progress_bar_multiplayer", user: @opponent, opponent: true %>
         <% end %>
         <%= render "decks/progress_bar_levels", user: current_user, opponent: false %>
 
