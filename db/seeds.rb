@@ -6,14 +6,24 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
+puts "Destroying all racetracks..."
 Racetrack.destroy_all
+puts "Racetracks destroyed."
+puts "Destroying all userdecks..."
 UserDeck.destroy_all
+puts "Userdecks destroyed."
+puts "Destroying all answers..."
 Answer.destroy_all
+puts "Answers destroyed."
+puts "Destroying all questions..."
 Question.destroy_all
+puts "Questions destroyed."
+puts "Destroying all decks..."
 Deck.destroy_all
+puts "Decks destroyed."
+puts "Destroying all users..."
 User.destroy_all
-
-# add avatar to each user. need username!
+puts "Users destroyed."
 
 user_1 = User.create!(email:"marcelo@live.com", password:"123456" ,first_name:"Marcelo", last_name:"User", username: "marcelovsk1")
 user_1.photo.attach(io: URI.open("https://res.cloudinary.com/ddpxdkwin/image/upload/v1693430408/marcelo_kiroir.jpg"), filename: "user_1.png", content_type: "image/png")
@@ -24,7 +34,7 @@ user_2.photo.attach(io: URI.open("https://res.cloudinary.com/ddpxdkwin/image/upl
 user_3 = User.create!(email:"grant@live.com", password:"123456" ,first_name:"Grant", last_name:"User", username: "boyCapel")
 user_3.photo.attach(io: URI.open("https://res.cloudinary.com/ddpxdkwin/image/upload/v1693430408/grant_gbqxfk.jpg"), filename: "user_3.png", content_type: "image/png")
 
-user_4 = User.create!(email:"kitty@live.com", password:"123456" ,first_name:"Kitty", last_name:"User", username: "hello_kitty123")
+user_4 = User.create!(email:"kitty@live.com", password:"123456" ,first_name:"Kitty", last_name:"User", username: "hellokitty")
 user_4.photo.attach(io: URI.open("https://res.cloudinary.com/ddpxdkwin/image/upload/v1693948791/138801531_bsishx.png"), filename: "user_4.png", content_type: "image/png")
 user_4.save
 
