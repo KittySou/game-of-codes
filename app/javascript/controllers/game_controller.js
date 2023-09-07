@@ -171,7 +171,7 @@ export default class extends Controller {
     // 1. update the progress bar width
     progressBar.querySelector('.green-bar').style.width = `${percentage}%`
     // 2. update the text
-    progressBar.querySelector('.completed-text').innerText = `DECK ${percentage}% COMPLETED!`
+    progressBar.querySelector('.percentage').innerText = `${percentage}%`
   }
 
   nextQuestion() {
