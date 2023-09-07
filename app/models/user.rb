@@ -10,4 +10,8 @@ class User < ApplicationRecord
   has_one_attached :photo
   validates :first_name, presence: true
   validates :last_name, presence: true
+
+  def multiplayer_label
+    "<img src='#{photo.url}' class='avatar'> #{username}".html_safe
+  end
 end
