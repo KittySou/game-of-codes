@@ -1,5 +1,5 @@
 class RacetracksController < ApplicationController
-  before_action :set_deck, except: [:update, :history]
+  before_action :set_deck, except: [:index, :update, :history]
   # skip_before_action :verify_authenticity_token, only: [:progress]
 
   def new
@@ -32,6 +32,10 @@ class RacetracksController < ApplicationController
   def history
     @racetracks = Racetrack.where("(player_1_id = ? or player_2_id = ?) and completed = ?", current_user, current_user, true)
     # raise
+  end
+
+  def index
+    @racetracks = Racetrack.where("player_2_id = ? and completed = ?", current_user, false)
   end
 
   private
