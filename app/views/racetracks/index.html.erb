@@ -1,18 +1,20 @@
-<h1>Open races</h1>
 
-<div class="results-history">
-  <ul>
+
+<h1 class="center">CLICK TO JOIN A RACE:</h1>
+
+<div class="center">
+
   <% @racetracks.each do |race| %>
-
-      <li><p>
+    <div class="btn btn-primary join-race-button" style="font-family: handjet; width: 80%; ;">
+      <%# <li><p> %>
       <%= link_to "/decks/#{race.deck_id}?racetrack=#{race.id}" do %>
-        <%= race.deck.name %>
-        vs
-        <%= race.player_1.username %>
+        <h2><%= race.deck.name.upcase %>
+        vs: <b><%= race.player_1.username %></b></h2>
+
         (<%= race.created_at %>)
       <% end %>
-      </p></li>
-
+      <%# </p></li> %>
+    </div>
   <% end %>
-  </ul>
+
 </div>
