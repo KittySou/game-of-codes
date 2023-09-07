@@ -2,7 +2,7 @@
   <div class="navbar navbar-expand-sm navbar-light navbar-lewagon" style="height: 74px; background-color: lightgray;">
     <div class="container-fluid">
       <div class="picture-name-info">
-        <%= link_to " < ", 'javascript:history.back()', class: "nav-btn black-text"%>
+        <%= link_to " < ", :back, class: "nav-btn black-text"%>
       </div>
 
       <% if current_page?(:controller => 'decks', :action => 'show') %>
