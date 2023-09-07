@@ -1,10 +1,9 @@
 <template class="loser-template" data-game-target="box-smaller loserTemplate">
   <%# TODO: connect in the stimulus %>
  <h1> You Lost !</h1>
-  <p>Your time was: {{time}}</p>
-  <img src="https://res.cloudinary.com/ddpxdkwin/image/upload/v1694035046/sad_mbid1f.gif" class="cat">
+  <p> : ( Your time was: {{time}}</p>
+  <img src="https://res.cloudinary.com/ddpxdkwin/image/upload/v1694035046/sad_mbid1f.gif" class="loser">
   <div class="btn back-to-index-btn">
-    <button class="button-back"><%= link_to "BACK TO DECKS", decks_path(level: "beginner") %></button>
+    <button class="button-back"><%= link_to "BACK TO DECKS", decks_path(level: "multiplayer") %></button>
   </div>
 </template>
-S

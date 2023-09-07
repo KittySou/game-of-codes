@@ -2,15 +2,7 @@
   <div class="navbar navbar-expand-sm navbar-light navbar-lewagon" style="height: 74px; background-color: lightgray;">
     <div class="container-fluid">
       <div class="picture-name-info">
-        <% if current_page?(:controller => 'decks', :action => 'menu') %>
-        <%= link_to "  ", "#" , class: "blank" %>
-        <%= cl_image_tag current_user.photo.key, class: "avatar" %>
-        <div class="name-beside-photo">
-        <%= current_user.first_name %>
-        </div>
-        <% else %>
         <%= link_to " < ", 'javascript:history.back()', class: "nav-btn black-text"%>
-        <% end %>
       </div>
 
       <% if current_page?(:controller => 'decks', :action => 'show') %>
@@ -38,10 +30,6 @@
       <% end %>
 
       <div>
-        <% if current_page?(:controller => 'decks', :action => 'menu') %>
-        <%= link_to " ≡ ", 'javascript:history.back()', class: "nav-btn", style: "font-family: math; color: black;" %>
-        <% else %>
-          <%#= link_to " ≡ ", "/menu" , class: "nav-btn", style: "font-family: math; color: black;" %>
          <div data-bs-toggle="modal" data-bs-target="#exampleModal2" class="nav-btn">
           ≡
         </div>
@@ -52,7 +40,7 @@
 
               <h1 class="modal-title-menu" id="exampleModal2Label">MENU</h1>
                 <div class="user-first-name">
-                    <%= current_user.first_name %>
+                    <%= current_user.username %>
                   <div class="user-avatar">
                     <%= cl_image_tag current_user.photo.key, class: "avatar" %>
                   </div>
@@ -69,7 +57,7 @@
             </div>
           </div>
         </div>
-        <% end %>
+
       </div>
     </div>
   </div>

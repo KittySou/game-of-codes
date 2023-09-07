@@ -17,6 +17,8 @@ export default class extends Controller {
     "answerInput",
     "progressBar",
     "congratulationsTemplate",
+    "loserTemplate",
+    "winnerTemplate",
     "tipsHeader",
     "deckHeader",
     "stopwatch",
@@ -136,7 +138,9 @@ export default class extends Controller {
         })
       }
 
-      this.#endGame(this.congratulationsTemplateTarget.innerHTML)
+      this.#endGame(this.winnerTemplateTarget.innerHTML)
+      this.stopwatchTarget.innerText = "DONE"
+
       return
     }
 
@@ -240,7 +244,10 @@ export default class extends Controller {
         if (data.playerId === this.opponentIdValue) {
           this.#updateProgressBar(this.opponentProgressBarTarget, data.numberOfCorrectAnswers)
           if (data.isDeckCompleted) {
-            this.#endGame('<h3>Oh no, you lost :(<h3>')
+            // this.#endGame('<h3>Oh no, you lost :(<h3>')
+            this.#endGame(this.loserTemplateTarget.innerHTML)
+            this.stopwatchTarget.innerText = "DONE"
+
               // need new LOST template
               // stop clock for loser
           }
