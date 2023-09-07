@@ -42,10 +42,10 @@ user_5 = User.create!(email:"david@live.com", password:"123456" ,first_name:"Dav
 user_5.photo.attach(io: URI.open("https://res.cloudinary.com/ddpxdkwin/image/upload/v1693423130/wcsd5gataw9n12srxxbj.png"), filename: "user_5.png", content_type: "image/png")
 user_5.save
 
-deck_1 = Deck.create!(name: "STRING", tips: "Strings are text that exist within either single quotes or double quotes. You create a string by enclosing a sequence of characters in one or the other.", level: 1)
-deck_2 = Deck.create!(name: "INTEGER", tips: "Numbers without decimal points are called integers. Example: 2.5", level: 1)
+deck_1 = Deck.create!(name: "STRING", tips: "Strings are texts that exist within either single quotes or double quotes. You create a string by enclosing a sequence of characters in one or the other.", level: 1)
+deck_2 = Deck.create!(name: "INTEGER", tips: "Numbers without decimal points are called integers. Example: 2 (Integer) vs 2.0 (Float)", level: 1)
 deck_3 = Deck.create!(name: "FLOAT", tips: "Numbers with decimal points are called floating-point numbers or floats. Example: 1.3", level: 1)
-deck_4 = Deck.create!(name: "ARRAY", tips: "check lecture", level: 1)
+deck_4 = Deck.create!(name: "ARRAY", tips: "An array is a collection of objects of any kind (strings, integers, etc.). It is enlo", level: 1)
 deck_5 = Deck.create!(name: "RANGE", tips: "check lecture", level: 1)
 deck_6 = Deck.create!(name: "SPECIAL VALUES", tips: "check lecture", level: 1)
 deck_7 = Deck.create!(name: "VARIABLES", tips: "check lecture", level: 1)
@@ -177,3 +177,13 @@ question_20 = Question.create!(content: "Is rootbeer a float?", deck: deck_1_mul
 answer_69 = Answer.create!(content: "No", question: question_20, right_answer: true)
 answer_70 = Answer.create!(content: "5", question: question_20)
 answer_71 = Answer.create!(content: "Yum", question: question_20)
+
+UserDeck.create(
+  user: user_4,
+  deck: deck_1
+)
+
+UserDeck.create(
+  user: user_4,
+  deck: deck_2
+)
