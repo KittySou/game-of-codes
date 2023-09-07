@@ -19,28 +19,62 @@
               <div class="hide" style="padding: 20px"><img class="ruby-size-on-button" src="https://www.nicepng.com/png/full/749-7492440_ruby-on-rails-logo.png"></div>
             </div>
           <% end %>
-          <%= link_to decks_path(level: "intermediate"), style: "text-decoration: none; opacity: .4;" do %>
-            <div class="level-card intermediate" style="border-style: solid; color: black" disabled>
+          <%= link_to_if false, decks_path(level: "intermediate"), remote: true do %>
+            <div class="level-card intermediate" style="border-style: solid; color: black; text-decoration: none; opacity: .4;">
               <div class="hide" style="padding: 20px"><img class="ruby-size-on-button" src="https://www.nicepng.com/png/full/749-7492440_ruby-on-rails-logo.png"></div>
               <h1>INTERMEDIATE</h1>
               <div class="hide" style="padding: 20px"><img class="ruby-size-on-button" src="https://www.nicepng.com/png/full/749-7492440_ruby-on-rails-logo.png"></div>
             </div>
           <% end %>
-          <%= link_to decks_path(level: "advanced"), style: "text-decoration: none; opacity: .4;" do %>
-            <div class="level-card advanced" style="border-style: solid; color: black" disabled>
+          <%= link_to_if false, decks_path(level: "advanced"), remote: true do %>
+            <div class="level-card advanced" style="border-style: solid; color: black; text-decoration: none; opacity: .4;">
               <div class="hide" style="padding: 20px"><img class="ruby-size-on-button" src="https://www.nicepng.com/png/full/749-7492440_ruby-on-rails-logo.png"></div>
               <h1>ADVANCED</h1>
               <div class="hide" style="padding: 20px"><img class="ruby-size-on-button" src="https://www.nicepng.com/png/full/749-7492440_ruby-on-rails-logo.png"></div>
             </div>
           <% end %>
             <img class="sword-img" src="https://res.cloudinary.com/ddpxdkwin/image/upload/v1693947476/multiplayer_lij6sl.png" alt="">
-          <%= link_to decks_path(level: "multiplayer"), style: "text-decoration: none" do %>
-            <div class="level-card multiplayer-button" style="border-style: double; border-width: 3px; align-items:center; color: black">
+            <div data-bs-toggle="modal" data-bs-target="#multiplayerModal" class="level-card multiplayer-button" style="border-style: double; border-width: 15px; align-items:center; color: black">
               <div class="hide" style="padding: 20px"><img class="ruby-size-on-button" src="https://res.cloudinary.com/ddpxdkwin/image/upload/v1693947476/multiplayer_lij6sl.png"></div>
               <h1>MULTIPLAYER</h1>
               <div class="hide" style="padding: 20px"><img class="ruby-size-on-button" src="https://res.cloudinary.com/ddpxdkwin/image/upload/v1693947476/multiplayer_lij6sl.png"></div>
             </div>
-          <% end %>
+
+        <div class="modal fade" id="multiplayerModal" tabindex="-1" aria-labelledby="multiplayerModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-tips modal-menu">
+            <div class="modal-content">
+              <div class="modal-header-menu">
+
+                <h1 class="modal-title-menu" id="multiplayerModalLabel">MULTIPLAYER</h1>
+
+              </div>
+
+              <div class="modal-body-menu p-2">
+
+                <%= link_to decks_path(level: "multiplayer"), style: "text-decoration: none" do %>
+                  <div class="level-card multiplayer-button" style="border-style: double; border-width: 3px; align-items:center; color: black">
+                    <div class="hide" style="padding: 20px"><img class="ruby-size-on-button" src="https://res.cloudinary.com/ddpxdkwin/image/upload/v1693947476/multiplayer_lij6sl.png"></div>
+                    <h1>Create a new game</h1>
+                    <div class="hide" style="padding: 20px"><img class="ruby-size-on-button" src="https://res.cloudinary.com/ddpxdkwin/image/upload/v1693947476/multiplayer_lij6sl.png"></div>
+                  </div>
+                <% end %>
+
+                <%= link_to racetracks_path, style: "text-decoration: none" do %>
+                  <div class="level-card multiplayer-button" style="border-style: double; border-width: 3px; align-items:center; color: black">
+                    <div class="hide" style="padding: 20px"><img class="ruby-size-on-button" src="https://res.cloudinary.com/ddpxdkwin/image/upload/v1693947476/multiplayer_lij6sl.png"></div>
+                    <h1>Join a game</h1>
+                    <div class="hide" style="padding: 20px"><img class="ruby-size-on-button" src="https://res.cloudinary.com/ddpxdkwin/image/upload/v1693947476/multiplayer_lij6sl.png"></div>
+                  </div>
+                <% end %>
+
+              </div>
+
+              <div class="modal-footer-menu" id="menu">
+                <button type="button" class="close-button" data-bs-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
 
 
         </div>
