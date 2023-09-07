@@ -1,4 +1,22 @@
-<%= simple_form_for([@deck, @racetrack]) do |f| %>
-<%= f.association :player_2, as: :radio_buttons, collection: @users, label_method: :username %>
-<%= f.submit "Invite" %>
-<% end %>
+<div class="container-multiplayer"></div>
+  <div class="bigbox-multiplayer"></div>
+     <h4 data-game-target="tipsHeader">TIPS</h4>
+        <h4 data-game-target="deckHeader" class="d-none">#<%= @deck.name %>_DECK</h4>
+    </div>
+    </div>
+        <div class="container-small">
+          <div class="smallbox-multiplayer">
+
+          <div data-game-target="gameArea" style="font-family: handjet;">
+
+            <div class="container-multiplayer-two">
+
+          <%= simple_form_for([@deck, @racetrack]) do |f| %>
+          <%= cl_image_tag current_user.photo.key, class: "avatar" %>
+          <%= f.association :player_2, as: :radio_buttons, collection: @users, label_method: :username %>
+          <%= f.submit "Invite" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+</div>
