@@ -1,0 +1,18 @@
+<h1>Open races</h1>
+
+<div class="results-history">
+  <ul>
+  <% @racetracks.each do |race| %>
+
+      <li><p>
+      <%= link_to "/decks/#{race.deck_id}?racetrack=#{race.id}" do %>
+        <%= race.deck.name %>
+        vs
+        <%= race.player_1.username %>
+        (<%= race.created_at %>)
+      <% end %>
+      </p></li>
+
+  <% end %>
+  </ul>
+</div>
