@@ -4,16 +4,20 @@
   </div>
 </div>
 
-
-
-
   <div class="box-white">
     <div class="results-history">
     <%# <ul> %>
       <% @racetracks.each do |race| %>
         <div class="result">
-          <h6><%= race.winner == current_user ? "WIN 🏆" : "👎 LOSS"%></h6>
           <% opponent = race.player_1 == current_user ? race.player_2 : race.player_1 %>
+          <%  if race.winner == current_user %>
+            <h6 style="color: green;">🏆 WIN</h6>
+          <%  else %>
+            <h6 style="color: red;">👎 LOSS </h6>
+          <% end %>
+
+          <%# <h6><%= race.winner == current_user ? "WIN 🏆" : "👎 LOSS"   IF UNCOMMENTED this statement is missing ruby tag and closing header %>
+
           <p>VS - <%= opponent.username %> <%= cl_image_tag opponent.photo.key, class: "avatar" %></p>
           <p><%= race.deck.name%> - <%= race.updated_at.to_s(:short) %></p>
         </div>
