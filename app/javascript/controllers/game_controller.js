@@ -103,8 +103,17 @@ export default class extends Controller {
 
   send() {
     // TODO (Fred): Check if we can do the line below with Stimulus...
-    const userAnswer = document.querySelector("input[name=answer]:checked").value
+    const userAnswerInput = document.querySelector("input[name=answer]:checked")
+    const userAnswer = userAnswerInput.value
     const userGuessedRight = this.currentQuestion.answers.find(answer => answer.id === userAnswer).rightAnswer
+
+    const label = userAnswerInput.nextElementSibling
+    if (userGuessedRight) {
+      label.classList.add('correct-answer')
+    } else {
+      label.classList.add('incorrect-answer')
+    }
+
     if (userGuessedRight) {
       this.#removeCurrentQuestionFromDeck()
       this.numberOfCorrectAnswers++
@@ -164,17 +173,18 @@ export default class extends Controller {
     answersInput.forEach(input => {
       input.disabled = true
     });
+
+  //   const answerLabels = document.querySelectorAll(".btn.btn-success");
+  // answerLabels.forEach(label => {
+  //   const isCorrect = label.classList.contains("correct");
+  //   if (isCorrect) {
+  //     label.classList.add("btn-correct");
+  //   } else {
+  //     label.classList.add("btn-incorrect");
+  //   }
+  // });
   }
 
-//   const answerLabels = document.querySelectorAll(".btn.btn-success");
-// answerLabels.forEach(label => {
-//   const isCorrect = label.classList.contains("correct");
-//   if (isCorrect) {
-//     label.classList.add("btn-correct");
-//   } else {
-//     label.classList.add("btn-incorrect");
-//   }
-// });
 
   #updateProgressBar(progressBar, numberOfCorrectAnswers) {
     const percentage = numberOfCorrectAnswers / this.totalNumberOfQuestions * 100

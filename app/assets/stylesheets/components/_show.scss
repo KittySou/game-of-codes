@@ -228,3 +228,13 @@ h1 {
   display: flex;
     justify-content: center;
 }
+
+.btn-check:checked + .correct-answer {
+  background-color: green;
+  opacity: 1;
+}
+
+.btn-check:checked + .incorrect-answer {
+  background-color: red;
+  opacity: 1;
+}
