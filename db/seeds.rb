@@ -225,6 +225,27 @@ Racetrack.create!(
   winner: david,
   player_1: kitty,
   player_2: david,
+  deck: deck_1_multiplayer,
+  completed: true
+)
+Racetrack.create!(
+  winner: david,
+  player_1: kitty,
+  player_2: david,
+  deck: deck_2_multiplayer,
+  completed: true
+)
+Racetrack.create!(
+  winner: david,
+  player_1: kitty,
+  player_2: david,
+  deck: deck_3_multiplayer,
+  completed: true
+)
+Racetrack.create!(
+  winner: david,
+  player_1: kitty,
+  player_2: david,
   deck: deck_4_multiplayer,
   completed: true
 )
