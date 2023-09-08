@@ -77,7 +77,7 @@ export default class extends Controller {
   }
 
   disconnect() {
-    this.channel.unsubscribe()
+    if (this.isMultiplayer) { this.channel.unsubscribe() }
   }
 
   start() {
