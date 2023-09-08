@@ -6,36 +6,46 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
+puts "Destroying all racetracks..."
 Racetrack.destroy_all
+puts "Racetracks destroyed."
+puts "Destroying all userdecks..."
 UserDeck.destroy_all
+puts "Userdecks destroyed."
+puts "Destroying all answers..."
 Answer.destroy_all
+puts "Answers destroyed."
+puts "Destroying all questions..."
 Question.destroy_all
+puts "Questions destroyed."
+puts "Destroying all decks..."
 Deck.destroy_all
+puts "Decks destroyed."
+puts "Destroying all users..."
 User.destroy_all
-
-# add avatar to each user. need username!
+puts "Users destroyed."
 
 user_1 = User.create!(email:"marcelo@live.com", password:"123456" ,first_name:"Marcelo", last_name:"User", username: "marcelovsk1")
-user_1.photo.attach(io: URI.open("https://res.cloudinary.com/ddpxdkwin/image/upload/v1693430408/marcelo_kiroir.jpg"), filename: "user_1.png", content_type: "image/png")
+user_1.photo.attach(io: URI.open("https://res.cloudinary.com/ddpxdkwin/image/upload/v1694120512/marcelo_c4omxf.png"), filename: "user_1.png", content_type: "image/png")
 
 user_2 = User.create!(email:"justin@live.com", password:"123456" ,first_name:"Justin", last_name:"User", username: "justincredible")
-user_2.photo.attach(io: URI.open("https://res.cloudinary.com/ddpxdkwin/image/upload/v1693430408/justin_dkrsph.jpg"), filename: "user_2.png", content_type: "image/png")
+user_2.photo.attach(io: URI.open("https://res.cloudinary.com/ddpxdkwin/image/upload/v1694120512/justin_oebyfz.png"), filename: "user_2.png", content_type: "image/png")
 
 user_3 = User.create!(email:"grant@live.com", password:"123456" ,first_name:"Grant", last_name:"User", username: "boyCapel")
-user_3.photo.attach(io: URI.open("https://res.cloudinary.com/ddpxdkwin/image/upload/v1693430408/grant_gbqxfk.jpg"), filename: "user_3.png", content_type: "image/png")
+user_3.photo.attach(io: URI.open("https://res.cloudinary.com/ddpxdkwin/image/upload/v1694122230/image_wjsor4.png"), filename: "user_3.png", content_type: "image/png")
 
-user_4 = User.create!(email:"kitty@live.com", password:"123456" ,first_name:"Kitty", last_name:"User", username: "hello_kitty123")
-user_4.photo.attach(io: URI.open("https://res.cloudinary.com/ddpxdkwin/image/upload/v1693948791/138801531_bsishx.png"), filename: "user_4.png", content_type: "image/png")
+user_4 = User.create!(email:"kitty@live.com", password:"123456" ,first_name:"Kitty", last_name:"User", username: "hellokitty")
+user_4.photo.attach(io: URI.open("https://res.cloudinary.com/ddpxdkwin/image/upload/v1694120512/kitty_c08za4.png"), filename: "user_4.png", content_type: "image/png")
 user_4.save
 
 user_5 = User.create!(email:"david@live.com", password:"123456" ,first_name:"David", last_name:"User", username: "davidwagon")
-user_5.photo.attach(io: URI.open("https://res.cloudinary.com/ddpxdkwin/image/upload/v1693423130/wcsd5gataw9n12srxxbj.png"), filename: "user_5.png", content_type: "image/png")
+user_5.photo.attach(io: URI.open("https://res.cloudinary.com/ddpxdkwin/image/upload/v1694120512/david_ixp3js.png"), filename: "user_5.png", content_type: "image/png")
 user_5.save
 
-deck_1 = Deck.create!(name: "STRING", tips: "Strings are text that exist within either single quotes or double quotes. You create a string by enclosing a sequence of characters in one or the other.", level: 1)
-deck_2 = Deck.create!(name: "INTEGER", tips: "Numbers without decimal points are called integers. Example: 2.5", level: 1)
+deck_1 = Deck.create!(name: "STRING", tips: "Strings are texts that exist within either single quotes or double quotes. You create a string by enclosing a sequence of characters in one or the other.", level: 1)
+deck_2 = Deck.create!(name: "INTEGER", tips: "Numbers without decimal points are called integers. Example: 2 (Integer) vs 2.0 (Float)", level: 1)
 deck_3 = Deck.create!(name: "FLOAT", tips: "Numbers with decimal points are called floating-point numbers or floats. Example: 1.3", level: 1)
-deck_4 = Deck.create!(name: "ARRAY", tips: "check lecture", level: 1)
+deck_4 = Deck.create!(name: "ARRAY", tips: "An array is a collection of objects (strings, integers, etc.). It consists of enclosing those objects inside square brackets [...] each object separated by a comma.", level: 1)
 deck_5 = Deck.create!(name: "RANGE", tips: "check lecture", level: 1)
 deck_6 = Deck.create!(name: "SPECIAL VALUES", tips: "check lecture", level: 1)
 deck_7 = Deck.create!(name: "VARIABLES", tips: "check lecture", level: 1)
@@ -167,3 +177,13 @@ question_20 = Question.create!(content: "Is rootbeer a float?", deck: deck_1_mul
 answer_69 = Answer.create!(content: "No", question: question_20, right_answer: true)
 answer_70 = Answer.create!(content: "5", question: question_20)
 answer_71 = Answer.create!(content: "Yum", question: question_20)
+
+UserDeck.create(
+  user: user_4,
+  deck: deck_1
+)
+
+UserDeck.create(
+  user: user_4,
+  deck: deck_2
+)
