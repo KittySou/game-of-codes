@@ -234,3 +234,24 @@ label.btn.btn-secondary {
   display: flex;
     justify-content: center;
 }
+
+.countdown {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.countdown > div {
+  background-color: lightgray;
+  font-size: xx-large;
+  font-family: handjet;
+  padding: 20px;
+  width: 60vw;
+  text-align: center;
+  border: 5px solid black;
+}

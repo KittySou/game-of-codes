@@ -4,7 +4,13 @@
   data-game-racetrack-id-value="<%= params[:racetrack] %>"
   data-game-player-id-value="<%= current_user.id %>"
   data-game-opponent-id-value="<%= @opponent.id if @multiplayer %>"
+  data-game-player-one-id-value="<%= @racetrack.player_1.id if @multiplayer %>"
+  data-game-player-two-id-value="<%= @racetrack.player_2.id if @multiplayer %>"
 >
+
+  <div class="countdown d-none" data-game-target="countdown">
+    <div>3</div>
+  </div>
 
   <div class="container">
 
