@@ -10,13 +10,14 @@
   <div class="box-white">
     <div class="results-history">
     <%# <ul> %>
-    <% @racetracks.each do |race| %>
-      <div class="result">
-        <h6>🃁 <%= race.deck.name%></h6>
-        <p>📅 <%= race.updated_at.to_s(:short) %></p>
-        <p>🏆 <%= race.winner.username %> - <%= cl_image_tag current_user.photo.key, class: "avatar" %></p>
-      </div>
-    <% end %>
+      <% @racetracks.each do |race| %>
+        <div class="result">
+          <h6><%= race.winner == current_user ? "WIN 🏆" : "👎 LOSS"%></h6>
+          <% opponent = race.player_1 == current_user ? race.player_2 : race.player_1 %>
+          <p>VS - <%= opponent.username %> <%= cl_image_tag opponent.photo.key, class: "avatar" %></p>
+          <p><%= race.deck.name%> - <%= race.updated_at.to_s(:short) %></p>
+        </div>
+      <% end %>
     <%# </ul> %>
+    </div>
   </div>
-</div>
