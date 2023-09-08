@@ -147,7 +147,7 @@ answer_57 = Answer.create!(content: "puts 3.13", question: question_15, right_an
 answer_58 = Answer.create!(content: "puts 365", question: question_15)
 answer_59 = Answer.create!(content: 'puts "wagon"', question: question_15)
 
-deck_1_multiplayer = Deck.create!(name: "Floats", tips: "check lecture", level: 100)
+deck_1_multiplayer = Deck.create!(name: "Floats", tips: "Numbers with decimal points are floats. If you use a float in a calculation, the result will also be a float-type number.", level: 100)
 deck_2_multiplayer = Deck.create!(name: "Boolean", tips: "check lecture", level: 100)
 deck_3_multiplayer = Deck.create!(name: "Integers", tips: "check lecture", level: 100)
 deck_4_multiplayer = Deck.create!(name: "Arrays", tips: "check lecture", level: 100)
