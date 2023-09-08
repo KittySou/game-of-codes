@@ -12,9 +12,9 @@
     <%# <ul> %>
     <% @racetracks.each do |race| %>
       <div class="result">
-        <h6><%= race.deck.name%></h6>
-        <p>📅 <%= race.updated_at.to_s(:long) %></p>
-        <p>🏆 <%= race.winner.username %></p>
+        <h6>🃁 <%= race.deck.name%></h6>
+        <p>📅 <%= race.updated_at.to_s(:short) %></p>
+        <p>🏆 <%= race.winner.username %> - <%= cl_image_tag current_user.photo.key, class: "avatar" %></p>
       </div>
     <% end %>
     <%# </ul> %>
