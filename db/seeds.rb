@@ -25,22 +25,24 @@ puts "Destroying all users..."
 User.destroy_all
 puts "Users destroyed."
 
+
 marcelo = User.create!(email:"marcelo@live.com", password:"123456" ,first_name:"Marcelo", last_name:"User", username: "marcelovsk1")
-marcelo.photo.attach(io: URI.open("https://res.cloudinary.com/ddpxdkwin/image/upload/v1694120512/marcelo_c4omxf.png"), filename: "marcelo.png", content_type: "image/png")
+marcelo.photo.attach(io: URI.open("https://res.cloudinary.com/ddpxdkwin/image/upload/v1694185576/marcelo_hfgoye.png"), filename: "marcelo.png", content_type: "image/png")
 
 justin = User.create!(email:"justin@live.com", password:"123456" ,first_name:"Justin", last_name:"User", username: "justincredible")
-justin.photo.attach(io: URI.open("https://res.cloudinary.com/ddpxdkwin/image/upload/v1694120512/justin_oebyfz.png"), filename: "justin.png", content_type: "image/png")
+justin.photo.attach(io: URI.open("https://res.cloudinary.com/ddpxdkwin/image/upload/v1694185576/justin_c5gj8h.png"), filename: "justin.png", content_type: "image/png")
 
 grant = User.create!(email:"grant@live.com", password:"123456" ,first_name:"Grant", last_name:"User", username: "boyCapel")
-grant.photo.attach(io: URI.open("https://res.cloudinary.com/ddpxdkwin/image/upload/v1694122230/image_wjsor4.png"), filename: "grant.png", content_type: "image/png")
+grant.photo.attach(io: URI.open("https://res.cloudinary.com/ddpxdkwin/image/upload/v1694185576/grant_1_dbznmm.png"), filename: "grant.png", content_type: "image/png")
 
 kitty = User.create!(email:"kitty@live.com", password:"123456" ,first_name:"Kitty", last_name:"User", username: "hellokitty")
-kitty.photo.attach(io: URI.open("https://res.cloudinary.com/ddpxdkwin/image/upload/v1694120512/kitty_c08za4.png"), filename: "kitty.png", content_type: "image/png")
+kitty.photo.attach(io: URI.open("https://res.cloudinary.com/ddpxdkwin/image/upload/v1694185576/kitty_vudo3p.png"), filename: "kitty.png", content_type: "image/png")
 kitty.save
 
 david = User.create!(email:"david@live.com", password:"123456" ,first_name:"David", last_name:"User", username: "davidwagon")
-david.photo.attach(io: URI.open("https://res.cloudinary.com/ddpxdkwin/image/upload/v1694120512/david_ixp3js.png"), filename: "david.png", content_type: "image/png")
+david.photo.attach(io: URI.open("https://res.cloudinary.com/ddpxdkwin/image/upload/v1694185578/david_wmsmef.png"), filename: "david.png", content_type: "image/png")
 david.save
+
 
 deck_1 = Deck.create!(name: "FLOAT", tips: "Numbers with decimal points are called floating-point numbers or floats. Example: 1.3", level: 1)
 deck_2 = Deck.create!(name: "INTEGER", tips: "Numbers without decimal points are called integers. Example: 2 (Integer) vs 2.0 (Float)", level: 1)
