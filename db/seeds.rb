@@ -53,10 +53,9 @@ deck_8 = Deck.create!(name: "ASSIGNING", tips: "check lecture", level: 1)
 deck_9 = Deck.create!(name: "REASSIGNING", tips: "check lecture", level: 1)
 
 
-
 question_1 = Question.create!(content: "What is a float?", deck: deck_1)
-answer_1 = Answer.create!(content: "Number", question: question_1, right_answer: true)
 answer_2 = Answer.create!(content: "Word", question: question_1)
+answer_1 = Answer.create!(content: "Number", question: question_1, right_answer: true)
 answer_3 = Answer.create!(content: "Text", question: question_1)
 
 question_2 = Question.create!(content: "Is 378 a float?", deck: deck_1)
@@ -65,13 +64,13 @@ answer_6 = Answer.create!(content: "Yes", question: question_2)
 answer_7 = Answer.create!(content: "Only if odd", question: question_2)
 
 question_3 = Question.create!(content: "Does a float contain a decimal point?", deck: deck_1)
-answer_9 = Answer.create!(content:  "Yes", question: question_3, right_answer: true)
 answer_10 = Answer.create!(content: "No", question: question_3)
 answer_11 = Answer.create!(content: "Sometimes", question: question_3)
+answer_9 = Answer.create!(content:  "Yes", question: question_3, right_answer: true)
 
 question_4 = Question.create!(content: "Choose the float.", deck: deck_1)
-answer_13 = Answer.create!(content: "34.4", question: question_4, right_answer: true)
 answer_14 = Answer.create!(content: "344", question: question_4)
+answer_13 = Answer.create!(content: "34.4", question: question_4, right_answer: true)
 answer_15 = Answer.create!(content: "0", question: question_4)
 
 question_5 = Question.create!(content: "How do you print a float ?", deck: deck_1)
@@ -80,20 +79,19 @@ answer_18 = Answer.create!(content: "puts 365", question: question_5)
 answer_19 = Answer.create!(content: 'puts "wagon"', question: question_5)
 
 
-
-deck_1_level_2 = Deck.create!(name: "array2", tips: "check lecture", level: 2)
-deck_2_level_2 = Deck.create!(name: "array2", tips: "check lecture", level: 2)
-deck_3_level_2 = Deck.create!(name: "array2", tips: "check lecture", level: 2)
-deck_4_level_2 = Deck.create!(name: "array2", tips: "check lecture", level: 2)
-deck_5_level_2 = Deck.create!(name: "array2", tips: "check lecture", level: 2)
-deck_6_level_2 = Deck.create!(name: "array2", tips: "check lecture", level: 2)
-deck_7_level_2 = Deck.create!(name: "array2", tips: "check lecture", level: 2)
-deck_8_level_2 = Deck.create!(name: "array2", tips: "check lecture", level: 2)
-deck_9_level_2 = Deck.create!(name: "array2", tips: "check lecture", level: 2)
+# deck_1_level_2 = Deck.create!(name: "array2", tips: "check lecture", level: 2)
+# deck_2_level_2 = Deck.create!(name: "array2", tips: "check lecture", level: 2)
+# deck_3_level_2 = Deck.create!(name: "array2", tips: "check lecture", level: 2)
+# deck_4_level_2 = Deck.create!(name: "array2", tips: "check lecture", level: 2)
+# deck_5_level_2 = Deck.create!(name: "array2", tips: "check lecture", level: 2)
+# deck_6_level_2 = Deck.create!(name: "array2", tips: "check lecture", level: 2)
+# deck_7_level_2 = Deck.create!(name: "array2", tips: "check lecture", level: 2)
+# deck_8_level_2 = Deck.create!(name: "array2", tips: "check lecture", level: 2)
+# deck_9_level_2 = Deck.create!(name: "array2", tips: "check lecture", level: 2)
 
 question_6 = Question.create!(content: "What is an integer?", deck: deck_2)
-answer_21 = Answer.create!(content: "Number", question: question_6, right_answer: true)
 answer_22 = Answer.create!(content: "Word", question: question_6)
+answer_21 = Answer.create!(content: "Number", question: question_6, right_answer: true)
 answer_23 = Answer.create!(content: "Sentence", question: question_6)
 
 question_7 = Question.create!(content: "How do you define an integer?", deck: deck_2)
@@ -102,13 +100,13 @@ answer_26 = Answer.create!(content: "Decimal Number", question: question_7)
 answer_27 = Answer.create!(content: "2.1?", question: question_7)
 
 question_8 = Question.create!(content: "Select the integer.", deck: deck_2)
-answer_29 = Answer.create!(content:  "15", question: question_8, right_answer: true)
 answer_30 = Answer.create!(content: "'wagon'", question: question_8)
 answer_31 = Answer.create!(content: "3.14", question: question_8)
+answer_29 = Answer.create!(content:  "15", question: question_8, right_answer: true)
 
 question_9 = Question.create!(content: "How can you check if number 100 is even?", deck: deck_2)
-answer_33 = Answer.create!(content: "100.even?", question: question_9, right_answer: true)
 answer_34 = Answer.create!(content: "100=even?", question: question_9)
+answer_33 = Answer.create!(content: "100.even?", question: question_9, right_answer: true)
 answer_35 = Answer.create!(content: "100 + even?", question: question_9)
 
 question_10 = Question.create!(content: "Is the number 3.14 an integer?", deck: deck_2)
@@ -125,7 +123,6 @@ answer_39 = Answer.create!(content: "Only when it is even", question: question_1
 # deck_7_level_3 = Deck.create!(name: "boolean3", tips: "check lecture", level: 3)
 # deck_8_level_3 = Deck.create!(name: "boolean3", tips: "check lecture", level: 3)
 # deck_9_level_3 = Deck.create!(name: "boolean3", tips: "check lecture", level: 3)
-
 
 
 question_11 = Question.create!(content: "What do you have to include when you create a string?", deck: deck_3)
@@ -154,9 +151,8 @@ answer_58 = Answer.create!(content: "100 = string", question: question_15)
 answer_59 = Answer.create!(content: "100_become_string", question: question_15)
 
 
-
 deck_1_multiplayer = Deck.create!(name: "Floats", tips: "Numbers with decimal points are floats. If you use a float in a calculation, the result will automatically be a float-type number.", level: 100)
-deck_2_multiplayer = Deck.create!(name: "Array", tips: "check lecture", level: 100)
+deck_2_multiplayer = Deck.create!(name: "Array", tips: "An array is a collection of objects (strings, integers, etc.). It consists of enclosing those objects inside square brackets [...] with each object separated by a comma.", level: 100)
 deck_3_multiplayer = Deck.create!(name: "Integers", tips: "check lecture", level: 100)
 deck_4_multiplayer = Deck.create!(name: "Boolean", tips: "check lecture", level: 100)
 deck_5_multiplayer = Deck.create!(name: "Variables", tips: "check lecture", level: 100)
