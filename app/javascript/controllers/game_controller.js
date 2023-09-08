@@ -159,12 +159,22 @@ export default class extends Controller {
     }
     this.nextButtonTarget.classList.remove("d-none")
     // this.answerInputTarget.disabled = true (disables only the first answer)
-    //👇 querySelectorAll on radio buttons .foreach -> disabled = true
+    // 👇 querySelectorAll on radio buttons .foreach -> disabled = true
     const answersInput = document.querySelectorAll("input[name=answer]");
     answersInput.forEach(input => {
       input.disabled = true
     });
   }
+
+//   const answerLabels = document.querySelectorAll(".btn.btn-success");
+// answerLabels.forEach(label => {
+//   const isCorrect = label.classList.contains("correct");
+//   if (isCorrect) {
+//     label.classList.add("btn-correct");
+//   } else {
+//     label.classList.add("btn-incorrect");
+//   }
+// });
 
   #updateProgressBar(progressBar, numberOfCorrectAnswers) {
     const percentage = numberOfCorrectAnswers / this.totalNumberOfQuestions * 100
