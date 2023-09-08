@@ -25,7 +25,7 @@
               </div>
 
               <button class="next" data-game-target="startButton" data-action="click->game#start">
-                Next
+                Start
               </button>
               <div data-game-target="questionContainer" class="question"></div>
 
@@ -48,7 +48,7 @@
               <% end %>
               <%= render "decks/progress_bar_levels", user: current_user %>
             </div>
-            <div data-game-target="stopwatch" class="stopwatch flex-shrink-0"></div>
+            <div data-game-target="stopwatch" class="stopwatch flex-shrink-0">TIME</div>
           </div>
 
         </div>
