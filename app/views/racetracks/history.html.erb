@@ -1,22 +1,22 @@
-<div class="container">
-  <div class="box-grey">
-    <h1 class="history-title">PREVIOUS RACETRACK RESULTS:</h1>
+<div class="container" >
+  <div class="box-grey" style="border-style: solid; border-width: 5px; align-items: center; background-color: lightgray; color: black; width: 90%; padding: 7px; margin-top: 20px; margin-bottom: 20px;">
+    <h1 class="history-title">PREVIOUS RACE RESULTS:</h1>
   </div>
 </div>
+
+
+
+
   <div class="box-white">
     <div class="results-history">
-    <ul>
+    <%# <ul> %>
     <% @racetracks.each do |race| %>
-      <h6>RACE NUMBER:</h6>
-        <li><p><%= race.deck_id %></p></li>
-      <h6 class="history-winners-list">THE WINNER WAS:</h6>
-        <% user = User.find(race.winner_id) %>
-        <li><p><%= user.username %></p></li>
-        <hr>
+      <div class="result">
+        <h6><%= race.deck.name%></h6>
+        <p>📅 <%= race.updated_at.to_s(:long) %></p>
+        <p>🏆 <%= race.winner.username %></p>
+      </div>
     <% end %>
-    </ul>
+    <%# </ul> %>
   </div>
 </div>
-
-
-<%# add completion %>
