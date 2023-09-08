@@ -26,20 +26,20 @@ User.destroy_all
 puts "Users destroyed."
 
 user_1 = User.create!(email:"marcelo@live.com", password:"123456" ,first_name:"Marcelo", last_name:"User", username: "marcelovsk1")
-user_1.photo.attach(io: URI.open("https://res.cloudinary.com/ddpxdkwin/image/upload/v1694120512/marcelo_c4omxf.png"), filename: "user_1.png", content_type: "image/png")
+user_1.photo.attach(io: URI.open("https://res.cloudinary.com/ddpxdkwin/image/upload/v1694185576/marcelo_hfgoye.png"), filename: "user_1.png", content_type: "image/png")
 
 user_2 = User.create!(email:"justin@live.com", password:"123456" ,first_name:"Justin", last_name:"User", username: "justincredible")
-user_2.photo.attach(io: URI.open("https://res.cloudinary.com/ddpxdkwin/image/upload/v1694120512/justin_oebyfz.png"), filename: "user_2.png", content_type: "image/png")
+user_2.photo.attach(io: URI.open("https://res.cloudinary.com/ddpxdkwin/image/upload/v1694185576/justin_c5gj8h.png"), filename: "user_2.png", content_type: "image/png")
 
 user_3 = User.create!(email:"grant@live.com", password:"123456" ,first_name:"Grant", last_name:"User", username: "boyCapel")
-user_3.photo.attach(io: URI.open("https://res.cloudinary.com/ddpxdkwin/image/upload/v1694122230/image_wjsor4.png"), filename: "user_3.png", content_type: "image/png")
+user_3.photo.attach(io: URI.open("https://res.cloudinary.com/ddpxdkwin/image/upload/v1694185576/grant_1_dbznmm.png"), filename: "user_3.png", content_type: "image/png")
 
 user_4 = User.create!(email:"kitty@live.com", password:"123456" ,first_name:"Kitty", last_name:"User", username: "hellokitty")
-user_4.photo.attach(io: URI.open("https://res.cloudinary.com/ddpxdkwin/image/upload/v1694120512/kitty_c08za4.png"), filename: "user_4.png", content_type: "image/png")
+user_4.photo.attach(io: URI.open("https://res.cloudinary.com/ddpxdkwin/image/upload/v1694185576/kitty_vudo3p.png"), filename: "user_4.png", content_type: "image/png")
 user_4.save
 
 user_5 = User.create!(email:"david@live.com", password:"123456" ,first_name:"David", last_name:"User", username: "davidwagon")
-user_5.photo.attach(io: URI.open("https://res.cloudinary.com/ddpxdkwin/image/upload/v1694120512/david_ixp3js.png"), filename: "user_5.png", content_type: "image/png")
+user_5.photo.attach(io: URI.open("https://res.cloudinary.com/ddpxdkwin/image/upload/v1694185578/david_wmsmef.png"), filename: "user_5.png", content_type: "image/png")
 user_5.save
 
 deck_1 = Deck.create!(name: "STRING", tips: "Strings are texts that exist within either single quotes or double quotes. You create a string by enclosing a sequence of characters in one or the other.", level: 1)
