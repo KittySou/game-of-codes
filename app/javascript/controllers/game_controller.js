@@ -2,7 +2,6 @@ import { Controller } from "@hotwired/stimulus"
 import Mustache from "mustache"
 import { createConsumer } from "@rails/actioncable"
 
-
 // Connects to data-controller="game"
 export default class extends Controller {
   static targets = [
@@ -22,7 +21,8 @@ export default class extends Controller {
     "tipsHeader",
     "deckHeader",
     "stopwatch",
-    "opponentProgressBar"
+    "opponentProgressBar",
+    "countdown"
   ]
 
   static outlets = [ "tips-button" ]
@@ -31,7 +31,9 @@ export default class extends Controller {
     deckId: Number,
     racetrackId: Number,
     playerId: Number,
-    opponentId: Number
+    opponentId: Number,
+    playerTwoId: Number,
+    playerOneId: Number,
   }
 
   connect() {
@@ -62,12 +64,26 @@ export default class extends Controller {
 
     this.startDate = null
     this.timer = null
-    if(this.isMultiplayer) {
+    if (this.isMultiplayer) {
       this.#subscribeToRacetrack()
+      if (this.playerIdValue !== this.playerTwoIdValue) {
+        this.opponentProgressBarTarget.classList.add("away")
+        this.startButtonTarget.innerText = "Waiting on opponent..."
+        this.startButtonTarget.disabled = true
+      }
     }
+
+    this.countdown = null;
+  }
+
+  disconnect() {
+    if (this.isMultiplayer) { this.channel.unsubscribe() }
   }
 
   start() {
+    if (this.isMultiplayer && this.playerIdValue === this.playerOneIdValue) {
+      this.channel.perform("start_game", { playerId: this.playerIdValue })
+    }
     document.querySelector('.tips-btn').classList.remove('d-none')
     this.tipsTarget.classList.add("d-none")
     this.startButtonTarget.classList.add("d-none")
@@ -151,10 +167,6 @@ export default class extends Controller {
         return
 
       }
-
-     // this.#endGame(this.winnerTemplateTarget.innerHTML)
-      // this.stopwatchTarget.innerText = "DONE"
-
 
     }
 
@@ -248,9 +260,34 @@ export default class extends Controller {
     .then((data) => {
       this.deck = data
       this.totalNumberOfQuestions = this.deck.length
-      this.#setNewQuestion()
-      this.setHeader()
+
+      if (this.isMultiplayer) {
+        this.countdown = 3
+        this.#updateCountdown()
+        const interval = setInterval(() => {
+          this.countdown--
+          if (this.countdown === 0) {
+            clearInterval(interval)
+            this.#setNewQuestion()
+            this.setHeader()
+          }
+          this.#updateCountdown()
+        }, 1000)
+      } else {
+        this.#setNewQuestion()
+        this.setHeader()
+      }
     })
+  }
+
+  #updateCountdown() {
+    const div = this.countdownTarget
+    if (this.countdown <= 0) {
+      div.classList.add('d-none')
+    } else {
+      div.firstElementChild.innerHTML = this.countdown
+      div.classList.remove('d-none')
+    }
   }
 
   setHeader() {
@@ -264,20 +301,20 @@ export default class extends Controller {
 
   #subscribeToRacetrack() {
     this.channel = createConsumer().subscriptions.create(
-      { channel: "RacetrackChannel", id: this.racetrackIdValue },
-      { received: (data) => {
-        if (data.playerId === this.opponentIdValue) {
+      { channel: "RacetrackChannel", id: this.racetrackIdValue, playerId: this.playerIdValue },
+      {
+        received: (data) => {
+        if (data.playerId === this.opponentIdValue && data.action === "progress") {
           this.#updateProgressBar(this.opponentProgressBarTarget, data.numberOfCorrectAnswers)
           if (data.isDeckCompleted) {
-            // this.#endGame('<h3>Oh no, you lost :(<h3>')
             this.#endGame(this.loserTemplateTarget.innerHTML)
-
-
-              // need new LOST template
-              // stop clock for loser
           }
-          return
-
+        } else if (data.action === "appear" && data.playerId === this.playerTwoIdValue) {
+          this.opponentProgressBarTarget.classList.remove('away');
+          this.startButtonTarget.disabled = false;
+          this.startButtonTarget.innerText = "Start";
+        } else if (data.action === "start_game" && data.playerId !== this.playerIdValue) {
+          this.start()
         }
       }}
     )
@@ -290,6 +327,6 @@ export default class extends Controller {
       playerId: this.playerIdValue
     }
 
-    this.channel.send(body)
+    this.channel.perform("progress", body)
   }
 }
