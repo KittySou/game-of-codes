@@ -154,7 +154,7 @@ answer_59 = Answer.create!(content: "100_become_string", question: question_15)
 
 
 deck_1_multiplayer = Deck.create!(name: "Floats", tips: "Numbers with decimal points are floats. If you use a float in a calculation, the result will automatically be a float-type number.", level: 100)
-deck_2_multiplayer = Deck.create!(name: "Array", tips: "An array is a collection of objects (strings, integers, etc.). It consists of enclosing those objects inside square brackets [...] with each object separated by a comma.", level: 100)
+deck_2_multiplayer = Deck.create!(name: "Array", tips: "An array is a collection of objects enclosed in square brackets", level: 100)
 deck_3_multiplayer = Deck.create!(name: "Integers", tips: "check lecture", level: 100)
 deck_4_multiplayer = Deck.create!(name: "Boolean", tips: "check lecture", level: 100)
 deck_5_multiplayer = Deck.create!(name: "Variables", tips: "check lecture", level: 100)
