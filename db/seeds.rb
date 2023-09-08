@@ -25,22 +25,22 @@ puts "Destroying all users..."
 User.destroy_all
 puts "Users destroyed."
 
-user_1 = User.create!(email:"marcelo@live.com", password:"123456" ,first_name:"Marcelo", last_name:"User", username: "marcelovsk1")
-user_1.photo.attach(io: URI.open("https://res.cloudinary.com/ddpxdkwin/image/upload/v1694120512/marcelo_c4omxf.png"), filename: "user_1.png", content_type: "image/png")
+marcelo = User.create!(email:"marcelo@live.com", password:"123456" ,first_name:"Marcelo", last_name:"User", username: "marcelovsk1")
+marcelo.photo.attach(io: URI.open("https://res.cloudinary.com/ddpxdkwin/image/upload/v1694120512/marcelo_c4omxf.png"), filename: "marcelo.png", content_type: "image/png")
 
-user_2 = User.create!(email:"justin@live.com", password:"123456" ,first_name:"Justin", last_name:"User", username: "justincredible")
-user_2.photo.attach(io: URI.open("https://res.cloudinary.com/ddpxdkwin/image/upload/v1694120512/justin_oebyfz.png"), filename: "user_2.png", content_type: "image/png")
+justin = User.create!(email:"justin@live.com", password:"123456" ,first_name:"Justin", last_name:"User", username: "justincredible")
+justin.photo.attach(io: URI.open("https://res.cloudinary.com/ddpxdkwin/image/upload/v1694120512/justin_oebyfz.png"), filename: "justin.png", content_type: "image/png")
 
-user_3 = User.create!(email:"grant@live.com", password:"123456" ,first_name:"Grant", last_name:"User", username: "boyCapel")
-user_3.photo.attach(io: URI.open("https://res.cloudinary.com/ddpxdkwin/image/upload/v1694122230/image_wjsor4.png"), filename: "user_3.png", content_type: "image/png")
+grant = User.create!(email:"grant@live.com", password:"123456" ,first_name:"Grant", last_name:"User", username: "boyCapel")
+grant.photo.attach(io: URI.open("https://res.cloudinary.com/ddpxdkwin/image/upload/v1694122230/image_wjsor4.png"), filename: "grant.png", content_type: "image/png")
 
-user_4 = User.create!(email:"kitty@live.com", password:"123456" ,first_name:"Kitty", last_name:"User", username: "hellokitty")
-user_4.photo.attach(io: URI.open("https://res.cloudinary.com/ddpxdkwin/image/upload/v1694120512/kitty_c08za4.png"), filename: "user_4.png", content_type: "image/png")
-user_4.save
+kitty = User.create!(email:"kitty@live.com", password:"123456" ,first_name:"Kitty", last_name:"User", username: "hellokitty")
+kitty.photo.attach(io: URI.open("https://res.cloudinary.com/ddpxdkwin/image/upload/v1694120512/kitty_c08za4.png"), filename: "kitty.png", content_type: "image/png")
+kitty.save
 
-user_5 = User.create!(email:"david@live.com", password:"123456" ,first_name:"David", last_name:"User", username: "davidwagon")
-user_5.photo.attach(io: URI.open("https://res.cloudinary.com/ddpxdkwin/image/upload/v1694120512/david_ixp3js.png"), filename: "user_5.png", content_type: "image/png")
-user_5.save
+david = User.create!(email:"david@live.com", password:"123456" ,first_name:"David", last_name:"User", username: "davidwagon")
+david.photo.attach(io: URI.open("https://res.cloudinary.com/ddpxdkwin/image/upload/v1694120512/david_ixp3js.png"), filename: "david.png", content_type: "image/png")
+david.save
 
 deck_1 = Deck.create!(name: "FLOAT", tips: "Numbers with decimal points are called floating-point numbers or floats. Example: 1.3", level: 1)
 deck_2 = Deck.create!(name: "INTEGER", tips: "Numbers without decimal points are called integers. Example: 2 (Integer) vs 2.0 (Float)", level: 1)
@@ -182,12 +182,49 @@ answer_69 = Answer.create!(content: "No", question: question_20, right_answer: t
 answer_70 = Answer.create!(content: "5", question: question_20)
 answer_71 = Answer.create!(content: "Yum", question: question_20)
 
-UserDeck.create(
-  user: user_4,
+# Multiplayer "Array" deck
+
+question_21 = Question.create!(content: "How can you get the first item of an array?", deck: deck_2_multiplayer)
+answer_72 = Answer.create!(content: "array.first", question: question_21, right_answer: true)
+answer_73 = Answer.create!(content: "array.one", question: question_21)
+answer_74 = Answer.create!(content: "array.uno", question: question_21)
+
+question_22 = Question.create!(content: "How can you delete an item from an array?", deck: deck_2_multiplayer)
+answer_76 = Answer.create!(content: "array.remove", question: question_22)
+answer_77 = Answer.create!(content: "array.delete", question: question_22, right_answer: true)
+answer_78 = Answer.create!(content: "array.clear", question: question_22)
+
+question_23 = Question.create!(content: "How can you get the last item of an array?", deck: deck_2_multiplayer)
+answer_80 = Answer.create!(content: "array.last", question: question_23, right_answer: true)
+answer_81 = Answer.create!(content: "array.end", question: question_23)
+answer_82 = Answer.create!(content: "array.fim", question: question_23)
+
+question_24 = Question.create!(content: "How can you verify if an item is included in an array?", deck: deck_2_multiplayer)
+answer_84 = Answer.create!(content: "array.all?", question: question_24)
+answer_85 = Answer.create!(content: "array.in?", question: question_24)
+answer_86 = Answer.create!(content: "array.include?", question: question_24, right_answer: true)
+
+question_25 = Question.create!(content: "How can you create a new array?", deck: deck_2_multiplayer)
+answer_88 = Answer.create!(content: "array.make", question: question_25)
+answer_89 = Answer.create!(content: "array.create", question: question_25, right_answer: true)
+answer_90 = Answer.create!(content: "array.new", question: question_25)
+
+
+UserDeck.create!(
+  user: kitty,
   deck: deck_1
 )
 
-UserDeck.create(
-  user: user_4,
+UserDeck.create!(
+  user: kitty,
   deck: deck_2
+)
+
+
+Racetrack.create!(
+  winner: david,
+  player_1: kitty,
+  player_2: david,
+  deck: deck_4_multiplayer,
+  completed: true
 )
