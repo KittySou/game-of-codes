@@ -2,9 +2,8 @@
   <div class="navbar navbar-expand-sm navbar-light navbar-lewagon" style="height: 74px; background-color: lightgray;">
     <div class="container-fluid">
       <div class="picture-name-info">
-        <%= link_to " < ", :back, class: "nav-btn black-text"%>
+        <%= link_to " < ", 'javascript:history.back()', class: "bigger-font-nav nav-btn black-text"%>
       </div>
-
       <% if current_page?(:controller => 'decks', :action => 'show') %>
        <button data-bs-toggle="modal" data-bs-target="#exampleModal" class="nav-btn tips-btn d-none">?</button>
 
@@ -30,8 +29,8 @@
       <% end %>
 
       <div>
-         <div data-bs-toggle="modal" data-bs-target="#exampleModal2" class="nav-btn">
-          ≡
+         <div data-bs-toggle="modal" data-bs-target="#exampleModal2" class="nav-btn bigger-font-nav">
+          ☰
         </div>
         <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModal2Label" aria-hidden="true">
           <div class="modal-dialog modal-tips modal-menu">

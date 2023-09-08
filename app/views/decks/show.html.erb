@@ -20,7 +20,7 @@
               <div class="tips-card"
                 data-game-target="tips"
                 style="margin-top: -40px">
-                <iframe src="https://giphy.com/embed/59ADeszMVpHgNBe7Ju" width="150" height="150" frameBorder="0" class="giphy-embed" style="margin-bottom: -20px" allowFullScreen></iframe>
+                <iframe style="pointer-events: none" src="https://giphy.com/embed/59ADeszMVpHgNBe7Ju" width="150" height="150" frameBorder="0" class="giphy-embed" style="margin-bottom: -20px" allowFullScreen ></iframe>
                 <h5><%= @deck.tips %></h5>
               </div>
 
@@ -41,9 +41,14 @@
           <div data-game-target="questionContainer" class="question"></div>
 
           <div data-game-target="answerConfirmation" class="answer"></div>
-        <% if @multiplayer %>
-        <%= render "decks/progress_bar_multiplayer", user: @opponent, opponent: true %>
-        <% end %>
-        <%= render "decks/progress_bar_levels", user: current_user, opponent: false %>
+          <div class="footer-container footer-container-to-bottom">
+            <div class="d-flex flex-column gap-2 flex-grow-1">
+              <% if @multiplayer %>
+                <%= render "decks/progress_bar_multiplayer", user: @opponent %>
+              <% end %>
+              <%= render "decks/progress_bar_levels", user: current_user %>
+            </div>
+            <div data-game-target="stopwatch" class="stopwatch flex-shrink-0"></div>
+          </div>
 
         </div>
