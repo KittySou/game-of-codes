@@ -1,4 +1,5 @@
 # Game of Codes 🕹️
+<p>In an era where the Internet is our #1 resource to obtain any type of information, it can become overhelming at times.</p>
 <p>A simple interactive game app aiming to introduce non-coders to the basics of Ruby.</p>
 
 ## Target 🎯
