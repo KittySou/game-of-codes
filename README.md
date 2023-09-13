@@ -1,12 +1,12 @@
 <h1 align="center"> Game of Codes 🕹️ </h1>
 
 ## → Pain 🤕
-<p>  In the era where the Internet is our #1 resource to obtain any type of information, it can become overhelming at times.</p>
+<p>In the era where the Internet is our #1 resource to obtain any type of information, it can become overhelming at times.</p>
 
-## Target 🎯
+## → Target 🎯
 <p>People with no coding experience but tech-savy having the desire to learn programming.</p>
 
-## Solution 💡
+## → Solution 💡
 <p>A simple interactive game app aiming to introduce non-coders to the basics of Ruby.</p>
 
 <br>
