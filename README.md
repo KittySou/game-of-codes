@@ -1,11 +1,15 @@
 # Game of Codes 🕹️
-<p>A simple interactive game app aiming to introduce non-coders to the basics of Ruby.</p>
 
 ## Pain 🤕
 <p>In the era where the Internet is our #1 resource to obtain any type of information, it can become overhelming at times.</p>
 
 ## Target 🎯
 <p>People with no coding experience but tech-savy having the desire to learn programming.</p>
+
+## Solution 💡
+<p>A simple interactive game app aiming to introduce non-coders to the basics of Ruby.</p>
+
+<br>
 
 <p>As our final project of the bootcamp, we encountered many challenges : create a figma product, work in teams, figure out merge conflicts and finally deploy on heroku.</p>
 
