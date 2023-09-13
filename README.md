@@ -1,7 +1,7 @@
 <h1 align="center"> Game of Codes 🕹️ </h1>
 
-## Pain 🤕
-<p>In the era where the Internet is our #1 resource to obtain any type of information, it can become overhelming at times.</p>
+## → Pain 🤕
+<p>  In the era where the Internet is our #1 resource to obtain any type of information, it can become overhelming at times.</p>
 
 ## Target 🎯
 <p>People with no coding experience but tech-savy having the desire to learn programming.</p>
