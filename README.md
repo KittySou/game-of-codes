@@ -10,6 +10,7 @@
 <p>→ A simple interactive game app aiming to introduce non-coders to the basics of Ruby.</p>
 
 <br>
+<br>
 
 <p>As our final project of the bootcamp, we encountered many challenges : create a figma product, work in teams, figure out merge conflicts and finally deploy on heroku.</p>
 
